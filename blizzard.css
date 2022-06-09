@@ -18,27 +18,6 @@ html {
 .mb, .pb, .tb, .sd, .dt {
     display: none;
 }
-.pyro {
-    color: #F84F38;
-}
-.hydro {
-    color: #00CBEA;
-}
-.cryo {
-    color: #4EF3FE;
-}
-.anemo {
-    color: #38FFBD;
-}
-.geo {
-    color: #FFCC00;
-}
-.electro {
-    color: #B15DFF;
-}
-.dendro {
-    color: #B0E82A;
-}
 
 /* Mobiles */
 @media only screen and (max-width: 599.98px) {

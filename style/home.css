@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Passion+One&family=Raleway&display=swap');
+.main-grid {
+    display: grid;
+    grid-template-columns: 20% 80%;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    z-index: 1;
+}
+.bg {
+    position: absolute;
+    margin-left: -12rem;
+    margin-top: -5rem;
+    width: 120vw;
+    height: 120vh;
+    filter: brightness(0.9);
+}
+main {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+}
+.landing {
+    font-size: 2.5rem;
+}
+body {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
+}
+h1 {
+    font-weight: normal;
+    font-family: 'Bebas Neue';
+    color: white;
+    font-size: 5em;
+    animation-name: slideInDown;
+    animation-delay: 1s;
+    animation-duration: 1s;
+    line-height: 1;
+}
+h2 {
+    font-weight: normal;
+    font-family: 'Bebas Neue';
+    color: white;
+    font-size: 3.2em;
+    display: inline;
+    animation-name: slideInUp;
+    animation-delay: 1s;
+    animation-duration: 1s;
+}
+h1 > span {
+    font-weight: normal;
+    font-family: 'Bebas Neue';
+    font-size: 2em;
+}
+nav {
+    font-family: 'Raleway';
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+.active {
+    color: rgb(255, 0, 128);
+}
+ul {
+    margin-bottom: 5rem;
+}
+a {
+    color: white;
+    font-size: 1.2rem;
+    transition: 0.3s;
+}
+a:hover {
+    color: rgb(255, 0, 128);
+}
+.welcome {
+    display: flex;
+}
+.anime-d {
+    display: inline-block;
+    color: rgb(255, 0, 128);
+    font-family: 'Passion One';
+    font-size: 6em;
+    animation-name: slideInLeft;
+    animation-delay: 1s;
+    animation-duration: 1s;
+}
+.rotate {
+    color: rgb(255, 0, 128);
+    font-family: 'Passion One';
+    font-size: 4.8em;
+    writing-mode: vertical-rl;
+    animation-name: slideInRight;
+    animation-delay: 1s;
+    animation-duration: 1s;
+}
+.category {
+    color: rgb(255, 0, 128);
+    font-family: 'Passion One';
+    font-size: 3.89em;
+    line-height: 0.1;
+    display: inline-block;
+    animation-name: slideInUp;
+    animation-delay: 1s;
+    animation-duration: 1s;
+}
+.slideInLeft {
+    display: inline-block;
+    animation-name: slideInLeft;
+    animation-delay: 1s;
+    animation-duration: 1s;
+}
+.slideInRight {
+    display: inline-block;
+    animation-name: slideInRight;
+    animation-delay: 1s;
+    animation-duration: 1s;
+}

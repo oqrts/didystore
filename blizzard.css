@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    list-style: none;
+    text-decoration: none;
+    color: black;
+}
+html {
+    background: rgb(26, 26, 26);
+    scroll-behavior: smooth;
+}
+.container {
+    margin-left: auto;
+    margin-right: auto;
+}
+.mb, .pb, .tb, .sd, .dt {
+    display: none;
+}
+.pyro {
+    color: #F84F38;
+}
+.hydro {
+    color: #00CBEA;
+}
+.cryo {
+    color: #4EF3FE;
+}
+.anemo {
+    color: #38FFBD;
+}
+.geo {
+    color: #FFCC00;
+}
+.electro {
+    color: #B15DFF;
+}
+.dendro {
+    color: #B0E82A;
+}
+
+/* Mobiles */
+@media only screen and (max-width: 599.98px) {
+    .container {
+        width: 100%;
+    }
+    .mb {
+        display: block;
+    }
+}
+
+/* Phablets */
+@media (min-width: 600px) and (max-width: 767.98px) {
+    .container {
+        width: 100%;
+    }
+    .pb {
+        display: block;
+    }
+}
+
+/* Tablets */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .container {
+        width: 650px;
+    }
+    .tb {
+        display: block;
+    }
+}
+
+/* Small Desktops */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .container {
+        width: 992px;
+    }
+    .sd {
+        display: block;
+    }
+}
+
+/* Desktops */
+@media only screen and (min-width: 1200px) {
+    .container {
+        width: 1200px;
+    }
+    .dt {
+        display: block;
+    }
+}
+
+/* Fonts */
+@font-face {
+    font-family: 'Magdelin';
+    src: url('../fonts/magdelin_fonts/Magdelin-Regular.otf');
+}
+
+/* For Easy Copying */
+/* @media only screen and (max-width: 599.98px) {
+        
+}
+
+@media (min-width: 600px) and (max-width: 767.98px) {
+
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+
+}
+
+@media only screen and (min-width: 1200px) {
+
+}  */

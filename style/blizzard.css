@@ -11,12 +11,54 @@ html {
     background: rgb(26, 26, 26);
     scroll-behavior: smooth;
 }
+.board {
+    position: absolute;
+    background-color: rgb(20, 20, 20);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    min-width: 100vw;
+    animation-name: slideUp;
+    animation-delay: 1s;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    z-index: 2;
+}
+.logo {
+    width: 100px;
+    height: auto;
+    filter: invert(26%) sepia(87%) saturate(5809%) hue-rotate(316deg) brightness(101%) contrast(101%);
+    z-index: 0;
+}
+.blocker {
+    position: absolute;
+    background-color: rgb(20, 20, 20);
+    min-width: 100px;
+    min-height: 100px;
+    animation-name: slideUp;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    z-index: 1;
+}
 .container {
     margin-left: auto;
     margin-right: auto;
 }
 .mb, .pb, .tb, .sd, .dt {
     display: none;
+}
+@keyframes slideUp {
+    100% { 
+        transform: translate(0, -100%);
+        display: none;
+    }
+}
+@keyframes goUp {
+    100% { 
+        transform: translate(0, -100%);
+        display: none;
+    }
 }
 
 /* Mobiles */

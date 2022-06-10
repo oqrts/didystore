@@ -18,21 +18,17 @@ main {
     display: flex;
     align-items: center;
     min-height: 100vh;
+    text-shadow: 0 0 7px rgba(0, 0, 0, 0.8);
 }
-.landing {
-    font-size: 2.5rem;
-}
+
 body {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
     overflow: hidden;
 }
 h1 {
     font-weight: normal;
     font-family: 'Bebas Neue';
     color: white;
-    font-size: 5em;
+    font-size: 13rem;
     animation-name: slideInDown;
     animation-delay: 1s;
     animation-duration: 1s;
@@ -42,7 +38,7 @@ h2 {
     font-weight: normal;
     font-family: 'Bebas Neue';
     color: white;
-    font-size: 3.2em;
+    font-size: 6em;
     display: inline;
     animation-name: slideInUp;
     animation-delay: 1s;
@@ -51,7 +47,7 @@ h2 {
 h1 > span {
     font-weight: normal;
     font-family: 'Bebas Neue';
-    font-size: 2em;
+    font-size: 3em;
 }
 nav {
     font-family: 'Raleway';
@@ -59,6 +55,7 @@ nav {
     align-items: center;
     justify-content: flex-end;
     flex-direction: column;
+    text-shadow: 0 0 7px rgba(0, 0, 0, 0.8);
 }
 .active {
     color: rgb(255, 0, 128);
@@ -68,7 +65,7 @@ ul {
 }
 a {
     color: white;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     transition: 0.3s;
 }
 a:hover {
@@ -81,7 +78,7 @@ a:hover {
     display: inline-block;
     color: rgb(255, 0, 128);
     font-family: 'Passion One';
-    font-size: 6em;
+    font-size: 14rem;
     animation-name: slideInLeft;
     animation-delay: 1s;
     animation-duration: 1s;
@@ -89,7 +86,7 @@ a:hover {
 .rotate {
     color: rgb(255, 0, 128);
     font-family: 'Passion One';
-    font-size: 4.8em;
+    font-size: 11rem;
     writing-mode: vertical-rl;
     animation-name: slideInRight;
     animation-delay: 1s;
@@ -98,12 +95,16 @@ a:hover {
 .category {
     color: rgb(255, 0, 128);
     font-family: 'Passion One';
-    font-size: 3.89em;
+    font-size: 7em;
     line-height: 0.1;
     display: inline-block;
     animation-name: slideInUp;
     animation-delay: 1s;
     animation-duration: 1s;
+}
+.category::before {
+    content: 'Figures';
+    animation: textChange infinite 2s;
 }
 .slideInLeft {
     display: inline-block;
@@ -116,4 +117,10 @@ a:hover {
     animation-name: slideInRight;
     animation-delay: 1s;
     animation-duration: 1s;
+}
+@keyframes textChange {
+    0% { content:  'FIGURES'; }
+    33% { content: 'cosplays'; }
+    66% { content: 'Mangas'; }
+    100% { content: 'FIGURES'; }
 }

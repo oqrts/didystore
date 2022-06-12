@@ -85,8 +85,8 @@ h1 > span {
 }
 @keyframes textChange {
     0% { content:  'FIGURES'; }
-    33% { content: 'cosplays'; }
-    66% { content: 'Mangas'; }
+    33% { content: 'COSPLAYS'; }
+    66% { content: 'ANIMES'; }
     100% { content: 'FIGURES'; }
 }
 @media (-webkit-min-device-pixel-ratio: 1.25) { 

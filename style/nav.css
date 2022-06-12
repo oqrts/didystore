@@ -1,4 +1,5 @@
 nav {
+    max-height: 100vh;
     font-family: 'Raleway';
     display: flex;
     align-items: center;
@@ -6,17 +7,27 @@ nav {
     flex-direction: column;
     text-shadow: 0 0 7px rgba(0, 0, 0, 0.8);
 }
-.active {
+nav .active {
     color: rgb(255, 0, 128);
 }
-ul {
+nav ul {
     margin-bottom: 5rem;
 }
-a {
+nav a {
     color: white;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     transition: 0.3s;
+    text-transform: uppercase;
 }
-a:hover {
+nav a:hover {
     color: rgb(255, 0, 128);
+}
+@media (-webkit-min-device-pixel-ratio: 1.25) {
+    
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.5) {
+    nav a {
+        font-size: 0.9rem;
+    }
 }

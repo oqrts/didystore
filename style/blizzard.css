@@ -22,6 +22,7 @@ html {
     width: 120vw;
     height: 120vh;
     filter: brightness(0.9);
+    z-index: -1;
 }
 .board {
     position: absolute;
@@ -123,6 +124,20 @@ html {
     }
 }
 
+/* Scale 1.25 */
+@media (-webkit-min-device-pixel-ratio: 1.25) {
+    .bg {
+        margin-left: -9.5rem;
+    }
+}
+
+/* Scale 1.5 */
+@media (-webkit-min-device-pixel-ratio: 1.5) {
+    .bg {
+        margin-left: -9rem;
+    }
+}
+
 /* Fonts */
 @font-face {
     font-family: 'Magdelin';
@@ -148,4 +163,12 @@ html {
 
 @media only screen and (min-width: 1200px) {
 
-}  */
+}  
+
+@media (-webkit-min-device-pixel-ratio: 1.25) {
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.5) {
+    
+}
+*/

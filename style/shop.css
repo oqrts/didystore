@@ -169,3 +169,20 @@ main::-webkit-scrollbar {
 .title span {
     color: rgb(255, 0, 128);
 }
+.category {
+    color: rgb(255, 0, 128);
+    font-size: 5rem;
+    font-family: 'Bebas Neue';
+    line-height: 0.1;
+    display: inline-block;
+}
+.category::before {
+    content: 'Figures';
+    animation: textChange infinite 2s;
+}
+@keyframes textChange {
+    0% { content:  'FIGURES'; }
+    33% { content: 'COSPLAYS'; }
+    66% { content: 'ANIMES'; }
+    100% { content: 'FIGURES'; }
+}

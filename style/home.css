@@ -21,7 +21,7 @@ h1 {
     color: white;
     font-size: 10rem;
     animation-name: slideInDown;
-    animation-delay: 1s;
+    animation-delay: 0.9s;
     animation-duration: 1s;
     line-height: 1;
 }
@@ -31,7 +31,7 @@ h1 {
     font-size: 10rem;
     display: inline-block;
     animation-name: slideInUp;
-    animation-delay: 1s;
+    animation-delay: 0.9s;
     animation-duration: 1s;
     margin: 0 0.5rem;
 }

@@ -32,8 +32,8 @@ html {
     align-items: center;
     min-height: 100vh;
     min-width: 100vw;
-    animation-name: slideUp;
-    animation-delay: 1s;
+    animation-name: slideRight;
+    animation-delay: 0.7s;
     animation-duration: 1s;
     animation-fill-mode: forwards;
     z-index: 2;
@@ -49,8 +49,8 @@ html {
     background-color: rgb(20, 20, 20);
     min-width: 100px;
     min-height: 100px;
-    animation-name: slideUp;
-    animation-duration: 1s;
+    animation-name: slideRight;
+    animation-duration: 0.7s;
     animation-fill-mode: forwards;
     z-index: 1;
 }
@@ -61,9 +61,9 @@ html {
 .mb, .pb, .tb, .sd, .dt {
     display: none;
 }
-@keyframes slideUp {
+@keyframes slideRight {
     100% { 
-        transform: translate(0, -100%);
+        transform: translateX(100%);
         display: none;
     }
 }

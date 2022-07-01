@@ -4,5 +4,5 @@ onmousemove = function moveScreen(e) {
     document.getElementById("screen").style.transform = "translate(" + x + "rem," + y + "rem)";
     let a = (e.clientX-440)/440;
     let b = (e.clientY-185)/185;
-    document.getElementById("back").style.transform = "translate(" + a + "rem," + b + "rem)";
+    document.getElementById("space").style.transform = "translate(" + a + "rem," + b + "rem)";
 }

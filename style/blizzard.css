@@ -20,7 +20,7 @@ html {
     margin-left: -10rem;
     margin-top: -5rem;
     width: 120vw;
-    height: 120vh;
+    height: auto;
     filter: brightness(0.9);
     z-index: -1;
 }

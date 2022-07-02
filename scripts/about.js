@@ -6,8 +6,7 @@ onmousemove = function moveScreen(e) {
     let screenY = (clientY-370)/370;
     document.getElementById("screen").style.transform = "translate(" + screenX + "rem," + screenY + "rem)";
 
-    let spaceX = (clientX-440)/440;
-    let spaceY = (clientY-185)/185;
-    document.getElementById("space").style.transform = "translate(" + spaceX + "rem," + spaceY + "rem)";
-
+    let membersX = (clientX-1000)/1000;
+    let membersY = (clientY-800)/800;
+    document.getElementById("members").style.transform = "translate(" + membersX + "rem," + membersY + "rem)";
 }

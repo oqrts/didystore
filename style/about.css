@@ -10,14 +10,30 @@ body {
     z-index: 1;
 }
 
-.second-grid {
-    display: grid;
-    grid-template-columns: 50% 50%;
+.members-grid {
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.members img {
-    width: 95%;
-    margin-top: 1.5rem;
+.member img {
+    width: 500px;
+    margin: 1rem
+}
+#member1 {
+    animation: Idle1 infinite 4s;
+    animation-timing-function: linear;
+}
+#member2 {
+    animation: Idle2 infinite 4s;
+    animation-timing-function: linear;
+}
+#member3 {
+    animation: Idle3 infinite 4s;
+    animation-timing-function: linear;
+}
+#member4 {
+    animation: Idle4 infinite 4s;
+    animation-timing-function: linear;
 }
 
 main {
@@ -30,7 +46,8 @@ main {
     /* IE and Edge */
     scrollbar-width: none;
     /* Firefox */
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: visible;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
@@ -110,4 +127,33 @@ p span {
 
 iframe {
     margin-bottom: 0.8rem;
+}
+
+@keyframes Idle1 {
+    0% { transform: translate(0.1rem , -0.1rem);}
+    25% { transform: translate(0.1rem , 0.1rem);}
+    50% { transform: translate(0.1rem , -0.1rem);}
+    75% { transform: translate(-0.1rem , 0.1rem);}
+    100% { transform: translate(0.1rem , -0.1rem);}
+}
+@keyframes Idle2 {
+    0% { transform: translate(0.1rem , 0.1rem);}
+    25% { transform: translate(0.1rem , -0.1rem);}
+    50% { transform: translate(0.1rem , -0.1rem);}
+    75% { transform: translate(-0.1rem , -0.1rem);}
+    100% { transform: translate(0.1rem , 0.1rem);}
+}
+@keyframes Idle3 {
+    0% { transform: translate(-0.1rem , -0.1rem);}
+    25% { transform: translate(-0.1rem , 0.1rem);}
+    50% { transform: translate(0.1rem , 0.1rem);}
+    75% { transform: translate(0.1rem , -0.1rem);}
+    100% { transform: translate(-0.1rem , -0.1rem);}
+}
+@keyframes Idle4 {
+    0% { transform: translate(-0.1rem , 0.1rem);}
+    25% { transform: translate(0.1rem , 0.1rem);}
+    50% { transform: translate(0.1rem , -0.1rem);}
+    75% { transform: translate(-0.1rem , -0.1rem);}
+    100% { transform: translate(-0.1rem , 0.1rem);}
 }

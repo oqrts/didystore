@@ -54,16 +54,16 @@ h1 {
     100% { content: 'FIGURES'; }
 }
 @keyframes scrollingLoop100 {
-    0% { transform: translateY(0%);}
-    100% { transform: translateY(-95%);}
+    0% { transform: translateY(0);}
+    100% { transform: translateY(-55rem);}
 }
 @keyframes scrollingLoop125 {
-    0% { transform: translateY(0%);}
-    100% { transform: translateY(-83%);}
+    0% { transform: translateY(0);}
+    100% { transform: translateY(-37rem);}
 }
 @keyframes scrollingLoop150 {
     0% { transform: translateY(0%);}
-    100% { transform: translateY(-86%);}
+    100% { transform: translateY(-31rem);}
 }
 .rotate {
     margin-right: 5rem;
@@ -83,7 +83,7 @@ h1 {
     } 
     .rotate {
         font-size: 6rem;
-        animation: scrollingLoop125 infinite 1.4s;
+        animation: scrollingLoop125 infinite 1.5s;
         animation-timing-function: linear;
     }
     #space {
@@ -95,7 +95,7 @@ h1 {
         font-size: 7rem;
     } 
     .rotate {
-        animation: scrollingLoop150 infinite 1.3s;
+        animation: scrollingLoop150 infinite 1.55s;
         animation-timing-function: linear;
         font-size: 5rem;
     }

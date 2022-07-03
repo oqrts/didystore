@@ -2,7 +2,7 @@ nav {
     max-height: 100vh;
     font-family: 'Raleway';
     display: flex;
-    align-items: center;
+    margin-left: 5rem;
     justify-content: flex-end;
     flex-direction: column;
     text-shadow: 0 0 7px rgba(0, 0, 0, 0.8);

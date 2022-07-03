@@ -186,3 +186,36 @@ main::-webkit-scrollbar {
     66% { content: 'ANIMES'; }
     100% { content: 'FIGURES'; }
 }
+.col-1 {
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.filter{
+    font-family: 'Raleway';
+    font-weight: normal;
+    display: flex;
+    margin-left: 5rem;
+    margin-top: 35vh;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+.filter h1{
+    color: rgb(255, 0, 128);
+    font-size: 1.3rem;
+}
+.filter ul li {
+    color: white;
+    font-size: 1rem;
+    margin: 0.25rem 1rem;
+}
+.selected{
+    background-color: rgb(255, 0, 128);
+}
+.filter ul li span, .filter h1 span{
+    color: white;
+    padding: 0.15rem;
+    font-family: 'Bebas Nebus', sans-serif;
+    font-weight: normal;
+}

@@ -45,6 +45,7 @@ main::-webkit-scrollbar {
     transform: translateZ(0);
     -webkit-font-smoothing: subpixel-antialiased;
     transition: 0.35s;
+    cursor: url('../images/white_cursor.png'), auto;
 }
 .item:hover img {
     transform: scale(1.15);
@@ -122,7 +123,7 @@ main::-webkit-scrollbar {
     font-size: 0.95rem;
     color: white;
     transition: 0.25s;
-    cursor: pointer;
+    cursor: url('../images/white_cursor.png'), auto;
 }
 .cart-button button:hover {
     background: rgb(255, 0, 128);
@@ -154,7 +155,7 @@ main::-webkit-scrollbar {
     height: auto;
     filter: invert(26%) sepia(87%) saturate(5809%) hue-rotate(316deg) brightness(101%) contrast(101%);
     transition: 0.25s;
-    cursor: pointer;
+    cursor: url('../images/white_cursor.png'), auto;
 }
 .cart img:hover {
     transform: scale(1.2);

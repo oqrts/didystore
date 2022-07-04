@@ -169,6 +169,7 @@ main::-webkit-scrollbar {
 }
 .title span {
     color: rgb(255, 0, 128);
+    cursor: url('../images/white_cursor.png'), auto;
 }
 .category {
     color: rgb(255, 0, 128);
@@ -176,6 +177,7 @@ main::-webkit-scrollbar {
     font-family: 'Bebas Neue';
     line-height: 0.1;
     display: inline-block;
+    cursor: url('../images/white_cursor.png'), auto;
 }
 .category::before {
     content: 'Figures';

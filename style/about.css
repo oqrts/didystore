@@ -77,7 +77,7 @@ p {
 }
 
 p span {
-    color: #ff0080;
+    color: hwb(330 0% 0%);
     font-weight: bold;
     font-family: 'Magdelin', sans-serif;
 }

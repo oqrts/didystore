@@ -38,8 +38,8 @@ main::-webkit-scrollbar {
     z-index: 1;
 }
 .item img {
-    width: 280px;
-    height: 300px;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     backface-visibility: hidden;
     transform: translateZ(0);
@@ -51,9 +51,9 @@ main::-webkit-scrollbar {
     transform: scale(1.15);
 }
 .item .info {
+    width: 280px;
     position: relative;
     background: white;
-    max-width: 280px;
     padding: 0.5rem;
     z-index: 1;
 }
@@ -90,8 +90,6 @@ main::-webkit-scrollbar {
     justify-content: center;
     align-items: center;
     height: 50px;
-}
-.item .name {
     z-index: 1;
     max-height: 50px;
     font-size: 1.2rem;
@@ -135,7 +133,7 @@ main::-webkit-scrollbar {
     position: absolute;
     background: rgb(255, 0, 128, 0);
     min-height: 440px;
-    min-width: 280px;
+    min-width: 100%;
     z-index: -1;
     transition: 0.2s;
 }
@@ -207,18 +205,136 @@ main::-webkit-scrollbar {
 .filter h1{
     color: rgb(255, 0, 128);
     font-size: 1.3rem;
+    margin-top: 0.2rem;
 }
 .filter ul li {
     color: white;
     font-size: 1rem;
-    margin: 0.25rem 1rem;
+    margin: 0.5rem 0;
 }
-.selected{
+.selected, .filter h1 span:hover, .filter ul li span:hover,.anime summary:hover ,.anime ul li:hover{
     background-color: rgb(255, 0, 128);
+    cursor: url('../images/white_cursor.png'), auto;
 }
-.filter ul li span, .filter h1 span{
+.filter ul li span, .filter h1 span, .anime summary{
+    border-radius: 4px;
     color: white;
-    padding: 0.15rem;
+    padding: 0.2rem;
     font-family: 'Bebas Nebus', sans-serif;
     font-weight: normal;
+    transition: 0.25s;
 }
+.anime {
+    display: flex;
+}
+.anime details {
+    transition: 0.3s;
+}
+.anime summary {
+    font-size: 1.3rem;
+    margin-left: 0.3rem;
+    transition: 0.25s;
+}
+.anime ul {
+    margin-left: 0.2rem;
+}
+.anime ul li:first-child {
+    display: none;
+}
+.anime ul li{
+    font-size: 0.9rem;
+    padding: 0.2rem;
+    margin: 0;
+    transition: 0.25s;
+    border-radius: 6px;
+    animation: none;
+}
+.anime details[open] ul li ~ *{
+    animation: dropdownList;
+    animation-duration: 1s;
+}
+@keyframes dropdownList {
+    from { 
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to { 
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+@media only screen and (max-width: 599.98px) {
+        
+}
+
+@media (min-width: 600px) and (max-width: 767.98px) {
+
+}
+
+@media (min-width: 768px) and (max-width: 1299.98px) {
+    .main-grid {
+        grid-template-columns: 17.5% 65% 17.5%;
+    }
+    .title, .category  {
+        font-size: 4rem;
+    }
+    .item .display {
+        width: 200px;
+        height: 214px;
+    }
+    .item .name {
+        font-size: 1rem;
+        height: 40px;
+    }
+    .item .info {
+        width: 200px;
+    }
+    .back-img {
+        min-height: 340px;
+    }
+    .item h2 {
+        font-size: 0.8rem;
+    }
+    .item .pre-order h3, .item .stock h3 {
+        font-size: 0.6rem;
+    }
+    .cart-button button {
+        font-size: 0.85rem;
+    }
+    .filter h1,.anime summary  {
+        font-size: 1rem;
+    }
+    .filter ul li {
+        font-size: 0.8rem;
+    }
+}
+
+@media (min-width: 1300px) and (max-width: 1599.98px) {
+    .title, .category {
+        font-size: 4.5rem;
+    }
+    .item .display {
+        width: 240px;
+        height: 257px;
+    }
+    .item .name {
+        font-size: 1.1rem;
+        height: 40px;
+    }
+    .item .info {
+        width: 240px;
+    }
+    .back-img {
+        min-height: 387px;
+    }
+    .filter h1,.anime summary  {
+        font-size: 1.2rem;
+    }
+    .filter ul li {
+        font-size: 0.9rem;
+    }
+}
+
+@media only screen and (min-width: 1600px) {
+    
+}  

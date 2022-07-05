@@ -22,14 +22,36 @@ nav a {
 }
 nav a:hover {
     color: rgb(255, 0, 128);
-    font-size: 1.3rem;
+    font-size: 1.25rem;
 }
-@media (-webkit-min-device-pixel-ratio: 1.25) {
-    
+@media only screen and (max-width: 599.98px) {
+        
 }
 
-@media (-webkit-min-device-pixel-ratio: 1.5) {
+@media (min-width: 600px) and (max-width: 767.98px) {
+
+}
+
+@media (min-width: 768px) and (max-width:1299.98px) {
     nav a {
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
+    nav a:hover {
+        color: rgb(255, 0, 128);
+        font-size: 1.15rem;
+    }
+}
+
+@media (min-width: 1300px) and (max-width: 1599.98px) {
+    nav a {
+        font-size: 1rem;
+    }
+    nav a:hover {
+        color: rgb(255, 0, 128);
+        font-size: 1.15rem;
+    }
+}
+
+@media only screen and (min-width: 1600px) {
+    
 }

@@ -54,17 +54,13 @@ h1 {
     66% { content: 'ANIMES'; }
     100% { content: 'FIGURES'; }
 }
-@keyframes scrollingLoop100 {
+@keyframes scrollingLoopv1 {
     0% { transform: translateY(0);}
     100% { transform: translateY(-55rem);}
 }
-@keyframes scrollingLoop125 {
+@keyframes scrollingLoopv2 {
     0% { transform: translateY(0);}
     100% { transform: translateY(-37rem);}
-}
-@keyframes scrollingLoop150 {
-    0% { transform: translateY(0%);}
-    100% { transform: translateY(-31rem);}
 }
 .rotate {
     margin-right: 5rem;
@@ -72,7 +68,7 @@ h1 {
     font-family: 'Passion One';
     font-size: 9rem;
     writing-mode: vertical-rl;
-    animation: scrollingLoop100 infinite 1.5s;
+    animation: scrollingLoopv1 infinite 1.5s;
     animation-timing-function: linear;
     white-space:nowrap;
     overflow: visible;
@@ -82,29 +78,43 @@ h1 {
 .rotate span {
     cursor: url('../images/pink_cursor.png'), auto;
 }
-@media (-webkit-min-device-pixel-ratio: 1.25) { 
+
+@media only screen and (max-width: 599.98px) {
+        
+}
+
+@media (min-width: 600px) and (max-width: 767.98px) {
+
+}
+
+@media (min-width: 768px) and (max-width: 1299.98px) {
+    h1, .category  {
+        font-size: 7rem;
+    } 
+    .rotate {
+        font-size: 6rem;
+        animation: scrollingLoopv2 infinite 1.5s;
+        animation-timing-function: linear;
+    }
+    #space {
+        width: 450px;
+    }
+}
+
+@media (min-width: 1300px) and (max-width: 1599.98px) {
     h1, .category  {
         font-size: 8rem;
     } 
     .rotate {
         font-size: 6rem;
-        animation: scrollingLoop125 infinite 1.5s;
+        animation: scrollingLoopv2 infinite 1.5s;
         animation-timing-function: linear;
     }
     #space {
         width: 550px;
     }
 }
-@media (-webkit-min-device-pixel-ratio: 1.5) { 
-    h1, .category  {
-        font-size: 7rem;
-    } 
-    .rotate {
-        animation: scrollingLoop150 infinite 1.55s;
-        animation-timing-function: linear;
-        font-size: 5rem;
-    }
-    #space {
-        width: 450px;
-    }
-}
+
+@media only screen and (min-width: 1600px) {
+    
+}  

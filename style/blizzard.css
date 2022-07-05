@@ -127,16 +127,12 @@ html {
 
 /* Scale 1.25 */
 @media (-webkit-min-device-pixel-ratio: 1.25) {
-    .bg {
-        margin-left: -9.5rem;
-    }
+    
 }
 
 /* Scale 1.5 */
 @media (-webkit-min-device-pixel-ratio: 1.5) {
-    .bg {
-        margin-left: -9rem;
-    }
+    
 }
 
 /* Fonts */

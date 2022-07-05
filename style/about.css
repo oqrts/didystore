@@ -6,7 +6,6 @@ body {
     display: grid;
     grid-template-columns: 20% 80%;
     text-transform: uppercase;
-    font-size: 1.3rem;
     z-index: 1;
 }
 
@@ -48,6 +47,7 @@ main {
     /* Firefox */
     overflow-y: scroll;
     overflow-x: visible;
+    padding-bottom: 2rem;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
@@ -56,13 +56,6 @@ main::-webkit-scrollbar {
 }
 
 h1 {
-    font-size: 5rem;
-    font-family: 'Bebas Neue';
-    color: white;
-    margin-top: 1rem;
-}
-
-h2 {
     font-size: 5rem;
     font-family: 'Bebas Neue';
     color: white;
@@ -114,7 +107,7 @@ p span {
 }
 
 .socials img {
-    width: 40px;
+    width: 35px;
     height: auto;
     margin-right: 1rem;
     filter: invert(97%) sepia(98%) saturate(3%) hue-rotate(75deg) brightness(105%) contrast(100%);
@@ -157,3 +150,45 @@ iframe {
     75% { transform: translate(-0.1rem , -0.1rem);}
     100% { transform: translate(-0.1rem , 0.1rem);}
 }
+
+@media only screen and (max-width: 599.98px) {
+        
+}
+
+@media (min-width: 600px) and (max-width: 767.98px) {
+
+}
+
+@media (min-width: 768px) and (max-width: 1299.98px) {
+    h1 {
+        font-size: 3.3rem;
+    }
+    p {
+        font-size: 1.2rem;
+    }
+    .member img {
+        width: 400px;
+    }
+    .socials img {
+        width: 25px;
+    }
+}
+
+@media (min-width: 1300px) and (max-width: 1599.98px) {
+    h1 {
+        font-size: 4rem;
+    }
+    p {
+        font-size: 1.4rem;
+    }
+    .member img {
+        width: 450px;
+    }
+    .socials img {
+        width: 30px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+
+}  

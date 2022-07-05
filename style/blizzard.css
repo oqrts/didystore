@@ -154,18 +154,10 @@ html {
 
 }
 
-@media (min-width: 992px) and (max-width: 1199.98px) {
+@media (min-width: 768px) and (max-width: 1299.98px) {
 
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1600px)  {
 
 }  
-
-@media (-webkit-min-device-pixel-ratio: 1.25) {
-}
-
-@media (-webkit-min-device-pixel-ratio: 1.5) {
-    
-}
-*/

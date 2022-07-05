@@ -212,6 +212,9 @@ main::-webkit-scrollbar {
     font-size: 1rem;
     margin: 0.5rem 0;
 }
+.anime h1:hover, .filter h1, .item .pre-order h3, .item .stock h3 {
+    cursor: url('../images/white_cursor.png'), auto;
+}
 .selected, .filter h1 span:hover, .filter ul li span:hover,.anime summary:hover ,.anime ul li:hover{
     background-color: rgb(255, 0, 128);
     cursor: url('../images/white_cursor.png'), auto;
@@ -290,7 +293,7 @@ main::-webkit-scrollbar {
         width: 200px;
     }
     .back-img {
-        min-height: 340px;
+        min-height: 335px;
     }
     .item h2 {
         font-size: 0.8rem;

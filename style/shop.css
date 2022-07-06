@@ -4,6 +4,7 @@ body {
 .main-grid {
     display: grid;
     grid-template-columns: 20% 60% 20%;
+    overflow: visible;
 }
 main {
     min-height: 100vh;
@@ -256,6 +257,121 @@ main::-webkit-scrollbar {
     animation: dropdownList;
     animation-duration: 1s;
 }
+/*!Cart -Seakmeng*/
+.cart-grid {
+    display: grid;
+    grid-template-columns: 90%;
+}
+.item-grid1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+
+.shoppingcartbg {
+    height: 8rem;
+    background: bisque;
+    width: 100%;
+}
+.title2 {
+    font-size: 2.7rem;
+    font-family: 'Bebas Neue';
+    color: white;
+    margin-top: 1rem;
+    text-align: center;
+}
+.title2 span {
+    color: rgb(255, 0, 128);
+}
+.category2 {
+    color: rgb(255, 0, 128);
+    font-size: 2.7rem;
+    font-family: 'Bebas Neue';
+    line-height: 0.1;
+    display: inline-block;
+}
+.category2::before {
+    content: 'Figures';
+    animation: textChange2 infinite 4s;
+}
+.cartbg {
+    height: 100vh;
+    background: white;
+    width: 100%;
+}
+/*----<!--Cart detail-->-----*/
+.cart-page {
+    margin: 80 auto;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.cart-info {
+    display: flex;
+    flex-wrap: wrap;
+}
+th {
+    text-align: left;
+    padding: 5px;
+    color: #ff0080;
+    background: seashell;
+}
+td {
+    padding: 10px;
+}
+td img{
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+}
+td input {
+    width: 40px;
+    height: 30px;
+    padding: 5px;
+}
+td a {
+    transition: 0.2s;
+}
+td a:hover {
+    color: red
+}
+td small {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+/*------Total Price------*/
+.total-price {
+    display: flex;
+    justify-content: flex-end;
+}
+.total-price table {
+    width: 100%;
+    max-width: 400px;
+}
+.total-price {
+    border-top: 1px solid #ff0080;
+}
+.line {
+    width: 100%;
+    height: 1px;
+    background: #ff0080;
+    margin-bottom: 10px;
+}
+td:last-child {
+    text-align: right;
+}
+th:last-child {
+    text-align: right;
+}
+@keyframes textChange2 {
+    0% { content:  'BUY-ANIME'; } 
+    33% { content: 'PRE-ORDER'; }
+    66% { content: 'ADD-CART'; }
+    100% { content: 'CHECK-OUT'; }
+}
+/*End of Cart*/
 @keyframes dropdownList {
     from { 
         transform: translateX(-100%);

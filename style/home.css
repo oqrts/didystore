@@ -39,7 +39,6 @@ main {
     overflow: visible;
     max-height: 100vh;
     cursor: url('../images/white_cursor.png'), auto;
-    animation-fill-mode: forwards;
 }
 .rotate span {
     cursor: url('../images/pink_cursor.png'), auto;

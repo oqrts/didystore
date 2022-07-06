@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap');
+
 body {
     background-color: rgb(20, 20, 20);
 }
@@ -15,52 +19,12 @@ main {
     min-height: 100vh;
     text-shadow: 0 0 7px rgba(0, 0, 0, 0.8);
 }
-h1 {
-    font-weight: normal;
-    font-family: 'Passion One';
-    color: white;
-    font-size: 10rem;
-    animation-name: slideInDown;
-    animation-delay: 0.9s;
-    animation-duration: 1s;
-    line-height: 1;
-    z-index: 1;
-}
-.category {
-    color: #ff0080;
-    font-family: 'Passion One';
-    font-size: 10rem;
-    display: inline-block;
-    animation-name: slideInUp;
-    animation-delay: 0.9s;
-    animation-duration: 1s;
-    margin: 0 0.5rem;
-    cursor: url('../images/white_cursor.png'), auto;
-}
-.category::before {
-    content: 'Figures';
-    animation: textChange infinite 2s;
-}
 #space {
     position: absolute;
     width: 700px;
     left: 50%;
     bottom: 0%;
     z-index: 0;
-}
-@keyframes textChange {
-    0% { content:  'FIGURES'; }
-    33% { content: 'COSPLAYS'; }
-    66% { content: 'ANIMES'; }
-    100% { content: 'FIGURES'; }
-}
-@keyframes scrollingLoopv1 {
-    0% { transform: translateY(0);}
-    100% { transform: translateY(-55rem);}
-}
-@keyframes scrollingLoopv2 {
-    0% { transform: translateY(0);}
-    100% { transform: translateY(-37rem);}
 }
 .rotate {
     margin-right: 5rem;
@@ -78,7 +42,51 @@ h1 {
 .rotate span {
     cursor: url('../images/pink_cursor.png'), auto;
 }
-
+.landing {
+    position: relative;
+    z-index: 1;
+    font-weight: normal;
+}
+h1 {
+    position: relative;
+    font-weight: normal;
+    font-family: 'Passion One';
+    color: white;
+    font-size: 10rem;
+    animation-name: slideInDown;
+    animation-duration: 1s;
+    line-height: 1;
+}
+.landing .row-2 {
+    display: inline-block;
+    color: white;
+    
+}
+.landing .row-1::before {
+    content: '';
+    animation: toprowChangev1 infinite 13s;
+    animation-timing-function: linear;
+}
+.landing .row-2::before {
+    content: '';
+    animation: botrowChangev1 infinite 13s;
+    animation-timing-function: linear;
+}
+.category {
+    color: #ff0080;
+    font-family: 'Passion One';
+    font-size: 10rem;
+    font-weight: normal;
+    display: inline-block;
+    animation-name: slideInUp;
+    animation-duration: 1s;
+    cursor: url('../images/white_cursor.png'), auto;
+}
+.category::before {
+    content: '';
+    animation: categoryChangev1 infinite 13s;
+    animation-timing-function: linear;
+}
 @media only screen and (max-width: 599.98px) {
         
 }
@@ -88,9 +96,18 @@ h1 {
 }
 
 @media (min-width: 768px) and (max-width: 1299.98px) {
-    h1, .category  {
+    .landing .row-1, .landing .row-2, .category  {
         font-size: 7rem;
     } 
+    .landing .row-1::before {
+        animation: toprowChangev2 infinite 13s;
+    }
+    .landing .row-2::before {
+        animation: botrowChangev2 infinite 13s;
+    }
+    .category::before {
+        animation: categoryChangev2 infinite 13s;
+    }
     .rotate {
         font-size: 6rem;
         animation: scrollingLoopv2 infinite 1.5s;
@@ -102,9 +119,18 @@ h1 {
 }
 
 @media (min-width: 1300px) and (max-width: 1599.98px) {
-    h1, .category  {
-        font-size: 8rem;
+    .landing .row-1, .landing .row-2, .category  {
+        font-size: 7rem;
     } 
+    .landing .row-1::before {
+        animation: toprowChangev2 infinite 13s;
+    }
+    .landing .row-2::before {
+        animation: botrowChangev2 infinite 13s;
+    }
+    .category::before {
+        animation: categoryChangev2 infinite 13s;
+    }
     .rotate {
         font-size: 6rem;
         animation: scrollingLoopv2 infinite 1.5s;

@@ -17,7 +17,7 @@
 }
 .menu-btn{
   position: absolute;
-  z-index: 2;
+  z-index: 1;
   right: 205px;
   /*left: 20px; */
   top: 60px;

@@ -326,10 +326,15 @@ td img{
     height: 80px;
     margin-right: 10px;
 }
-td input {
-    width: 40px;
-    height: 30px;
-    padding: 5px;
+
+.quantity-input {
+    width: 20px;
+    display: inline-flex;
+    text-align: center;
+    border: none;
+}
+.add-remove-quantity {
+    padding: 7px 14px 8px;
 }
 td a {
     transition: 0.2s;
@@ -340,6 +345,12 @@ td a:hover {
 td small {
     margin-top: 5px;
     margin-bottom: 5px;
+}
+.quantityselector {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid #d9d9d9;
+    white-space: nowrap;
 }
 /*------Total Price------*/
 .total-price {

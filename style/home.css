@@ -65,12 +65,12 @@ h1 {
 }
 .landing .row-1::before {
     content: '';
-    animation: toprowChangev1 infinite 13s;
+    animation: toprowChangev1 infinite 15s;
     animation-timing-function: linear;
 }
 .landing .row-2::before {
     content: '';
-    animation: botrowChangev1 infinite 13s;
+    animation: botrowChangev1 infinite 15s;
     animation-timing-function: linear;
 }
 .category {
@@ -86,7 +86,7 @@ h1 {
 }
 .category::before {
     content: '';
-    animation: categoryChangev1 infinite 13s;
+    animation: categoryChangev1 infinite 15s;
     animation-timing-function: linear;
 }
 @media only screen and (max-width: 599.98px) {

@@ -42,7 +42,7 @@ main {
 }
 
 .preview-image:active {
-    border: 1.5px solid hwb(330 0% 0%);
+    border: 1.5px solid rgb(255, 0, 128);
 }
 
 .image-container {
@@ -74,7 +74,7 @@ p {
 }
 
 .pink-bold {
-    color: hwb(330 0% 0%);
+    color: rgb(255, 0, 128);
     font-family: "Raleway";
     text-transform: none;
     font-size: 1.2rem;
@@ -89,7 +89,7 @@ p {
 
 .size-button,
 .cart-button {
-    border: 1px solid hwb(330 0% 0%);
+    border: 1px solid rgb(255, 0, 128);
     display: inline-block;
     text-align: center;
     min-width: 3.3rem;
@@ -105,11 +105,11 @@ p {
 
 .cart-button {
     min-width: 21.5rem;
-    background-color: hwb(330 0% 0%);
+    background-color: rgb(255, 0, 128);
 }
 
 .size-button:hover {
-    background-color: hwb(330 0% 0%);
+    background-color: rgb(255, 0, 128);
     transition: 0.25s;
 }
 
@@ -135,7 +135,7 @@ p {
 .line {
     width: 100%;
     height: 0.1rem;
-    background-color: hwb(330 0% 0%);
+    background-color: rgb(255, 0, 128);
     margin-bottom: 0.1rem;
     margin-left: 0.5rem;
 }
@@ -144,7 +144,7 @@ p {
 table,
 th,
 td {
-    border-bottom: 1px solid hwb(330 0% 0%);
+    border-bottom: 1px solid rgb(255, 0, 128);
     border-collapse: collapse;
 }
 

@@ -18,18 +18,22 @@ body {
     width: 500px;
     margin: 1rem
 }
+
 #member1 {
     animation: Idle1 infinite 4s;
     animation-timing-function: linear;
 }
+
 #member2 {
     animation: Idle2 infinite 4s;
     animation-timing-function: linear;
 }
+
 #member3 {
     animation: Idle3 infinite 4s;
     animation-timing-function: linear;
 }
+
 #member4 {
     animation: Idle4 infinite 4s;
     animation-timing-function: linear;
@@ -123,52 +127,110 @@ iframe {
 }
 
 @keyframes Idle1 {
-    0% { transform: translate(0.1rem , -0.1rem);}
-    25% { transform: translate(0.1rem , 0.1rem);}
-    50% { transform: translate(0.1rem , -0.1rem);}
-    75% { transform: translate(-0.1rem , 0.1rem);}
-    100% { transform: translate(0.1rem , -0.1rem);}
+    0% {
+        transform: translate(0.1rem, -0.1rem);
+    }
+
+    25% {
+        transform: translate(0.1rem, 0.1rem);
+    }
+
+    50% {
+        transform: translate(0.1rem, -0.1rem);
+    }
+
+    75% {
+        transform: translate(-0.1rem, 0.1rem);
+    }
+
+    100% {
+        transform: translate(0.1rem, -0.1rem);
+    }
 }
+
 @keyframes Idle2 {
-    0% { transform: translate(0.1rem , 0.1rem);}
-    25% { transform: translate(0.1rem , -0.1rem);}
-    50% { transform: translate(0.1rem , -0.1rem);}
-    75% { transform: translate(-0.1rem , -0.1rem);}
-    100% { transform: translate(0.1rem , 0.1rem);}
+    0% {
+        transform: translate(0.1rem, 0.1rem);
+    }
+
+    25% {
+        transform: translate(0.1rem, -0.1rem);
+    }
+
+    50% {
+        transform: translate(0.1rem, -0.1rem);
+    }
+
+    75% {
+        transform: translate(-0.1rem, -0.1rem);
+    }
+
+    100% {
+        transform: translate(0.1rem, 0.1rem);
+    }
 }
+
 @keyframes Idle3 {
-    0% { transform: translate(-0.1rem , -0.1rem);}
-    25% { transform: translate(-0.1rem , 0.1rem);}
-    50% { transform: translate(0.1rem , 0.1rem);}
-    75% { transform: translate(0.1rem , -0.1rem);}
-    100% { transform: translate(-0.1rem , -0.1rem);}
+    0% {
+        transform: translate(-0.1rem, -0.1rem);
+    }
+
+    25% {
+        transform: translate(-0.1rem, 0.1rem);
+    }
+
+    50% {
+        transform: translate(0.1rem, 0.1rem);
+    }
+
+    75% {
+        transform: translate(0.1rem, -0.1rem);
+    }
+
+    100% {
+        transform: translate(-0.1rem, -0.1rem);
+    }
 }
+
 @keyframes Idle4 {
-    0% { transform: translate(-0.1rem , 0.1rem);}
-    25% { transform: translate(0.1rem , 0.1rem);}
-    50% { transform: translate(0.1rem , -0.1rem);}
-    75% { transform: translate(-0.1rem , -0.1rem);}
-    100% { transform: translate(-0.1rem , 0.1rem);}
+    0% {
+        transform: translate(-0.1rem, 0.1rem);
+    }
+
+    25% {
+        transform: translate(0.1rem, 0.1rem);
+    }
+
+    50% {
+        transform: translate(0.1rem, -0.1rem);
+    }
+
+    75% {
+        transform: translate(-0.1rem, -0.1rem);
+    }
+
+    100% {
+        transform: translate(-0.1rem, 0.1rem);
+    }
 }
 
-@media only screen and (max-width: 599.98px) {
-        
-}
+@media only screen and (max-width: 599.98px) {}
 
-@media (min-width: 600px) and (max-width: 767.98px) {
-
-}
+@media (min-width: 600px) and (max-width: 767.98px) {}
 
 @media (min-width: 768px) and (max-width: 1299.98px) {
     h1 {
         font-size: 3.3rem;
     }
+
     p {
         font-size: 1.2rem;
     }
+
     .member img {
         width: 400px;
     }
+
     .socials img {
         width: 25px;
     }
@@ -178,17 +240,18 @@ iframe {
     h1 {
         font-size: 4rem;
     }
+
     p {
         font-size: 1.4rem;
     }
+
     .member img {
         width: 450px;
     }
+
     .socials img {
         width: 30px;
     }
 }
 
-@media only screen and (min-width: 1200px) {
-
-}  
+@media only screen and (min-width: 1200px) {}

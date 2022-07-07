@@ -268,6 +268,12 @@ main::-webkit-scrollbar {
     justify-content: center;
     width: 100%;
 }
+.item-grid2 {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    margin-right: 6rem;
+}
 
 .shoppingcartbg {
     position: sticky;
@@ -276,13 +282,16 @@ main::-webkit-scrollbar {
     background: bisque;
     width: 100%;
     overflow: auto;
+    display: flex;
+    justify-content: center;
 }
 .title2 {
+    position: absolute;
     font-size: 2.7rem;
     font-family: 'Bebas Neue';
     color: white;
     margin-top: 1rem;
-    text-align: center;
+    bottom: 0;
 }
 .title2 span {
     color: rgb(255, 0, 128);
@@ -320,6 +329,8 @@ main::-webkit-scrollbar {
 table {
     width: 100%;
     border-collapse: collapse;
+    font-size: 1.1rem;
+    font-family: 'Bebas Neue';
 }
 .cart-info {
     display: flex;
@@ -431,7 +442,8 @@ th:last-child {
 }
 .checkout span {
     cursor: url('../images/white_cursor.png'), auto;
-    font-weight: bold;
+    font-family: 'Bebas Neue';
+    font-size: 1.3rem;
 }
 /*End of Cart*/
 @keyframes dropdownList {

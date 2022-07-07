@@ -270,9 +270,12 @@ main::-webkit-scrollbar {
 }
 
 .shoppingcartbg {
+    position: sticky;
+    top: 0;
     height: 8rem;
     background: bisque;
     width: 100%;
+    overflow: auto;
 }
 .title2 {
     font-size: 2.7rem;
@@ -283,6 +286,7 @@ main::-webkit-scrollbar {
 }
 .title2 span {
     color: rgb(255, 0, 128);
+    cursor: url('../images/white_cursor.png'), auto;
 }
 .category2 {
     color: rgb(255, 0, 128);
@@ -296,9 +300,18 @@ main::-webkit-scrollbar {
     animation: textChange2 infinite 4s;
 }
 .cartbg {
-    height: 100vh;
+    height: auto;
     background: white;
     width: 100%;
+    overflow: scroll;
+    scroll-snap-align: center;
+    /* Hide scrollbar */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+.cartbg::-webkit-scrollbar {
+    display: none;
 }
 /*----<!--Cart detail-->-----*/
 .cart-page {
@@ -317,6 +330,7 @@ th {
     padding: 5px;
     color: #ff0080;
     background: seashell;
+    cursor: url('../images/white_cursor.png'), auto;
 }
 td {
     padding: 10px;
@@ -325,6 +339,7 @@ td img{
     width: 80px;
     height: 80px;
     margin-right: 10px;
+    cursor: url('../images/white_cursor.png'), auto;
 }
 
 .quantity-input {
@@ -332,12 +347,15 @@ td img{
     display: inline-flex;
     text-align: center;
     border: none;
+    cursor: url('../images/white_cursor.png'), auto;
 }
 .add-remove-quantity {
     padding: 7px 14px 8px;
+    cursor: url('../images/white_cursor.png'), auto;
 }
 td a {
     transition: 0.2s;
+    cursor: url('../images/white_cursor.png'), auto;
 }
 td a:hover {
     color: red
@@ -392,6 +410,28 @@ th:last-child {
     33% { content: 'PRE-ORDER'; }
     66% { content: 'ADD-CART'; }
     100% { content: 'CHECK-OUT'; }
+}
+.checkout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.checkout button {
+    width: 80%;
+    text-align: center;
+    border: none;
+    padding: 1rem;
+    margin: 1rem;
+    -webkit-box-align: center;
+    background-color: #ff0080;
+    transition: 0.25s;
+    cursor: url('../images/white_cursor.png'), auto;
+    font-weight: bold;
+}
+.checkout span {
+    cursor: url('../images/white_cursor.png'), auto;
+    font-weight: bold;
 }
 /*End of Cart*/
 @keyframes dropdownList {

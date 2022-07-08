@@ -279,7 +279,7 @@ main::-webkit-scrollbar {
     position: sticky;
     top: 0;
     height: 8rem;
-    background: bisque;
+    background: rgb(20, 20, 20);
     width: 100%;
     overflow: auto;
     display: flex;
@@ -339,8 +339,10 @@ table {
 th {
     text-align: left;
     padding: 5px;
-    color: #ff0080;
-    background: seashell;
+    background: #ff0080;
+    color:white;
+    /*color: #ff0080;
+    background: seashell; */
     cursor: url('../images/white_cursor.png'), auto;
 }
 td {
@@ -435,15 +437,19 @@ th:last-child {
     padding: 1rem;
     margin: 1rem;
     -webkit-box-align: center;
-    background-color: #ff0080;
+    background-color: black;
     transition: 0.25s;
     cursor: url('../images/white_cursor.png'), auto;
     font-weight: bold;
+}
+.checkout button:hover {
+    background-color: #ff0080;
 }
 .checkout span {
     cursor: url('../images/white_cursor.png'), auto;
     font-family: 'Bebas Neue';
     font-size: 1.3rem;
+    color: white;
 }
 /*End of Cart*/
 @keyframes dropdownList {

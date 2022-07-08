@@ -329,14 +329,19 @@ main::-webkit-scrollbar {
 table {
     width: 100%;
     border-collapse: collapse;
-    font-size: 1.1rem;
-    font-family: 'Bebas Neue';
+    font-family: "Magdelin", sans-serif;
+    font-weight: normal;
+    text-transform: none;
+    font-size: 1.2rem;
 }
 .cart-info {
     display: flex;
     flex-wrap: wrap;
 }
-th {
+th h1 {
+    font-family: "Raleway";
+    text-transform: none;
+    font-size: 1.2rem;
     text-align: left;
     padding: 5px;
     background: #ff0080;
@@ -360,6 +365,8 @@ td img{
     display: inline-flex;
     text-align: center;
     border: none;
+    font-family: "Magdelin", sans-serif;
+    font-weight: normal;
     cursor: url('../images/white_cursor.png'), auto;
 }
 .add-remove-quantity {
@@ -374,6 +381,7 @@ td a:hover {
     color: red
 }
 td small {
+    font-size: 1rem;
     margin-top: 5px;
     margin-bottom: 5px;
 }
@@ -443,11 +451,14 @@ th:last-child {
     font-weight: bold;
 }
 .checkout button:hover {
+    font-family: "Magdelin", sans-serif;
+    font-weight: normal;
     background-color: #ff0080;
 }
 .checkout span {
     cursor: url('../images/white_cursor.png'), auto;
-    font-family: 'Bebas Neue';
+    font-family: "Magdelin", sans-serif;
+    font-weight: normal;
     font-size: 1.3rem;
     color: white;
 }

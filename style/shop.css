@@ -9,6 +9,7 @@ body {
 main {
     min-height: 100vh;
     max-height: 100vh;
+    padding-bottom: 5rem;
     overflow: scroll;
     scroll-snap-align: center;
     /* Hide scrollbar */

@@ -72,7 +72,7 @@
   border-color: #fff;
 }
 
-input[type="checkbox"]{
+input.cart-checkbox[type="checkbox"]{
   display: none;
 }
 .content{

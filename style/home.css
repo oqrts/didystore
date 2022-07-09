@@ -67,11 +67,13 @@ h1 {
     content: '';
     animation: toprowChangev1 infinite 15s;
     animation-timing-function: linear;
+    animation-delay: 0.9s;
 }
 .landing .row-2::before {
     content: '';
     animation: botrowChangev1 infinite 15s;
     animation-timing-function: linear;
+    animation-delay: 0.9s;
 }
 .category {
     color: #ff0080;
@@ -88,6 +90,7 @@ h1 {
     content: '';
     animation: categoryChangev1 infinite 15s;
     animation-timing-function: linear;
+    animation-delay: 0.9s;
 }
 @media only screen and (max-width: 599.98px) {
         

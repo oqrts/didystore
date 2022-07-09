@@ -180,13 +180,14 @@ main::-webkit-scrollbar {
 }
 .category::before {
     content: 'Figures';
-    animation: textChange infinite 2s;
+    animation: textChange infinite 2.8s;
 }
 @keyframes textChange {
     0% { content:  'FIGURES'; }
-    33% { content: 'COSPLAYS'; }
-    66% { content: 'ANIMES'; }
-    100% { content: 'FIGURES'; }
+    25% { content: 'COSPLAYS'; }
+    50% { content: 'APARELS'; }
+    75% { content: 'ACCESSORIES'; }
+    100% { content:  'FIGURES'; }
 }
 .col-1 {
     min-height: 100vh;
@@ -213,14 +214,14 @@ main::-webkit-scrollbar {
     font-size: 1rem;
     margin: 0.5rem 0;
 }
-.anime h1:hover, .filter h1, .item .pre-order h3, .item .stock h3 {
+.item-category h1:hover, .filter h1, .item .pre-order h3, .item .stock h3, .item-category ul li {
     cursor: url('../images/white_cursor.png'), auto;
 }
-.selected, .filter h1 span:hover, .filter ul li span:hover,.anime summary:hover ,.anime ul li:hover{
+.selected, .filter h1 span:hover, .filter ul li span:hover{
     background-color: rgb(255, 0, 128);
     cursor: url('../images/white_cursor.png'), auto;
 }
-.filter ul li span, .filter h1 span, .anime summary{
+.filter ul li span, .filter h1 span {
     border-radius: 4px;
     color: white;
     padding: 0.2rem;
@@ -228,34 +229,80 @@ main::-webkit-scrollbar {
     font-weight: normal;
     transition: 0.25s;
 }
-.anime {
+.main-category {
     display: flex;
+    align-items: flex-end;
 }
-.anime details {
-    transition: 0.3s;
+.item-category .pink-checkbox {
+    background: white;
+    border: 1px solid white;
+    width: 0.85rem;
+    height: 0.85rem;
+    transition: 0.2s;
 }
-.anime summary {
-    font-size: 1.3rem;
-    margin-left: 0.3rem;
-    transition: 0.25s;
+.item-category li:hover .pink-checkbox, .item-category li.active .pink-checkbox{
+    background: #ff0080;
+    cursor: url('../images/white_cursor.png'), auto;
 }
-.anime ul {
-    margin-left: 0.2rem;
+.item-category ul li {
+    display: flex;
+    align-items: center;
 }
-.anime ul li:first-child {
-    display: none;
-}
-.anime ul li{
+.item-category ul li label{
+    color: white;
     font-size: 0.9rem;
-    padding: 0.2rem;
     margin: 0;
+    padding: 0.2rem;
+    margin-left: 0.6rem;
     transition: 0.25s;
     border-radius: 6px;
     animation: none;
 }
-.anime details[open] ul li ~ *{
-    animation: dropdownList;
-    animation-duration: 1s;
+.profile {
+    display: flex;
+    align-items: flex-end;
+    margin: 1rem;
+    margin-bottom: 5rem;
+}
+.profile a {
+    display: flex;
+    align-items: center;
+}
+.profile img {
+    width: 75px;
+    height: auto;
+    border-radius: 50%;
+    border: 3px solid #ff0080;
+    transition: 0.3s;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    -webkit-font-smoothing: subpixel-antialiased;
+    cursor: url('../images/pink_cursor.png'), auto;
+    animation: inOut infinite 3s;
+    animation-timing-function: linear;
+}
+.profile h1 {
+    font-size: 1.5rem;
+    font-weight: normal;
+    font-family: "Magdelin", sans-serif;
+    color: white;
+    margin-left: 1rem;
+    transition: 0.25s;
+    cursor: url('../images/white_cursor.png'), auto;
+}
+.profile a:hover h1 {
+    font-size: 1.6rem;
+    color: #ff0080;
+}
+.profile a:hover img {
+    transform: scale(1.1);
+    animation-play-state: paused;
+    border: 3px solid white;
+}
+@keyframes inOut {
+    0% { transform: scale(1);}
+    50% { transform: scale(1.08);}
+    100% { transform: scale(1);}
 }
 /*!Cart -Seakmeng*/
 .cart-grid {
@@ -466,16 +513,6 @@ th:last-child {
     color: white;
 }
 /*End of Cart*/
-@keyframes dropdownList {
-    from { 
-        transform: translateX(-100%);
-        opacity: 0;
-    }
-    to { 
-        transform: translateX(0%);
-        opacity: 1;
-    }
-}
 @media only screen and (max-width: 599.98px) {
         
 }
@@ -520,6 +557,23 @@ th:last-child {
     .filter ul li {
         font-size: 0.8rem;
     }
+    .profile img {
+        width: 50px;
+    }
+    .profile h1 {
+        font-size:0.9rem;
+    }
+    .profile a:hover h1 {
+        font-size: 1rem;
+    }
+    .item-category ul li label {
+        font-size: 0.6rem;
+        margin-left: 0.2rem;
+    }
+    .item-category .pink-checkbox {
+        width: 0.6rem;
+        height: 0.6rem;
+    }
 }
 
 @media (min-width: 1300px) and (max-width: 1599.98px) {
@@ -545,6 +599,23 @@ th:last-child {
     }
     .filter ul li {
         font-size: 0.9rem;
+    }
+    .profile img {
+        width: 50px;
+    }
+    .profile h1 {
+        font-size: 1.2rem;
+    }
+    .profile a:hover h1 {
+        font-size: 1.3rem;
+    }
+    .item-category ul li label {
+        font-size: 0.7rem;
+        margin-left: 0.2rem;
+    }
+    .item-category .pink-checkbox {
+        width: 0.7rem;
+        height: 0.7rem;
     }
 }
 

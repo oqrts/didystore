@@ -214,6 +214,19 @@ main::-webkit-scrollbar {
     font-size: 1rem;
     margin: 0.5rem 0;
 }
+.filter .search {
+    width: 100%;
+    max-width: 200px;
+    font-size: 1rem;
+    padding: 0.3rem;
+    border-radius: 5px;
+    border: none;
+    transition: 0.25s;
+    outline: 1px solid #ff0080;
+}
+.filter .search:focus, .filter .search:hover { 
+    outline: 2px solid #ff0080;
+}
 .item-category h1:hover, .filter h1, .item .pre-order h3, .item .stock h3, .item-category ul li {
     cursor: url('../images/white_cursor.png'), auto;
 }
@@ -567,12 +580,16 @@ th:last-child {
         font-size: 1rem;
     }
     .item-category ul li label {
-        font-size: 0.6rem;
+        font-size: 0.7rem;
         margin-left: 0.2rem;
     }
     .item-category .pink-checkbox {
-        width: 0.6rem;
-        height: 0.6rem;
+        width: 0.7rem;
+        height: 0.7rem;
+    }
+    .filter .search {
+        font-size: 0.7rem;
+        padding: 0.2rem;
     }
 }
 
@@ -610,12 +627,16 @@ th:last-child {
         font-size: 1.3rem;
     }
     .item-category ul li label {
-        font-size: 0.7rem;
-        margin-left: 0.2rem;
+        font-size: 0.8rem;
+        margin-left: 0.3rem;
     }
     .item-category .pink-checkbox {
-        width: 0.7rem;
-        height: 0.7rem;
+        width: 0.8rem;
+        height: 0.8rem;
+    }
+    .filter .search {
+        font-size: 0.9rem;
+        padding: 0.2rem;
     }
 }
 

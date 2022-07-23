@@ -13,11 +13,12 @@
 </head>
 
 <body>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <!-- For Google Login -->
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script type="module" src="../scripts/jwt-code.js"></script>
     <script src="https://accounts.google.com/gsi/client" async defer></script>
-    <script src="../scripts/login.js"></script>
+    <script src="../scripts/shop.js"></script>
     <!-- End -->
     <div class="board">
         <div class="blocker"></div>
@@ -39,19 +40,19 @@
                                 <h1>Categories: </h1>
                             </div>
                             <ul>
-                                <li class="active">
+                                <li onclick="toggleFigure()" id="figureCheckBox" class="active">
                                     <div class="pink-checkbox"></div>
                                     <label for="cat-figures">Figures</label>
                                 </li>
-                                <li>
+                                <li onclick="toggleCosplay()" id="cosplayCheckBox" class="active">
                                     <div class="pink-checkbox"></div>
                                     <label for="cat-figures">Cosplays</label>
                                 </li>
-                                <li>
+                                <li onclick="toggleApparel()" id="apparelCheckBox" class="active">
                                     <div class="pink-checkbox"></div>
                                     <label for="cat-figures">Aparels</label>
                                 </li>
-                                <li class="active">
+                                <li onclick="toggleAccessory()" id="accessoryCheckBox" class="active">
                                     <div class="pink-checkbox"></div>
                                     <label for="cat-figures">Accessories</label>
                                 </li>
@@ -69,199 +70,7 @@
             </section>
             <main>
                 <h1 class="title"><span class="category"></span> available now at <br><span>Anime D. Store</span></h1>
-                <section class="item-grid">
-                    <a href="../detail/" class="item">
-                        <div class="back-img"></div>
-                        <div class="display">
-                            <img src="../images/f3.png" alt="">
-                        </div>
-                        <div class="info">
-                            <div class="stock">
-                                <h3>In-Stock</h3>
-                            </div>
-                            <h1 class="name">Albedo Figure</h1>
-                            <h2>100$</h2>
-                            <div class="cart-button">
-                                <button>Add to Cart</button>
-                            </div>
-                        </div>
-                    </a>
-                    <a class="item">
-                        <div class="back-img"></div>
-                        <div class="display">
-                            <img src="../images/1.png" alt="">
-                        </div>
-                        <div class="info">
-                            <div class="stock">
-                                <h3>In-Stock</h3>
-                            </div>
-                            <h1 class="name">Demon Slayer Theartre Set</h1>
-                            <h2>100$</h2>
-                            <div class="cart-button">
-                                <button>Add to Cart</button>
-                            </div>
-                        </div>
-                    </a>
-                    <a class="item">
-                        <div class="back-img"></div>
-                        <div class="display">
-                            <img src="../images/5.png" alt="">
-                        </div>
-                        <div class="info">
-                            <div class="stock">
-                                <h3>In-Stock</h3>
-                            </div>
-                            <h1 class="name">My Hero Academy Movie</h1>
-                            <h2>100$</h2>
-                            <div class="cart-button">
-                                <button>Add to Cart</button>
-                            </div>
-                        </div>
-                    </a>
-                    <a class="item">
-                        <div class="back-img"></div>
-                        <div class="display">
-                            <img src="../images/f4.png" alt="">
-                        </div>
-                        <div class="info">
-                            <div class="stock">
-                                <h3>In-Stock</h3>
-                            </div>
-                            <h1 class="name">Tamaki Kotatsu Figure</h1>
-                            <h2>100$</h2>
-                            <div class="cart-button active">
-                                <button>In Cart</button>
-                            </div>
-                        </div>
-                    </a>
-                    <a class="item">
-                        <div class="back-img"></div>
-                        <div class="display">
-                            <img src="../images/f1.png" alt="">
-                        </div>
-                        <div class="info">
-                            <div class="pre-order">
-                                <h3>pre-order</h3>
-                            </div>
-                            <h1 class="name">Jujutsu Kaisen Figure</h1>
-                            <h2>100$</h2>
-                            <div class="cart-button">
-                                <button>Add to Cart</button>
-                            </div>
-                        </div>
-                    </a>
-                    <a class="item">
-                        <div class="back-img"></div>
-                        <div class="display">
-                            <img src="../images/2.png" alt="">
-                        </div>
-                        <div class="info">
-                            <div class="stock">
-                                <h3>In-Stock</h3>
-                            </div>
-                            <h1 class="name">Yor Figure</h1>
-                            <h2>100$</h2>
-                            <div class="cart-button">
-                                <button>Add to Cart</button>
-                            </div>
-                        </div>
-                    </a>
-                    <a class="item">
-                        <div class="back-img"></div>
-                        <div class="display">
-                            <img src="../images/f6.png" alt="">
-                        </div>
-                        <div class="info">
-                            <div class="pre-order">
-                                <h3>pre-order</h3>
-                            </div>
-                            <h1 class="name">Venti Figure</h1>
-                            <h2>100$</h2>
-                            <div class="cart-button">
-                                <button>Add to Cart</button>
-                            </div>
-                        </div>
-                    </a>
-                    <a class="item">
-                        <div class="back-img"></div>
-                        <div class="display">
-                            <img src="../images/4.png" alt="">
-                        </div>
-                        <div class="info">
-                            <div class="stock">
-                                <h3>In-Stock</h3>
-                            </div>
-                            <h1 class="name">Uchiha Shirt</h1>
-                            <h2>100$</h2>
-                            <div class="cart-button">
-                                <button>Add to Cart</button>
-                            </div>
-                        </div>
-                    </a>
-                    <a class="item">
-                        <div class="back-img"></div>
-                        <div class="display">
-                            <img src="../images/6.png" alt="">
-                        </div>
-                        <div class="info">
-                            <div class="stock">
-                                <h3>In-Stock</h3>
-                            </div>
-                            <h1 class="name">One Piece Movie</h1>
-                            <h2>100$</h2>
-                            <div class="cart-button">
-                                <button>Add to Cart</button>
-                            </div>
-                        </div>
-                    </a>
-                    <a class="item">
-                        <div class="back-img"></div>
-                        <div class="display">
-                            <img src="../images/3.png" alt="">
-                        </div>
-                        <div class="info">
-                            <div class="stock">
-                                <h3>In-Stock</h3>
-                            </div>
-                            <h1 class="name">One Piece Shirt</h1>
-                            <h2>100$</h2>
-                            <div class="cart-button">
-                                <button>Add to Cart</button>
-                            </div>
-                        </div>
-                    </a>
-                    <a class="item">
-                        <div class="back-img"></div>
-                        <div class="display">
-                            <img src="../images/f5.png" alt="">
-                        </div>
-                        <div class="info">
-                            <div class="stock">
-                                <h3>In-Stock</h3>
-                            </div>
-                            <h1 class="name">Kakashi Figure</h1>
-                            <h2>100$</h2>
-                            <div class="cart-button">
-                                <button>Add to Cart</button>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="../detail/" class="item">
-                        <div class="back-img"></div>
-                        <div class="display">
-                            <img src="../images/1_1.jpg" alt="">
-                        </div>
-                        <div class="info">
-                            <div class="stock">
-                                <h3>In-Stock</h3>
-                            </div>
-                            <h1 class="name">Attack On Titan - Mikasa Battle Long Sleeve</h1>
-                            <h2>$29.94</h2>
-                            <div class="cart-button">
-                                <button>Add to Cart</button>
-                            </div>
-                        </div>
-                    </a>
+                <section class="item-grid" id="item-grid">
                 </section>
             </main>
             <!--!Cart Page - Seakmeng start from here-->
@@ -383,7 +192,6 @@
             </main>
         </div>
     </div>
-    <script src="../scripts/home.js"></script>
 </body>
 
 </html>

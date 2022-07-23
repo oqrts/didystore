@@ -31,6 +31,7 @@ main::-webkit-scrollbar {
     margin: 1rem 1.5rem;
     position: relative;
     z-index: 1;
+    transition: 0.25s;
 }
 .item .display {
     position: relative;
@@ -88,20 +89,16 @@ main::-webkit-scrollbar {
     position:relative;
 }
 .item .name {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     height: 50px;
     z-index: 1;
-    max-height: 50px;
     font-size: 1.2rem;
     overflow:hidden; 
-    text-overflow:ellipsis; 
-    -webkit-line-clamp: 2;
+    margin-top: 0.2rem;
+    -webkit-line-clamp: 1;
 }
 .item h2 {
     font-size: 1rem;
-    margin-bottom: 0.2rem;
+    margin: 0.2rem 0;
 }
 .item h1, .item h2, .item button {
     position:relative;
@@ -134,7 +131,7 @@ main::-webkit-scrollbar {
 .back-img {
     position: absolute;
     background: rgb(255, 0, 128, 0);
-    min-height: 440px;
+    min-height: 445px;
     min-width: 100%;
     z-index: -1;
     transition: 0.2s;
@@ -254,7 +251,10 @@ main::-webkit-scrollbar {
     height: 0.85rem;
     transition: 0.2s;
 }
-.item-category li:hover .pink-checkbox, .item-category li.active .pink-checkbox{
+.item-category li:hover label {
+    color: #ff0080;
+}
+.item-category li.active .pink-checkbox{
     background: #ff0080;
     cursor: url('../images/white_cursor.png'), auto;
 }
@@ -554,7 +554,7 @@ th:last-child {
         width: 200px;
     }
     .back-img {
-        min-height: 335px;
+        min-height: 340px;
     }
     .item h2 {
         font-size: 0.8rem;
@@ -610,7 +610,7 @@ th:last-child {
         width: 240px;
     }
     .back-img {
-        min-height: 387px;
+        min-height: 392px;
     }
     .filter h1,.anime summary  {
         font-size: 1.2rem;

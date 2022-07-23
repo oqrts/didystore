@@ -276,7 +276,7 @@ main::-webkit-scrollbar {
     display: flex;
     align-items: flex-end;
     margin: 1rem;
-    margin-bottom: 5rem;
+    margin-bottom: 0;
 }
 .profile a {
     display: flex;

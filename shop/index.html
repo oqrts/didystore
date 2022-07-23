@@ -13,6 +13,12 @@
 </head>
 
 <body>
+    <!-- For Google Login -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script type="module" src="../scripts/jwt-code.js"></script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="../scripts/login.js"></script>
+    <!-- End -->
     <div class="board">
         <div class="blocker"></div>
         <img class="logo" src="../images/Logo.svg">
@@ -368,9 +374,10 @@
                     </div>
                 </section>
                 <section class="profile">
-                    <a href="../account/">
-                        <img src="https://avatarfiles.alphacoders.com/125/125578.png" alt="">
-                        <h1>Blizzard Einzbern</h1>
+                    <div id="signInBtn"></div> 
+                    <a id="googleInfo" href="../account/">
+                        <img id="googlePic">
+                        <h1 id="googleName"></h1>
                     </a>
                 </section>
             </main>

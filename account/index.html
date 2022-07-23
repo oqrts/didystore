@@ -12,6 +12,7 @@
 </head>
 
 <body>
+    <script src="../scripts/account.js"></script>
     <div class="board">
         <div class="blocker"></div>
         <img class="logo" src="../images/Logo.svg">
@@ -21,16 +22,16 @@
             <nav>
                 <ul>
                     <li><a href="../">Home</a></li>
-                    <li><a href="../store/">Shop</a></li>
-                    <li><a class="active" href="#">About</a></li>
+                    <li><a href="../shop/">Shop</a></li>
+                    <li><a href="../about/">About</a></li>
                 </ul>
             </nav>
             <main>
                 <section class="profile">
-                    <img src="https://avatarfiles.alphacoders.com/125/125578.png" alt="">
+                    <img id="googlePic">
                     <div class="name-email">
-                        <h1>Blizzard Einzbern</h1>
-                        <h2>blizzard4e@gmail.com</h2>
+                        <h1 id="googleName">Blizzard Einzbern</h1>
+                        <h2 id="googleEmail">blizzard4e@gmail.com</h2>
                     </div>
                     <div class="trackrecord">
                         <div>
@@ -40,6 +41,9 @@
                         <div>
                             <h3>Spent</h3>
                             <h4>900$</h4>
+                        </div>
+                        <div class="signOut">
+                            <a onclick="signOut()">Sign Out</a>
                         </div>
                     </div>
                 </section>

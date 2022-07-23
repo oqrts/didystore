@@ -74,9 +74,22 @@ main::-webkit-scrollbar {
 .trackrecord {
     display: flex;
     align-items: center;
-}
-.trackrecord div {
+    justify-content: space-between;
     margin: 1rem;
+}
+.signOut a{
+    color: white;
+    font-weight: normal;
+    font-size: 1.5rem;
+    font-family: 'Bebas Neue';
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    background-color: rgb(255, 0, 128);
+    transition: 0.3s;
+}
+.signOut:hover a{
+    background-color: white;
+    color: rgb(255, 0, 128);
 }
 .profile h2:hover, .profile h4:hover {
     cursor: url('../images/white_cursor.png'), auto;
@@ -144,10 +157,10 @@ main::-webkit-scrollbar {
     transition: 0.2s;
 }
 .item h3 {
-    text-align: center;
+    text-align: right;
 }
 .item h4 {
-    text-align: center;
+    text-align: right;
 }
 .item a:hover h2 {
     color: rgb(255, 0, 128);

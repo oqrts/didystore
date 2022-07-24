@@ -1,8 +1,85 @@
-let list = [];
+const original_items = [];
+let main_items = [];
 let figureShow = true;
 let cosplayShow = true;
 let apparelShow = true;
 let accessoryShow = true;
+let itemName = "";
+
+function setFilter() {
+    if(figureShow) turnOn('figure');
+    else turnOff('figure');
+    if(cosplayShow) turnOn('cosplay');
+    else turnOff('cosplay');
+    if(apparelShow) turnOn('apparel');
+    else turnOff('apparel');
+    if(accessoryShow) turnOn('accessory');
+    else turnOff('accessory');
+}
+
+function sortOld() {
+    document.getElementById('high').classList.remove('selected');
+    document.getElementById('low').classList.remove('selected');
+    document.getElementById('new').classList.remove('selected');
+    document.getElementById('old').classList.add('selected');
+    main_items = original_items.slice();
+    main_items.reverse();
+    console.log(original_items);
+    generateItems(main_items);
+    setSearch(itemName);
+}
+
+function sortNew() {
+    document.getElementById('high').classList.remove('selected');
+    document.getElementById('low').classList.remove('selected');
+    document.getElementById('new').classList.add('selected');
+    document.getElementById('old').classList.remove('selected');
+    main_items = original_items.slice();
+    generateItems(main_items);
+    setSearch(itemName);
+}
+
+function sortHigh() {
+    main_items.sort(function(a, b){
+        return b.price - a.price;
+    });
+    document.getElementById('high').classList.add('selected');
+    document.getElementById('low').classList.remove('selected');
+    document.getElementById('new').classList.remove('selected');
+    document.getElementById('old').classList.remove('selected');
+    generateItems(main_items);
+    setSearch(itemName);
+}
+
+function sortLow() {
+    main_items.sort(function(a, b){
+        return a.price - b.price;
+    });
+    document.getElementById('high').classList.remove('selected');
+    document.getElementById('low').classList.add('selected');
+    document.getElementById('new').classList.remove('selected');
+    document.getElementById('old').classList.remove('selected');
+    generateItems(main_items);
+    setSearch(itemName);
+}
+
+function setSearch() {
+    let searchedItems = [];
+    let count = 0;
+    main_items.forEach(item => {
+        if(item.name.toUpperCase().search(itemName.toUpperCase()) >= 0) {
+            searchedItems[count] = item;
+            count++;
+        }
+    });
+    generateItems(searchedItems);
+    setFilter();
+}
+
+function searchItem() {
+    itemName = document.getElementById('searchBar').value;
+    setSearch(itemName);
+}
 
 function toggleFigure() {
     if(cosplayShow == false && apparelShow == false && accessoryShow == false) {
@@ -67,15 +144,27 @@ function toggleAccessory() {
 function turnOff(className) {
     let items = document.getElementsByClassName(className);
     for (let i = 0; i < items.length; i++) {
-        items[i].style.display = "none";
+        items[i].classList.remove('itemFadeIn');
+        items[i].classList.add('itemFadeOut');
     }
+    setTimeout(() => {
+        for (let i = 0; i < items.length; i++) {
+            items[i].style.display = "none";
+        }
+    }, 500);
 }
 
 function turnOn(className) {
     let items = document.getElementsByClassName(className);
     for (let i = 0; i < items.length; i++) {
-        items[i].style.display = "block";
+        items[i].classList.remove('itemFadeOut');
+        items[i].classList.add('itemFadeIn');
     }
+    setTimeout(() => {
+        for (let i = 0; i < items.length; i++) {
+            items[i].style.display = "block";
+        }
+    }, 500);
 }
 
 function fetchItem() {
@@ -153,16 +242,21 @@ function getStatus(status) {
     else return "<div class='pre-order'> <h3>Pre-Order</h3> </div>";
 }
 
-function generateItems()  {
-    list = [];
+function generateItems(itemsList)  {
+    document.getElementById('item-grid').innerHTML = "";
+    itemsList.forEach(item => {
+        document.getElementById('item-grid').innerHTML += `<a href='../detail/' class='item ${getCategory(item.category)}'><div class='back-img'></div> <div class='display'> <img src='${item.img[0]}'> </div> <div class='info'> ${getStatus(item.status)} <h1 class='name'>${item.name}</h1> <h2>${item.price}$</h2> <div class='cart-button'> <button>Add to Cart</button> </div> </div></a>`;
+    });
+}
+
+function getOriginalItems() {
     fetchItem().then(function(result) {
         for (let i = 0; i < result.length; i++) {
-            list.push(result[i]);
+            original_items.push(result[i]);
         }
-        console.log(list);
-        list.forEach(item => {
-            document.getElementById('item-grid').innerHTML += `<a href='../detail/' class='item ${getCategory(item.category)}'><div class='back-img'></div> <div class='display'> <img src='${item.img[0]}'> </div> <div class='info'> ${getStatus(item.status)} <h1 class='name'>${item.name}</h1> <h2>${item.price}$</h2> <div class='cart-button'> <button>Add to Cart</button> </div> </div></a>`;
-        });
+        main_items = original_items;
+        console.log(main_items);
+        generateItems(main_items);
     });
 }
 
@@ -176,7 +270,7 @@ window.onload = function () {
     { theme: "outline", size: "medium" }  // customization attributes
     );
     checkUser();
-    generateItems();
+    getOriginalItems();
 }
 
 

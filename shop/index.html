@@ -29,11 +29,13 @@
             <section class="col-1">
                 <div class="filter">
                     <div>
-                        <input class="search" type="text" placeholder="Search...">
+                        <form onsubmit="searchItem();return false;">
+                            <input id="searchBar" class="search" type="text" placeholder="Search...">
+                        </form>
                         <h1>Sort by:</h1>
                         <ul>
-                            <li>Price: <span class="selected">HIGH</span> | <span>LOW</span> </li>
-                            <li>Release: <span class="selected">NEW</span> | <span>OLD</span></li>
+                            <li>Price: <span id="high" onclick="sortHigh()">HIGH</span> | <span id="low" onclick="sortLow()">LOW</span> </li>
+                            <li>Release: <span id="new" class="selected" onclick="sortNew()">NEW</span> | <span id="old" onclick="sortOld()">OLD</span></li>
                         </ul>
                         <div class="item-category">
                             <div class="main-category">

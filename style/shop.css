@@ -1,5 +1,6 @@
 body {
     background-color: rgb(20, 20, 20);
+    --item-width: 280px;
 }
 .main-grid {
     display: grid;
@@ -24,18 +25,46 @@ main::-webkit-scrollbar {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    transition: 0.25s;
 }
 .item-grid .item {
     background-color: rgb(20, 20, 20);
     position: relative;
     margin: 1rem 1.5rem;
-    position: relative;
     z-index: 1;
-    transition: 0.25s;
+}
+.itemFadeOut {
+    flex-grow: 0.00001;
+}
+.itemFadeIn {
+    animation: fadeIn 0.5s;
+}
+.itemFadeOut {
+    animation: fadeOut 0.5s;
+}
+@keyframes fadeOut {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+@keyframes fadeIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 .item .display {
     position: relative;
-    width: 280px;
+    width: var(--item-width);
     height: 300px;
     overflow: hidden;
     z-index: 1;
@@ -54,7 +83,7 @@ main::-webkit-scrollbar {
     transform: scale(1.15);
 }
 .item .info {
-    width: 280px;
+    width: var(--item-width);
     position: relative;
     background: white;
     padding: 0.5rem;
@@ -131,8 +160,8 @@ main::-webkit-scrollbar {
 .back-img {
     position: absolute;
     background: rgb(255, 0, 128, 0);
-    min-height: 445px;
-    min-width: 100%;
+    height: 445px;
+    width: var(--item-width);
     z-index: -1;
     transition: 0.2s;
 }
@@ -211,6 +240,9 @@ main::-webkit-scrollbar {
     color: white;
     font-size: 1rem;
     margin: 0.5rem 0;
+}
+.filter form {
+    margin-bottom: 1rem;
 }
 .filter .search {
     width: 100%;

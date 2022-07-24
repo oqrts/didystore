@@ -272,6 +272,3 @@ window.onload = function () {
     checkUser();
     getOriginalItems();
 }
-
-
-

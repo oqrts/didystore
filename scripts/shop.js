@@ -245,14 +245,19 @@ function getStatus(status) {
 function generateItems(itemsList)  {
     document.getElementById('item-grid').innerHTML = "";
     itemsList.forEach(item => {
-        document.getElementById('item-grid').innerHTML += `<div class='item ${getCategory(item.category)}'><a href='../detail/'> <div class='back-img'></div> <div class='display'> <img src='${item.img[0]}'> </div> <div class='info'> ${getStatus(item.status)} <h1 class='name'>${item.name}</h1> <h2>${item.price}$</h2> </a> <div class='cart-button'> <button>Add to Cart</button> </div> </div></div>`;
+        document.getElementById('item-grid').innerHTML += `<div class='item ${getCategory(item.category)}'><div class='back-img'></div> <div class='display'> <a href='../detail'><img src='${item.img[0]}'></a> </div> <div class='info'> ${getStatus(item.status)} <h1 class='name'>${item.name}</h1> <h2>${item.price}$</h2> <div class='cart-button'> <button onclick='addToCart(${item.id})'>Add to Cart</button> </div> </div></div>`;
     });
+}
+
+function addToCart(id) {
+    console.log(id);
 }
 
 function getOriginalItems() {
     fetchItem().then(function(result) {
         for (let i = 0; i < result.length; i++) {
             original_items.push(result[i]);
+            original_items[i].id = i;
         }
         main_items = original_items;
         console.log(main_items);

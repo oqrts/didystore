@@ -250,7 +250,7 @@ function generateItems(itemsList)  {
 }
 
 function addToCart(id) {
-    console.log(id);
+    console.log(original_items[id].name);
 }
 
 function getOriginalItems() {
@@ -276,4 +276,53 @@ window.onload = function () {
     );
     checkUser();
     getOriginalItems();
+}
+
+//! Seakmeng cart function
+var addToCartButton = document.getElementsByClassName('cart-button')
+function cartReady() {
+    //? Loop to check all add to cart buttons
+    for (let i = 0; i < addToCartButton; i++) {
+        let button = addToCartButton[i]
+        //? Attach a click event to the button, if clicked the addToCartClicked function run
+        button.addEventListener('click', addToCart)
+    }
+}
+
+//? Function to get cart detail
+function addToCart(id) {
+    let cartName = original_items[id].name
+    let cartPrice = original_items[id].price
+    let cartImage = original_items[id].img[0]
+    //? Call Function to append the code to html
+    addItemToCart(cartName, cartPrice, cartImage)
+}
+
+//? Function to append the code to html
+function addItemToCart(cartName, cartPrice, cartImage) {
+    //? Get tableId
+    let table = document.getElementById("tableId");
+    //? Insert using row insert method
+    let row = table.insertRow();
+    //? Append the code into html
+    row.innerHTML = `
+    <td>
+    <div class="cart-info">
+        <img class="cartimg" src="${cartImage}">
+        <div>
+            <p>${cartName}</p>
+            <small>Price: $${cartPrice}</small>
+            <br>
+            <a href="">Remove</a>
+        </div>
+    </div>
+    </td>
+    <td>
+        <div class="quantityselector">
+            <a class="add add-remove-quantity">-</a>
+            <input class="quantity-input" value="1">
+            <a class="remove add-remove-quantity">+</a>
+        </div>
+    </td>
+    <td>$${cartPrice}</td>`
 }

@@ -313,7 +313,7 @@ function addItemToCart(cartName, cartPrice, cartImage) {
             <p>${cartName}</p>
             <small>Price: $${cartPrice}</small>
             <br>
-            <a class="cartRemove" href="">Remove</a>
+            <a class="cartRemove">Remove</a>
         </div>
     </div>
     </td>

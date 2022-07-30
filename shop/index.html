@@ -13,9 +13,11 @@
 </head>
 
 <body>
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <!-- For Google Login -->
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script type="module" src="../scripts/jwt-code.js"></script>
     <script src="https://accounts.google.com/gsi/client" async defer></script>
     <script src="../scripts/shop.js"></script>
@@ -34,8 +36,10 @@
                         </form>
                         <h1>Sort by:</h1>
                         <ul>
-                            <li>Price: <span id="high" onclick="sortHigh()">HIGH</span> | <span id="low" onclick="sortLow()">LOW</span> </li>
-                            <li>Release: <span id="new" class="selected" onclick="sortNew()">NEW</span> | <span id="old" onclick="sortOld()">OLD</span></li>
+                            <li>Price: <span id="high" onclick="sortHigh()">HIGH</span> | <span id="low"
+                                    onclick="sortLow()">LOW</span> </li>
+                            <li>Release: <span id="new" class="selected" onclick="sortNew()">NEW</span> | <span id="old"
+                                    onclick="sortOld()">OLD</span></li>
                         </ul>
                         <div class="item-category">
                             <div class="main-category">
@@ -78,114 +82,116 @@
             <!--!Cart Page - Seakmeng start from here-->
             <main class="cart-grid">
                 <section class="item-grid2">
-                    <input class="cart-checkbox" type="checkbox" id="active">
-                    <img class="menu-btn cartsvg" src="../Images/Logo.svg">
-                    <label for="active" class="menu-btn"><span></span></label>
-                    <label for="active" class="close"></label>
-                    <label for="active" class="close"></label>
-                    <div class="wrapper">
-                        <!--Change text part - bisque background-->
-                        <div class="shoppingcartbg">
-                            <!--<h1 class="title2"><span class="category2"></span> at <span>Anime D. Store</span></h1> -->
-                        </div>
-                        <!--Cart detail-->
-                        <div class="cartbg">
-                            <div class="product cart-page">
-                                <table>
-                                    <tr>
-                                        <th>
-                                            <h1>Product</h1>
-                                        </th>
-                                        <th>
-                                            <h1>Quality</h1>
-                                        </th>
-                                        <th>
-                                            <h1>Subtotal</h1>
-                                        </th>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="cart-info">
-                                                <img class="cartimg" src="../Images/2.png" alt="image">
-                                                <div>
-                                                    <p>Yor Figure</p>
-                                                    <small>Price: 10$</small>
-                                                    <br>
-                                                    <a href="">Remove</a>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="quantityselector">
-                                                <a class="add add-remove-quantity">-</a>
-                                                <input class="quantity-input" value="1">
-                                                <a class="remove add-remove-quantity">+</a>
-                                            </div>
-                                        </td>
-                                        <td>10$</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="cart-info">
-                                                <img class="cartimg" src="../Images/3.png" alt="image">
-                                                <div>
-                                                    <p>Yor</p>
-                                                    <small>Price: 100$</small>
-                                                    <br>
-                                                    <a href="">Remove</a>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="quantityselector">
-                                                <a class="add add-remove-quantity">-</a>
-                                                <input class="quantity-input" value="1">
-                                                <a class="remove add-remove-quantity">+</a>
-                                            </div>
-                                        </td>
-                                        <td>100$</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-
-                                            <div class="cart-info">
-                                                <img class="cartimg" src="../Images/4.png" alt="image">
-                                                <div>
-                                                    <p>Itachi T-shirt</p>
-                                                    <small>Price: 1000$</small>
-                                                    <br>
-                                                    <a href="">Remove</a>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="quantityselector">
-                                                <a class="add add-remove-quantity">-</a>
-                                                <input class="quantity-input" value="1">
-                                                <a class="remove add-remove-quantity">+</a>
-                                            </div>
-                                        </td>
-                                        <td>1000$</td>
-                                    </tr>
-                                </table>
-                                <!--Total price-->
-                                <div class="total-price">
+                    <div class="cartlogo">
+                        <input class="cart-checkbox" type="checkbox" id="active">
+                        <img class="menu-btn cartsvg" src="../Images/Logo.svg">
+                        <label for="active" class="menu-btn"><span></span></label>
+                        <label for="active" class="close"></label>
+                        <label for="active" class="close"></label>
+                        <div class="wrapper">
+                            <!--Change text part - bisque background-->
+                            <div class="shoppingcartbg">
+                                <!--<h1 class="title2"><span class="category2"></span> at <span>Anime D. Store</span></h1> -->
+                            </div>
+                            <!--Cart detail-->
+                            <div class="cartbg">
+                                <div class="product cart-page">
                                     <table>
                                         <tr>
-                                            <td>Subtotal</td>
-                                            <td>1110$</td>
+                                            <th>
+                                                <h1>Product</h1>
+                                            </th>
+                                            <th>
+                                                <h1>Quality</h1>
+                                            </th>
+                                            <th>
+                                                <h1>Subtotal</h1>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="cart-info">
+                                                    <img class="cartimg" src="../Images/2.png" alt="image">
+                                                    <div>
+                                                        <p>Yor Figure</p>
+                                                        <small>Price: 10$</small>
+                                                        <br>
+                                                        <a href="">Remove</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="quantityselector">
+                                                    <a class="add add-remove-quantity">-</a>
+                                                    <input class="quantity-input" value="1">
+                                                    <a class="remove add-remove-quantity">+</a>
+                                                </div>
+                                            </td>
+                                            <td>10$</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="cart-info">
+                                                    <img class="cartimg" src="../Images/3.png" alt="image">
+                                                    <div>
+                                                        <p>Yor</p>
+                                                        <small>Price: 100$</small>
+                                                        <br>
+                                                        <a href="">Remove</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="quantityselector">
+                                                    <a class="add add-remove-quantity">-</a>
+                                                    <input class="quantity-input" value="1">
+                                                    <a class="remove add-remove-quantity">+</a>
+                                                </div>
+                                            </td>
+                                            <td>100$</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+
+                                                <div class="cart-info">
+                                                    <img class="cartimg" src="../Images/4.png" alt="image">
+                                                    <div>
+                                                        <p>Itachi T-shirt</p>
+                                                        <small>Price: 1000$</small>
+                                                        <br>
+                                                        <a href="">Remove</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="quantityselector">
+                                                    <a class="add add-remove-quantity">-</a>
+                                                    <input class="quantity-input" value="1">
+                                                    <a class="remove add-remove-quantity">+</a>
+                                                </div>
+                                            </td>
+                                            <td>1000$</td>
                                         </tr>
                                     </table>
-                                </div>
-                                <div class="checkout">
-                                    <button type="submit" name="CHECKOUT"><span>CHECKOUT</span></button>
+                                    <!--Total price-->
+                                    <div class="total-price">
+                                        <table>
+                                            <tr>
+                                                <td>Subtotal</td>
+                                                <td>1110$</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div class="checkout">
+                                        <button type="submit" name="CHECKOUT"><span>CHECKOUT</span></button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
                 <section class="profile">
-                    <div id="signInBtn"></div> 
+                    <div id="signInBtn"></div>
                     <a id="googleInfo" href="../account/">
                         <img id="googlePic">
                         <h1 id="googleName"></h1>

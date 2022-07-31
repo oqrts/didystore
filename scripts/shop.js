@@ -297,77 +297,67 @@ function cartReady() {
 }
 
 var removeId
+var cartedItem = [];
+
 //? Function to get cart detail
 function addToCart(id) {
-    let cartName = original_items[id].name
-    let cartPrice = original_items[id].price
-    let cartImage = original_items[id].img[0]
     //? Call Function to append the code to html
-    addItemToCart(cartName, cartPrice, cartImage)
-}
-
-var cartedItem = [];
-//? Function to append the code to html
-function addItemToCart(cartName, cartPrice, cartImage) {
-    //? Check if items in cart is duplicate or not, if duplicate send user a notification
-    let cartedItemSize = cartedItem.length
-    cartedItem[cartedItemSize] = cartName
-    for (var i = 0; i < cartedItemSize; i++) {
-        if (cartedItem[i] == cartName) {
-            alert('This item is already added to the cart')
-            //? if the array of cartedItem already has its name stored, remove the duplicate name
-            index = cartedItem.indexOf(cartName);
-            if (index > -1) { //? only splice array when item is found
-                cartedItem.splice(index, 1); //? 2nd parameter means remove one item only
+    if(cartedItem.length > 0) {
+        for (let i = 0; i < cartedItem.length; i++) {
+            if(cartedItem[i].item_id == id) 
+            {
+                console.log("Duplicate");
+                return;
             }
-            return addItemToCart
         }
     }
-    let table = document.getElementById("tableId");
-    let row = table.insertRow();
-    //add class to <tr> tag start from 0
-    row.classList.add("cartRow-" + cartedItemSize)
-    row.innerHTML = `
-    <td>
-    <div class="cart-info">
-        <img class="cartimg" src="${cartImage}">
-        <div>
-            <p class="cartName">${cartName}</p>
-            <small>Price: $${cartPrice}</small>
-            <br>
-            <a class="cartRemove" id="${cartedItemSize}" onclick='removeCartItem(${cartedItemSize})'">Remove</a>
+    addItemToCart(id);
+}
+
+
+//? Function to append the code to html
+function addItemToCart(id) {
+        cartedItem.push({
+            item_id: id,
+            qty: 0
+        });
+        console.log(cartedItem);
+        let table = document.getElementById("tableId");
+        let row = table.insertRow();
+        //add class to <tr> tag start from 0
+        row.classList.add("cartRow-" + id)
+        row.innerHTML = `
+        <td>
+        <div class="cart-info">
+            <img class="cartimg" src="${original_items[id].img[0]}">
+            <div>
+                <p class="cartName">${original_items[id].name}</p>
+                <small>Price: $${original_items[id].price}</small>
+                <br>
+                <a class="cartRemove" id="${id}" onclick='removeCartItem(${id})'">Remove</a>
+            </div>
         </div>
-    </div>
-    </td>
-    <td>
-        <div class="quantityselector">
-            <a class="add add-remove-quantity">-</a>
-            <input class="quantity-input" value="1">
-            <a class="remove add-remove-quantity">+</a>
-        </div>
-    </td>
-    <td>$${cartPrice}</td>`
+        </td>
+        <td>
+            <div class="quantityselector">
+                <a class="add add-remove-quantity">-</a>
+                <input class="quantity-input" value="1">
+                <a class="remove add-remove-quantity">+</a>
+            </div>
+        </td>
+        <td>$${original_items[id].price}</td>`;
 }
 
 //? Remove cart function
-function removeCartItem(cartedItemSize) {
-    console.log("Item ID " + cartedItemSize )
-    //? remove cart by its class name
-    var removeCartedItem = document.getElementsByClassName('cartRow-' + cartedItemSize);
+function removeCartItem(id) {
+    var removeCartedItem = document.getElementsByClassName('cartRow-' + id);
     // while(removeCartedItem[0]) {
         removeCartedItem[0].parentNode.removeChild(removeCartedItem[0]);
     // }
-    //? Remove index in array
-    //! cartedItem.splice(cartedItemSize, 1);
-    var tempCartedItem = cartedItem[cartedItemSize]
-    cartedItem = cartedItem.filter(function(item) {
-        return item !== tempCartedItem
-    })
-    //! index = cartedItem.indexOf(tempCartedItem);
-    // if (index > -1) { //? only splice array when item is found
-    //     cartedItem.splice(index, 1); //? 2nd parameter means remove one item only
-    // }
-    for (var test of cartedItem) {
-        console.log(test)
-    }
+    let indexOfObject = cartedItem.findIndex(object => {
+    return object.item_id === id;
+    });
+    cartedItem.splice(indexOfObject, 1);
+
+    console.log(cartedItem);
 }

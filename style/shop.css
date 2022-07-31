@@ -422,6 +422,10 @@ main::-webkit-scrollbar {
     display: none;
 }
 /*----<!--Cart detail-->-----*/
+#tableId > tbody {
+    overflow: scroll;
+    min-height: 80vh;
+}
 .cart-page {
     margin: 80 auto;
 }

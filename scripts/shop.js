@@ -325,7 +325,7 @@ function addItemToCart(id) {
         <img class="cartImg" src="${original_items[id].img[0]}" alt="">
         <div class="cartInfo">
             <p class="cartName">${original_items[id].name}</p>
-            <small>Price: $${original_items[id].price}</small>
+            <small class="cartName">Price: $${original_items[id].price}</small>
             <br>
             <div class="hoverRemove">
                 <a class="cartRemove" id="${id}" onclick='removeCartItem(${id})'>Remove</a>

@@ -296,9 +296,7 @@ function cartReady() {
     }
 }
 
-var removeId
 var cartedItem = [];
-
 //? Function to get cart detail
 function addToCart(id) {
     //? Call Function to append the code to html
@@ -314,7 +312,6 @@ function addToCart(id) {
     addItemToCart(id);
 }
 
-
 //? Function to append the code to html
 function addItemToCart(id) {
         cartedItem.push({
@@ -322,30 +319,27 @@ function addItemToCart(id) {
             qty: 0
         });
         console.log(cartedItem);
-        let table = document.getElementById("tableId");
-        let row = table.insertRow();
-        //add class to <tr> tag start from 0
-        row.classList.add("cartRow-" + id)
-        row.innerHTML = `
-        <td>
-        <div class="cart-info">
-            <img class="cartimg" src="${original_items[id].img[0]}">
-            <div>
-                <p class="cartName">${original_items[id].name}</p>
-                <small>Price: $${original_items[id].price}</small>
-                <br>
-                <a class="cartRemove" id="${id}" onclick='removeCartItem(${id})'">Remove</a>
+        let cartAdd = document.querySelector(".cartBody");
+        cartAdd.innerHTML += `
+        <li class="cartRow cartRow-${id}">
+        <img class="cartImg" src="${original_items[id].img[0]}" alt="">
+        <div class="cartInfo">
+            <p class="cartName">${original_items[id].name}</p>
+            <small>Price: $${original_items[id].price}</small>
+            <br>
+            <div class="hoverRemove">
+                <a class="cartRemove" id="${id}" onclick='removeCartItem(${id})'>Remove</a>
             </div>
         </div>
-        </td>
-        <td>
-            <div class="quantityselector">
-                <a class="add add-remove-quantity">-</a>
-                <input class="quantity-input" value="1">
-                <a class="remove add-remove-quantity">+</a>
-            </div>
-        </td>
-        <td>$${original_items[id].price}</td>`;
+        <div class="quantityselector">
+            <a class="add add-remove-quantity">-</a>
+            <input class="quantity-input" value="1">
+            <a class="remove add-remove-quantity">+</a>
+        </div>
+        <a class="cartSubtotal">
+            <span>$${original_items[id].price}</span>
+        </a>
+        </li>`
 }
 
 //? Remove cart function

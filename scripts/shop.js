@@ -291,8 +291,15 @@ function cartReady() {
     //? Remove cart
     var removeCartItemButtons = document.getElementsByClassName('cartRemove')
     for (var i = 0; i < removeCartItemButtons.length; i++) {
-        var button = removeCartItemButtons[i]
+        let button = removeCartItemButtons[i]
         button.addEventListener('click', removeCartItem)
+    }
+
+    //? - + quantity
+    var quantityButton = document.getElementsByClassName('add-remove-quantity')
+    for (let i = 0; i < quantityButton; i++) {
+        let button = quantityButton[i]
+        button.addEventListener('click', quantityadjust)
     }
 }
 

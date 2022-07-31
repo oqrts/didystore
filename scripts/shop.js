@@ -297,9 +297,18 @@ function addToCart(id) {
     //? Call Function to append the code to html
     addItemToCart(cartName, cartPrice, cartImage)
 }
-
+var cartedItem = [];
 //? Function to append the code to html
 function addItemToCart(cartName, cartPrice, cartImage) {
+    //? Check if items in cart is duplicate or not, if duplicate send user a notification
+    let cartedItemSize = cartedItem.length
+    cartedItem[cartedItemSize] = cartName
+    for (var i = 0; i < cartedItemSize; i++) {
+        if (cartedItem[i] == cartName) {
+            alert('This item is already added to the cart')
+            return 
+        }
+    }
     //? Get tableId
     let table = document.getElementById("tableId");
     //? Insert using row insert method

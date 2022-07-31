@@ -89,38 +89,52 @@
                         <label for="active" class="close"></label>
                         <label for="active" class="close"></label>
                         <div class="wrapper">
-                            <!--Change text part - bisque background-->
-                            <div class="shoppingcartbg">
-                                <!--<h1 class="title2"><span class="category2"></span> at <span>Anime D. Store</span></h1> -->
-                            </div>
                             <!--Cart detail-->
-                            <div class="cartbg">
-                                <div class="product cart-page">
-                                    <table id="tableId">
-                                        <tr>
-                                            <th>
-                                                <h1>Product</h1>
-                                            </th>
-                                            <th>
-                                                <h1>Quality</h1>
-                                            </th>
-                                            <th>
-                                                <h1>Subtotal</h1>
-                                            </th>
-                                        </tr>
-                                    </table>
-                                    <!--Total price-->
-                                    <div class="total-price">
-                                        <table>
-                                            <tr>
-                                                <td>Subtotal</td>
-                                                <td>1110$</td>
-                                            </tr>
-                                        </table>
-                                    </div>
-                                    <div class="checkout">
-                                        <button type="submit" name="CHECKOUT"><span>CHECKOUT</span></button>
-                                    </div>
+                            <div class="cartContainer">
+                                <div class="cartHeader">
+                                    <a class="cartText cartText1">
+                                        <h3>Product</h3>
+                                    </a>
+                                    <a class="cartText">
+                                        <h3>Quantity</h3>
+                                    </a>
+                                    <a class="cartText">
+                                        <h3>Subtotal</h3>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="cartBg">
+                                <ul class="cartBody">
+                                    <li class="cartRow cartRow-1">
+                                        <img class="cartImg" src="../Images/1.png" alt="">
+                                        <div class="cartInfo">
+                                            <p class="cartName">Dragon Ball Z - Shenron (Glitter)</p>
+                                            <small>Price: $10</small>
+                                            <br>
+                                            <div class="hoverRemove">
+                                                <a class="cartRemove" id="${id}">Remove</a>
+                                            </div>
+                                        </div>
+                                        <div class="quantityselector">
+                                            <a class="add add-remove-quantity">-</a>
+                                            <input class="quantity-input" value="1">
+                                            <a class="remove add-remove-quantity">+</a>
+                                        </div>
+                                        <a class="cartSubtotal">
+                                            <span>$24.99</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div class="cartTotal">
+                                    <a>
+                                        <span>Total</span>
+                                    </a>
+                                    <a>
+                                        <span>$1110</span>
+                                    </a>
+                                </div>
+                                <div class="checkout">
+                                    <button type="submit" name="CHECKOUT"><span>CHECKOUT</span></button>
                                 </div>
                             </div>
                         </div>

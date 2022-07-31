@@ -89,7 +89,7 @@ input.cart-checkbox[type="checkbox"]{
   font-size: 40px;
   font-weight: 700;
 }
-#active:checked ~ .wrapper ul li a{
+/* #active:checked ~ .wrapper ul li a{
   opacity: 1;
 }
 .wrapper ul li a{
@@ -98,7 +98,7 @@ input.cart-checkbox[type="checkbox"]{
 }
 #active:checked ~ .wrapper ul li a{
 	transform: none;
-	transition-timing-function: ease, cubic-bezier(.1,1.3,.3,1); /* easeOutBackを緩めた感じ */
+	transition-timing-function: ease, cubic-bezier(.1,1.3,.3,1);  easeOutBackを緩めた感じ 
    transition-delay: .6s;
   transform: translateX(-100px);
-}
+} */

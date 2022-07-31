@@ -279,16 +279,24 @@ window.onload = function () {
 }
 
 //! Seakmeng cart function
-var addToCartButton = document.getElementsByClassName('cart-button')
 function cartReady() {
     //? Loop to check all add to cart buttons
+    var addToCartButton = document.getElementsByClassName('cart-button')
     for (let i = 0; i < addToCartButton; i++) {
         let button = addToCartButton[i]
         //? Attach a click event to the button, if clicked the addToCartClicked function run
         button.addEventListener('click', addToCart)
     }
+
+    //? Remove cart
+    var removeCartItemButtons = document.getElementsByClassName('cartRemove')
+    for (var i = 0; i < removeCartItemButtons.length; i++) {
+        var button = removeCartItemButtons[i]
+        button.addEventListener('click', removeCartItem)
+    }
 }
 
+var removeId
 //? Function to get cart detail
 function addToCart(id) {
     let cartName = original_items[id].name
@@ -297,6 +305,7 @@ function addToCart(id) {
     //? Call Function to append the code to html
     addItemToCart(cartName, cartPrice, cartImage)
 }
+
 var cartedItem = [];
 //? Function to append the code to html
 function addItemToCart(cartName, cartPrice, cartImage) {
@@ -306,23 +315,27 @@ function addItemToCart(cartName, cartPrice, cartImage) {
     for (var i = 0; i < cartedItemSize; i++) {
         if (cartedItem[i] == cartName) {
             alert('This item is already added to the cart')
-            return 
+            //? if the array of cartedItem already has its name stored, remove the duplicate name
+            index = cartedItem.indexOf(cartName);
+            if (index > -1) { //? only splice array when item is found
+                cartedItem.splice(index, 1); //? 2nd parameter means remove one item only
+            }
+            return addItemToCart
         }
     }
-    //? Get tableId
     let table = document.getElementById("tableId");
-    //? Insert using row insert method
     let row = table.insertRow();
-    //? Append the code into html
+    //add class to <tr> tag start from 0
+    row.classList.add("cartRow-" + cartedItemSize)
     row.innerHTML = `
     <td>
     <div class="cart-info">
         <img class="cartimg" src="${cartImage}">
         <div>
-            <p>${cartName}</p>
+            <p class="cartName">${cartName}</p>
             <small>Price: $${cartPrice}</small>
             <br>
-            <a class="cartRemove">Remove</a>
+            <a class="cartRemove" id="${cartedItemSize}" onclick='removeCartItem(${cartedItemSize})'">Remove</a>
         </div>
     </div>
     </td>
@@ -334,4 +347,27 @@ function addItemToCart(cartName, cartPrice, cartImage) {
         </div>
     </td>
     <td>$${cartPrice}</td>`
+}
+
+//? Remove cart function
+function removeCartItem(cartedItemSize) {
+    console.log("Item ID " + cartedItemSize )
+    //? remove cart by its class name
+    var removeCartedItem = document.getElementsByClassName('cartRow-' + cartedItemSize);
+    // while(removeCartedItem[0]) {
+        removeCartedItem[0].parentNode.removeChild(removeCartedItem[0]);
+    // }
+    //? Remove index in array
+    //! cartedItem.splice(cartedItemSize, 1);
+    var tempCartedItem = cartedItem[cartedItemSize]
+    cartedItem = cartedItem.filter(function(item) {
+        return item !== tempCartedItem
+    })
+    //! index = cartedItem.indexOf(tempCartedItem);
+    // if (index > -1) { //? only splice array when item is found
+    //     cartedItem.splice(index, 1); //? 2nd parameter means remove one item only
+    // }
+    for (var test of cartedItem) {
+        console.log(test)
+    }
 }

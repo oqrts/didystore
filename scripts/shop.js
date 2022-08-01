@@ -339,9 +339,9 @@ function addItemToCart(id) {
             </div>
         </div>
         <div class="quantityselector">
-            <a class="add add-remove-quantity">-</a>
+            <a class="remove add-remove-quantity">-</a>
             <input class="quantity-input" value="1">
-            <a class="remove add-remove-quantity">+</a>
+            <a class="add add-remove-quantity">+</a>
         </div>
         <a class="cartSubtotal">
             <span>$${original_items[id].price}</span>

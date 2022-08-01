@@ -382,6 +382,18 @@ main::-webkit-scrollbar {
     width: 100%;
     max-width: 420px;
     max-height: 545px;
+    overflow: scroll;
+    scroll-snap-align: center;
+    /* Hide scrollbar */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+.cartBg::-webkit-scrollbar {
+    display: none;
+}
+.cartBg span {
+    float: right;
 }
 .cartBg a, span, p, small{
     transition: 0.2s;
@@ -428,14 +440,17 @@ main::-webkit-scrollbar {
 }
 .cartRow {
     padding: 10px;
-    display: flex;
+    /* display: flex;
     justify-content: space-between;
+    align-items: center; */
+    display: grid;
+    grid-template-columns: 21% 24% 24% 31%;
     align-items: center;
 }
 .cartInfo {
     float: left;
-    position: absolute;
-    left: 6.2rem;
+    /* position: relative;
+    right: 1.5rem; */
 }
 .cartInfo small {
     font-size: 1rem;
@@ -460,8 +475,12 @@ main::-webkit-scrollbar {
     display: flex;
     justify-content: space-between;
     padding: 10px;
+    max-width: 420px;
+    background-color: white;
 }
-
+.checkoutButton {
+    position: sticky;
+}
 .quantity-input {
     width: 20px;
     display: inline-flex;
@@ -481,7 +500,9 @@ main::-webkit-scrollbar {
     align-items: center;
     border: 1px solid #d9d9d9;
     white-space: nowrap;
-    margin-left: 2rem;
+    /* margin-left: 2rem; */
+    position: relative;
+    right: -1rem;
     transition: 0.2s;
     cursor: url('../images/white_cursor.png'), auto;
 }
@@ -511,6 +532,7 @@ main::-webkit-scrollbar {
     align-items: center;
     width: 100%;
     background: white;
+    max-width: 420px;
 }
 .checkout button {
     width: 80%;

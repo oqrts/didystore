@@ -381,6 +381,7 @@ main::-webkit-scrollbar {
     background-color: white;
     width: 100%;
     max-width: 420px;
+    max-height: 545px;
 }
 .cartBg a, span, p, small{
     transition: 0.2s;
@@ -465,6 +466,7 @@ main::-webkit-scrollbar {
     width: 20px;
     display: inline-flex;
     text-align: center;
+    justify-content: center;
     border: none;
     font-family: "Magdelin", sans-serif;
     font-weight: normal;
@@ -508,6 +510,7 @@ main::-webkit-scrollbar {
     justify-content: center;
     align-items: center;
     width: 100%;
+    background: white;
 }
 .checkout button {
     width: 80%;

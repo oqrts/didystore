@@ -323,7 +323,7 @@ function addToCart(id) {
 function addItemToCart(id) {
         cartedItem.push({
             item_id: id,
-            qty: 0
+            item_qty: 1,
         });
         console.log(cartedItem);
         let cartAdd = document.querySelector(".cartBody");
@@ -339,9 +339,9 @@ function addItemToCart(id) {
             </div>
         </div>
         <div class="quantityselector">
-            <a class="remove add-remove-quantity">-</a>
-            <input class="quantity-input" value="1">
-            <a class="add add-remove-quantity">+</a>
+            <a class="add-remove-quantity" onclick='removeQty(${id})'>-</a>
+            <p class="quantity-input" id="value-${id}">1</p>
+            <a class="add-remove-quantity" onclick='addQty(${id})'>+</a>
         </div>
         <a class="cartSubtotal">
             <span>$${original_items[id].price}</span>
@@ -352,13 +352,39 @@ function addItemToCart(id) {
 //? Remove cart function
 function removeCartItem(id) {
     var removeCartedItem = document.getElementsByClassName('cartRow-' + id);
-    // while(removeCartedItem[0]) {
         removeCartedItem[0].parentNode.removeChild(removeCartedItem[0]);
-    // }
     let indexOfObject = cartedItem.findIndex(object => {
     return object.item_id === id;
     });
     cartedItem.splice(indexOfObject, 1);
 
     console.log(cartedItem);
+}
+//? + quantity
+function addQty(id) {
+    if(cartedItem.length > 0) {
+        for (let i = 0; i < cartedItem.length; i++) {
+            if(cartedItem[i].item_id == id) 
+            {
+                cartedItem[i].item_qty++;
+                if (cartedItem[i].item_qty >= 1) {
+                    document.getElementById('value-' + id).innerHTML = cartedItem[i].item_qty;
+                }
+            }
+        }
+    }
+}
+//? - quantity
+function removeQty(id) {
+    if(cartedItem.length > 0) {
+        for (let i = 0; i < cartedItem.length; i++) {
+            if(cartedItem[i].item_id == id) 
+            {
+                cartedItem[i].item_qty--;
+                if (cartedItem[i].item_qty >= 1) {
+                    document.getElementById('value-' + id).innerHTML = cartedItem[i].item_qty;
+                }
+            }
+        }
+    }
 }

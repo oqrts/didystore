@@ -324,6 +324,7 @@ function addItemToCart(id) {
         cartedItem.push({
             item_id: id,
             item_qty: 1,
+            item_price: 0,
         });
         console.log(cartedItem);
         let cartAdd = document.querySelector(".cartBody");
@@ -344,7 +345,7 @@ function addItemToCart(id) {
             <a class="add-remove-quantity" onclick='addQty(${id})'>+</a>
         </div>
         <a class="cartSubtotal">
-            <span>$${original_items[id].price}</span>
+            <span id='subPrice-${id}'>$${original_items[id].price}</span>
         </a>
         </li>`
 }
@@ -369,6 +370,7 @@ function addQty(id) {
                 cartedItem[i].item_qty++;
                 if (cartedItem[i].item_qty >= 1) {
                     document.getElementById('value-' + id).innerHTML = cartedItem[i].item_qty;
+                    cartSubtotal(cartedItem[i].item_qty, id)
                 }
             }
         }
@@ -383,8 +385,29 @@ function removeQty(id) {
                 cartedItem[i].item_qty--;
                 if (cartedItem[i].item_qty >= 1) {
                     document.getElementById('value-' + id).innerHTML = cartedItem[i].item_qty;
+                    cartSubtotal(cartedItem[i].item_qty, id)
                 }
             }
         }
+    }
+}
+//? Update price
+function cartSubtotal(cartQty, id) {
+    var cartPrice = cartQty * original_items[id].price;
+    document.getElementById('subPrice-'+ id).innerHTML = "$" + cartPrice;
+    for (let i = 0; i < cartedItem.length; i++) {
+        if(cartedItem[i].item_id == id) 
+        {
+            cartedItem[i].item_price = cartPrice;
+        }
+    }
+    cartTotal();
+}
+//? Update Total price
+function cartTotal() {
+    let totalPrice = 0;
+    for (let i = 0; i < cartedItem.length; i++) {
+        totalPrice += cartedItem[i].item_price
+        document.getElementById('totalPrice').innerHTML = "$" + totalPrice;
     }
 }

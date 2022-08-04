@@ -368,11 +368,12 @@ function removeCartItem(id) {
         removeCartedItem[0].parentNode.removeChild(removeCartedItem[0]);
     let indexOfObject = cartedItem.findIndex(object => {
     return object.item_id === id;
-});
-cartedItem.splice(indexOfObject, 1);
+    });
+    cartedItem.splice(indexOfObject, 1);
     for (let i = 0; i < cartedItem.length; i++) {
         if(cartedItem[i].item_id == id) 
         {
+            cartedItem[i].item_qty -= 1;
             cartedItem[i].item_price = original_items[id].price
             totalFirst -= cartedItem[i].item_price
             console.log(totalFirst)

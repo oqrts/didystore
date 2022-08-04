@@ -312,6 +312,7 @@ function addToCart(id) {
     addItemToCart(id);
 }
 
+let totalFirst = 0;
 //? Function to append the code to html
 function addItemToCart(id) {
         cartedItem.push({
@@ -347,7 +348,6 @@ function addItemToCart(id) {
                 cartedItem[i].item_price = original_items[id].price
             }
         }
-        let totalFirst = 0;
         for (let i = 0; i < cartedItem.length; i++)
         {
             for (let j = 0; j < cartedItem.length; j++) {
@@ -359,19 +359,26 @@ function addItemToCart(id) {
                 }
             }
         }
-        document.getElementById('totalPrice').innerHTML = "$" + totalFirst;
+        document.getElementById('totalPrice').innerHTML = "$" + totalFirst.toFixed(2);
 }
-
+let totalPrice = 0;
 //? Remove cart function
 function removeCartItem(id) {
     var removeCartedItem = document.getElementsByClassName('cartRow-' + id);
         removeCartedItem[0].parentNode.removeChild(removeCartedItem[0]);
     let indexOfObject = cartedItem.findIndex(object => {
     return object.item_id === id;
-    });
-    cartedItem.splice(indexOfObject, 1);
-
-    console.log(cartedItem);
+});
+cartedItem.splice(indexOfObject, 1);
+    for (let i = 0; i < cartedItem.length; i++) {
+        if(cartedItem[i].item_id == id) 
+        {
+            cartedItem[i].item_price = original_items[id].price
+            totalFirst -= cartedItem[i].item_price
+            console.log(totalFirst)
+        }
+    }
+    document.getElementById('totalPrice').innerHTML = "$" + totalFirst.toFixed(2);
 }
 //? + quantity
 function addQty(id) {
@@ -406,7 +413,7 @@ function removeQty(id) {
 //? Update price
 function cartSubtotal(cartQty, id) {
     var cartPrice = cartQty * original_items[id].price;
-    document.getElementById('subPrice-'+ id).innerHTML = "$" + cartPrice;
+    document.getElementById('subPrice-'+ id).innerHTML = "$" + cartPrice.toFixed(2);
     for (let i = 0; i < cartedItem.length; i++) {
         if(cartedItem[i].item_id == id) 
         {
@@ -417,9 +424,8 @@ function cartSubtotal(cartQty, id) {
 }
 //? Update Total price
 function cartTotal() {
-    let totalPrice = 0;
     for (let i = 0; i < cartedItem.length; i++) {
         totalPrice += cartedItem[i].item_price
-        document.getElementById('totalPrice').innerHTML = "$" + totalPrice;
     }
+    document.getElementById('totalPrice').innerHTML = "$" + ttPrice.toFixed(2) ;
 }

@@ -294,13 +294,6 @@ function cartReady() {
         let button = removeCartItemButtons[i]
         button.addEventListener('click', removeCartItem)
     }
-
-    //? - + quantity
-    var quantityButton = document.getElementsByClassName('add-remove-quantity')
-    for (let i = 0; i < quantityButton; i++) {
-        let button = quantityButton[i]
-        button.addEventListener('click', quantityadjust)
-    }
 }
 
 var cartedItem = [];
@@ -347,7 +340,26 @@ function addItemToCart(id) {
         <a class="cartSubtotal">
             <span id='subPrice-${id}'>$${original_items[id].price}</span>
         </a>
-        </li>`
+        </li>`;
+        for (let i = 0; i < cartedItem.length; i++) {
+            if(cartedItem[i].item_id == id) 
+            {
+                cartedItem[i].item_price = original_items[id].price
+            }
+        }
+        let totalFirst = 0;
+        for (let i = 0; i < cartedItem.length; i++)
+        {
+            for (let j = 0; j < cartedItem.length; j++) {
+                if(cartedItem[j].item_id == id) 
+                {
+                    if (cartedItem[j].item_qty == 1) {
+                        totalFirst += cartedItem[i].item_price
+                    }
+                }
+            }
+        }
+        document.getElementById('totalPrice').innerHTML = "$" + totalFirst;
 }
 
 //? Remove cart function

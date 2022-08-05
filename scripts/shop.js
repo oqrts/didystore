@@ -342,7 +342,7 @@ function addItemToCart(id) {
         </a>
         </li>`;
         for (let i = 0; i < cartedItem.length; i++) {
-            if(cartedItem[i].item_id == id) 
+            if(cartedItem[i].item_id == id)
             {
                 cartedItem[i].item_price = original_items[id].price
             }
@@ -351,7 +351,7 @@ function addItemToCart(id) {
         for (let i = 0; i < cartedItem.length; i++)
         {
             for (let j = 0; j < cartedItem.length; j++) {
-                if(cartedItem[j].item_id == id) 
+                if(cartedItem[j].item_id == id)
                 {
                     if (cartedItem[j].item_qty == 1) {
                         totalFirst += cartedItem[i].item_price
@@ -376,7 +376,7 @@ function removeCartItem(id) {
 function addQty(id) {
     if(cartedItem.length > 0) {
         for (let i = 0; i < cartedItem.length; i++) {
-            if(cartedItem[i].item_id == id) 
+            if(cartedItem[i].item_id == id)
             {
                 cartedItem[i].item_qty++;
                 if (cartedItem[i].item_qty >= 1) {
@@ -391,7 +391,7 @@ function addQty(id) {
 function removeQty(id) {
     if(cartedItem.length > 0) {
         for (let i = 0; i < cartedItem.length; i++) {
-            if(cartedItem[i].item_id == id) 
+            if(cartedItem[i].item_id == id)
             {
                 cartedItem[i].item_qty--;
                 if (cartedItem[i].item_qty >= 1) {
@@ -407,7 +407,7 @@ function cartSubtotal(cartQty, id) {
     var cartPrice = cartQty * original_items[id].price;
     document.getElementById('subPrice-'+ id).innerHTML = "$" + cartPrice.toFixed(2);
     for (let i = 0; i < cartedItem.length; i++) {
-        if(cartedItem[i].item_id == id) 
+        if(cartedItem[i].item_id == id)
         {
             cartedItem[i].item_price = cartPrice;
         }

@@ -533,6 +533,7 @@ main::-webkit-scrollbar {
     width: 100%;
     background: white;
     max-width: 420px;
+    border-top: 2px solid white;
 }
 .checkout button {
     width: 80%;

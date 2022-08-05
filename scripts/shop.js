@@ -347,7 +347,6 @@ function addItemToCart(id) {
         <a class="cartSubtotal">
             <span id='subPrice-${id}'>$${original_items[id].price}</span>
         </a>
-<<<<<<< HEAD
         </li>`;
         let totalFirst = 0;
         for (let i = 0; i < cartedItem.length; i++) {
@@ -368,9 +367,6 @@ function addItemToCart(id) {
             }
         }
         document.getElementById('totalPrice').innerHTML = "$" + totalFirst.toFixed(2);
-=======
-        </li>`
->>>>>>> parent of 032177c (finally done lol)
 }
 let totalPrice = 0;
 //? Remove cart function

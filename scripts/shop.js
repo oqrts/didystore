@@ -361,7 +361,6 @@ function addItemToCart(id) {
         }
         document.getElementById('totalPrice').innerHTML = "$" + totalFirst.toFixed(2);
 }
-
 //? Remove cart function
 function removeCartItem(id) {
     var removeCartedItem = document.getElementsByClassName('cartRow-' + id);
@@ -370,8 +369,8 @@ function removeCartItem(id) {
     return object.item_id === id;
     });
     cartedItem.splice(indexOfObject, 1);
-
     console.log(cartedItem);
+    cartTotal();
 }
 //? + quantity
 function addQty(id) {
@@ -420,6 +419,6 @@ function cartTotal() {
     let totalPrice = 0;
     for (let i = 0; i < cartedItem.length; i++) {
         totalPrice += cartedItem[i].item_price
-        document.getElementById('totalPrice').innerHTML = "$" + totalPrice.toFixed(2);
     }
+    document.getElementById('totalPrice').innerHTML = "$" + totalPrice.toFixed(2);
 }

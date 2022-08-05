@@ -294,13 +294,6 @@ function cartReady() {
         let button = removeCartItemButtons[i]
         button.addEventListener('click', removeCartItem)
     }
-
-    //? - + quantity
-    var quantityButton = document.getElementsByClassName('add-remove-quantity')
-    for (let i = 0; i < quantityButton; i++) {
-        let button = quantityButton[i]
-        button.addEventListener('click', quantityadjust)
-    }
 }
 
 var cartedItem = [];
@@ -319,6 +312,7 @@ function addToCart(id) {
     addItemToCart(id);
 }
 
+let totalFirst = 0;
 //? Function to append the code to html
 function addItemToCart(id) {
         cartedItem.push({
@@ -347,9 +341,7 @@ function addItemToCart(id) {
         <a class="cartSubtotal">
             <span id='subPrice-${id}'>$${original_items[id].price}</span>
         </a>
-<<<<<<< HEAD
         </li>`;
-        let totalFirst = 0;
         for (let i = 0; i < cartedItem.length; i++) {
             if(cartedItem[i].item_id == id) 
             {
@@ -368,9 +360,6 @@ function addItemToCart(id) {
             }
         }
         document.getElementById('totalPrice').innerHTML = "$" + totalFirst.toFixed(2);
-=======
-        </li>`
->>>>>>> parent of 032177c (finally done lol)
 }
 let totalPrice = 0;
 //? Remove cart function
@@ -381,16 +370,16 @@ function removeCartItem(id) {
     return object.item_id === id;
     });
     cartedItem.splice(indexOfObject, 1);
-    // for (let i = 0; i < cartedItem.length; i++) {
-    //     if(cartedItem[i].item_id == id) 
-    //     {
-    //         cartedItem[i].item_qty -= 1;
-    //         cartedItem[i].item_price = original_items[id].price
-    //         totalFirst = cartedItem[i].item_price--
-    //         console.log(totalFirst)
-    //     }
-    // }
-    // document.getElementById('totalPrice').innerHTML = "$" + totalFirst.toFixed(2);
+    for (let i = 0; i < cartedItem.length; i++) {
+        if(cartedItem[i].item_id == id) 
+        {
+            cartedItem[i].item_qty -= 1;
+            cartedItem[i].item_price = original_items[id].price
+            totalFirst -= cartedItem[i].item_price
+            console.log(totalFirst)
+        }
+    }
+    document.getElementById('totalPrice').innerHTML = "$" + totalFirst.toFixed(2);
 }
 //? + quantity
 function addQty(id) {
@@ -439,5 +428,5 @@ function cartTotal() {
     for (let i = 0; i < cartedItem.length; i++) {
         totalPrice += cartedItem[i].item_price
     }
-    document.getElementById('totalPrice').innerHTML = "$" + totalPrice.toFixed(2) ;
+    document.getElementById('totalPrice').innerHTML = "$" + ttPrice.toFixed(2) ;
 }

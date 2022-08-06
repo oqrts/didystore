@@ -1,10 +1,17 @@
 const original_items = [];
+let user = {};
 let main_items = [];
 let figureShow = true;
 let cosplayShow = true;
 let apparelShow = true;
 let accessoryShow = true;
 let itemName = "";
+
+function saveDetail(id) {
+    console.log("Save item detail");
+    localStorage.setItem("item_details", JSON.stringify(original_items[id]));
+    window.location.href = './detail';
+}
 
 function setFilter() {
     if(figureShow) turnOn('figure');
@@ -175,8 +182,6 @@ function fetchItem() {
     });
 }
 
-let user = {};
-
 onmousemove = function moveScreen(e) {
     let clientX = e.clientX;
     let clientY = e.clientY;
@@ -245,7 +250,7 @@ function getStatus(status) {
 function generateItems(itemsList)  {
     document.getElementById('item-grid').innerHTML = "";
     itemsList.forEach(item => {
-        document.getElementById('item-grid').innerHTML += `<div class='item ${getCategory(item.category)}'><div class='back-img'></div> <div class='display'> <a href='../detail'><img src='${item.img[0]}'></a> </div> <div class='info'> ${getStatus(item.status)} <h1 class='name'>${item.name}</h1> <h2>${item.price}$</h2> <div class='cart-button'> <button onclick='addToCart(${item.id})'>Add to Cart</button> </div> </div></div>`;
+        document.getElementById('item-grid').innerHTML += `<a onclick='saveDetail(${item.id})' class='item ${getCategory(item.category)}'><div class='back-img'></div> <div class='display'> <div><img src='${item.img[0]}'></div> </div> <div class='info'> ${getStatus(item.status)} <h1 class='name'>${item.name}</h1> <h2>${item.price}$</h2> <div class='cart-button'> <button onclick='addToCart(${item.id})'>Add to Cart</button> </div> </div></a>`;
     });
 }
 

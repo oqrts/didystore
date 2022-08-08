@@ -250,7 +250,7 @@ function getStatus(status) {
 function generateItems(itemsList)  {
     document.getElementById('item-grid').innerHTML = "";
     itemsList.forEach(item => {
-        document.getElementById('item-grid').innerHTML += `<a onclick='saveDetail(${item.id})' class='item ${getCategory(item.category)}'><div class='back-img'></div> <div class='display'> <img src='${item.img[0]}'> </div> <div class='info'> ${getStatus(item.status)} <h1 class='name'>${item.name}</h1> <h2>${item.price}$</h2> <div class='cart-button'> <button onclick='addToCart(${item.id})'>Add to Cart</button> </div> </div></a>`;
+        document.getElementById('item-grid').innerHTML += `<a onclick='saveDetail(${item.id})' class='item ${getCategory(item.category)}'><div class='back-img'></div> <div class='display'> <img src='${item.img[0]}'> </div> <div class='info'> ${getStatus(item.status)} <h1 class='name'>${item.name}</h1> <h2>${item.price}$</h2> <div class='cart-button'> </div> </div></a>`;
     });
 }
 

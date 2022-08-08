@@ -160,7 +160,7 @@ main::-webkit-scrollbar {
 .back-img {
     position: absolute;
     background: rgb(255, 0, 128, 0);
-    height: 445px;
+    height: 420px;
     width: var(--item-width);
     z-index: -1;
     transition: 0.2s;

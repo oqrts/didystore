@@ -25,10 +25,75 @@
                     <li><a href="../../about/">About</a></li>
                 </ul>
             </nav>
-            <main>
-                <div></div>
-                <div></div>
-                <div></div>
+            <main class="detail-grid">
+                <div id="img-selector">
+                </div>
+                <div class="main-img">
+                    <div class="slides" id="slide">
+                    </div>
+                </div>
+                <div class="info">
+                    <h1 id="item-name"></h1>
+                    <h2 id="item-price"></h2>
+                    <div id="size-section">
+                        <h3>Select size:</h3>
+                        <div class="size">
+                            <div onclick="selectSize(0)" id="size-0">S</div>
+                            <div onclick="selectSize(1)" id="size-1">M</div>
+                            <div onclick="selectSize(2)" id="size-2">L</div>
+                            <div onclick="selectSize(3)" id="size-3">XL</div>
+                            <div onclick="selectSize(4)" id="size-4">XXL</div>
+                        </div>
+                    </div>
+                    <h3>Quanity:</h3>
+                    <div class="qty">
+                        <div onclick="reduceQty()">-</div>
+                        <div id="qty">1</div>
+                        <div onclick="addQty()">+</div>
+                    </div>
+                    <h4>Total Price: <span id="priceSum"></span></h4>
+                    <button onclick="addToCart()" id="addToCart" class="block" disabled>Please select a size</button>
+                    <h3 id="inCartText"><span>Item is already in cart!</span></h3>
+                    <div id="desc">
+                        <h3>Description:</h3>
+                        <ul>
+                            <li>Officially licensed  and exclusive to Crunchyroll!</li>
+                            <li>Officially licensed  and exclusive to Crunchyroll!</li>
+                            <li>Officially licensed  and exclusive to Crunchyroll!</li>
+                            <li>Officially licensed  and exclusive to Crunchyroll!</li>
+                            <li>Officially licensed  and exclusive to Crunchyroll!</li>
+                        </ul>
+                    </div>
+                    <div id="size-guide">
+                        <h3 style="margin-top: 2rem;">Size Guide:</h3>
+                        <div class="size-grid">
+                            <div>
+                                <h3>Size (US)</h3>
+                                <h3>S</h3>
+                                <h3>M</h3>
+                                <h3>L</h3>
+                                <h3>XL</h3>
+                                <h3>XXL</h3>
+                            </div>
+                            <div>
+                                <h3>Chest (in.)</h3>
+                                <h3>40</h3>
+                                <h3>44</h3>
+                                <h3>48</h3>
+                                <h3>52</h3>
+                                <h3>56</h3>
+                            </div>
+                            <div>
+                                <h3>Length (in.)</h3>
+                                <h3>27</h3>
+                                <h3>28</h3>
+                                <h3>29</h3>
+                                <h3>30</h3>
+                                <h3>31</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </main>
         </div>
     </div>

@@ -29,7 +29,6 @@ main {
 }
 .rotate {
     margin-right: 5rem;
-    color: rgb(255, 0, 128);
     font-family: 'Passion One';
     font-size: 9rem;
     writing-mode: vertical-rl;
@@ -39,6 +38,9 @@ main {
     overflow: visible;
     max-height: 100vh;
     cursor: url('../images/white_cursor.png'), auto;
+}
+.rotate div {
+    color: rgb(255, 0, 128);
 }
 .rotate span {
     cursor: url('../images/pink_cursor.png'), auto;

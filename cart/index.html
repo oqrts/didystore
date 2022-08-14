@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style/blizzard.css">
-    <link rel="stylesheet" href="../style/shop.css">
+    <!-- <link rel="stylesheet" href="../style/shop.css"> -->
     <link rel="stylesheet" href="../style/nav.css">
     <link rel="stylesheet" href="../style/cart.css">
     <title>Anime D. Store</title>
@@ -27,83 +27,55 @@
                 </ul>
             </nav>
             <main>
-                <h1 class="title"><span class="category"></span> available now at <span>Anime D. Store</span></h1>
-                <section class="item-grid">
-                    <!--Pink background-->
-                    <div class="shoppingcartbg">
-                        <h1 class="title2"><span class="category2"></span> at <span>Anime D. Store</span>
-                        </h1>
+                <div class="cartContainer">
+                    <div class="cartHeader">
+                        <a class="cartText cartText1">
+                            <h3>Product</h3>
+                        </a>
+                        <a class="cartText">
+                            <h3>Quantity</h3>
+                        </a>
+                        <a class="cartText">
+                            <h3>Subtotal</h3>
+                        </a>
                     </div>
-                    <!--Cart detail-->
-                    <div class="cartbg">
-                        <div class="product cart-page">
-                            <table>
-                                <tr>
-                                    <th>Product</th>
-                                    <th>Quality</th>
-                                    <th>Subtotal</th>
-                                </tr>
-                                <tr>
-                                    <td>
-
-                                        <div class="cart-info">
-                                            <img class="cartimg" src="../Images/2.png" alt="image">
-                                            <div>
-                                                <p>Yor Dildo</p>
-                                                <small>Price: 1000000$</small>
-                                                <br>
-                                                <a href="">Remove</a>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td><input type="number" value="1"></td>
-                                    <td>1000000$</td>
-                                </tr>
-                                <tr>
-                                    <td>
-
-                                        <div class="cart-info">
-                                            <img class="cartimg" src="../Images/3.png" alt="image">
-                                            <div>
-                                                <p>Yor Gay</p>
-                                                <small>Price: 100$</small>
-                                                <br>
-                                                <a href="">Remove</a>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td><input type="number" value="1"></td>
-                                    <td>100$</td>
-                                </tr>
-                                <tr>
-                                    <td>
-
-                                        <div class="cart-info">
-                                            <img class="cartimg" src="../Images/4.png" alt="image">
-                                            <div>
-                                                <p>Layheng Gay</p>
-                                                <small>Price: 1000$</small>
-                                                <br>
-                                                <a href="">Remove</a>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td><input type="number" value="1"></td>
-                                    <td>1000$</td>
-                                </tr>
-                            </table>
-                            <!--Total price-->
-                            <div class="total-price">
-                                <table>
-                                    <tr>
-                                        <td>Subtotal</td>
-                                        <td>1001100$</td>
-                                    </tr>
-                                </table>
+                </div>
+                <div class="cartBg">
+                    <ul class="cartBody" id='cartBody'>
+                        <li class="cartRow cartRow-${id}">
+                            <img class="cartImg" src="../Images/1_1.jpg" alt="">
+                            <div class="cartInfo">
+                                <p class="cartName">NAJUNJI ITO - MEDUSA UZUMAKI T-SHIRT - CRUNCHYROLL EXCLUSIVE!ME</p>
+                                <small class="cartName">Price: $100</small>
+                                <br>
+                                <div class="hoverRemove">
+                                    <a class="cartRemove" id="${id}">Remove</a>
+                                </div>
                             </div>
-                        </div>
+                            <div class="quantityselector">
+                                <a class="add-remove-quantity">-</a>
+                                <p class="quantity-input" id="value-${id}">1</p>
+                                <a class="add-remove-quantity">+</a>
+                            </div>
+                            <a class="cartSubtotal">
+                                <span id='subPrice-${id}'>100$</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="checkoutButton">
+                    <div class="cartTotal">
+                        <a>
+                            <span>Total</span>
+                        </a>
+                        <a>
+                            <span id="totalPrice">$</span>
+                        </a>
                     </div>
-                </section>
+                    <div class="checkout">
+                        <button type="submit" name="CHECKOUT"><span>CHECKOUT</span></button>
+                    </div>
+                </div>
             </main>
         </div>
     </div>

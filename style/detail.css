@@ -11,12 +11,10 @@ body {
 }
 main {
     display: flex;
-    align-items: center;
     justify-content: space-between;
     min-height: 100vh;
-    text-shadow: 0 0 7px rgba(0, 0, 0, 0.8);
 }
-.info {
+.detail-grid .info {
     height: 80vh;
     overflow-y: scroll;
     /* Hide scrollbar */
@@ -24,17 +22,23 @@ main {
     scrollbar-width: none;  /* Firefox */
 }
 /* Hide scrollbar for Chrome, Safari and Opera */
-.info::-webkit-scrollbar {
+.detail-grid .info::-webkit-scrollbar {
     display: none;
 }
 .detail-grid {
     display: grid;
-    grid-template-columns: 7% 53% 40%;
+    grid-template-columns: 7% 50% 43%;
     align-items: start;
-    column-gap: 1rem;
 }
 .detail-grid > div { 
     margin-top: 5rem;
+}
+.detail-grid > div:nth-child(2) {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+.detail-grid > div:nth-child(3) {
+    margin-right: 2rem;
 }
 #img-selector {
     display: grid;
@@ -63,19 +67,19 @@ main {
     object-fit: cover;
     aspect-ratio: 1/1;
 }
-h1, h2 {
+.detail-grid h1, .detail-grid h2 {
     font-family: 'Bebas Neue', sans-serif;
     font-weight: normal;
 }
-h1 {
+.detail-grid h1 {
     color: white;
     font-size: 3rem;
     line-height: 1;
 }
-h2 {
+.detail-grid h2 {
     color: var(--pink);
 }
-h3, h4, #desc li {
+.detail-grid h3,.detail-grid h4, #desc li {
     font-family: "Magdelin", sans-serif;
     color: white;
     text-transform: capitalize;
@@ -83,11 +87,11 @@ h3, h4, #desc li {
     margin: 0.5rem 0;
     font-weight: normal;
 }
-h4 {
+.detail-grid h4 {
     font-size: 1.4rem;
     margin-top: 3rem;
 }
-h4 > span, h3 > span {
+.detail-grid h4 > span, .detail-grid h3 > span {
     color: var(--pink);
 }
 .size  {
@@ -224,4 +228,134 @@ h4 > span, h3 > span {
 .size-grid > div > h3:hover {
     background: white;
     color: var(--pink);
+}
+.cartsvg {
+    margin: 1rem;
+    width: 50px;
+    height: auto;
+    filter: invert(26%) sepia(87%) saturate(5809%) hue-rotate(316deg) brightness(101%) contrast(101%);
+    transition: 0.25s;
+    cursor: url('../images/white_cursor.png'), auto;
+}
+.col-3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.cart {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 1rem;
+}
+.cart #page {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    z-index: 1;
+    transition: 0.25s;
+    transform: translateX(150%);
+}
+#page.active {
+    transform: translateX(0);
+}
+.cart #page .cartBtn-wrapper {
+    width: 100%;
+    background-color: var(--pink);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.cart #page .cartBtn {
+    filter: invert(100%) sepia(0%) saturate(7470%) hue-rotate(116deg) brightness(109%) contrast(109%);
+}
+.cartBtn {
+    margin: 1rem;
+    width: 50px;
+    height: 50px;
+    filter: invert(26%) sepia(87%) saturate(5809%) hue-rotate(316deg) brightness(101%) contrast(101%);
+    transition: 0.25s;
+    cursor: url('../images/white_cursor.png'), auto;
+}
+.cartBtn:hover {
+    transform: scale(1.2);
+}
+.cart-items {
+    margin: 0 0.5rem;
+    display: flex;
+    flex-direction: column;
+    max-height: 40vh;
+    overflow: scroll;
+    /* Hide scrollbar */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+.cart-items::-webkit-scrollbar {
+    display: none;
+}
+.cart-item {
+    margin-top: 0.5rem;
+    display: flex;
+    flex-shrink: 1;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+}
+.cart-item .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 0.5rem;
+}
+.price-remove {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.price-remove h2:nth-child(2) {
+    padding: 0.5rem;
+    transition: 0.25s;
+} 
+.price-remove h2:nth-child(2):hover {
+    text-decoration: none;
+    background-color: var(--pink);
+    color: white;
+}
+.cart-item > img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    aspect-ratio: 1/1;
+}
+.cart-item h1 {
+    font-family: "Magdelin", sans-serif;
+    font-size: 1.1rem;
+    font-weight: normal;
+}
+.cart-item h3 {
+    font-family: "Magdelin", sans-serif;
+    font-size: 0.85rem;
+    font-weight: lighter;
+}
+.cart-item h2 {
+    font-family: "Magdelin", sans-serif;
+    font-size: 0.9rem;
+    font-weight: normal;
+}
+.checkout-btn {
+    margin: 0.5rem 0;
+    padding: 0.5rem 0 ;
+    width: calc(100% - 2rem);
+    background-color: var(--pink);
+    border: none;
+    color: white;
+    font-family: 'Bebas Neue';
+    font-size: 2rem;
+    transition: 0.25s;
+    cursor: url('../Images/white_cursor.png'), default;
+}
+.checkout-btn:hover {
+    transform: scale(1.03);
 }

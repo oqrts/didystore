@@ -5,6 +5,8 @@ let figureShow = true;
 let cosplayShow = true;
 let apparelShow = true;
 let accessoryShow = true;
+let cartShow = false;
+let cartItems = [];
 let itemName = "";
 
 function saveDetail(id) {
@@ -182,6 +184,19 @@ function fetchItem() {
     });
 }
 
+function getOriginalItems() {
+    fetchItem().then(function(result) {
+        for (let i = 0; i < result.length; i++) {
+            original_items.push(result[i]);
+            original_items[i].id = i;
+        }
+        main_items = original_items;
+        console.log(main_items);
+        generateItems(main_items);
+        generateCartItems();
+    });
+}
+
 onmousemove = function moveScreen(e) {
     let clientX = e.clientX;
     let clientY = e.clientY;
@@ -222,9 +237,21 @@ function handleCredentialResponse(response) {
         'name': userInfo.name,
         'email': userInfo.email
     }
+    axios.get('https://cors-anywhere.herokuapp.com/https://d2a3-45-118-77-169.ap.ngrok.io/users').then((res) => {
+        console.log(res.data);
+    });
+    axios.post('https://cors-anywhere.herokuapp.com/https://d2a3-45-118-77-169.ap.ngrok.io/signIn', { email: user.email}).then((res) => {
+        console.log(res.data);
+    });
     console.log(user);
     localStorage.setItem('user', JSON.stringify(user));
     displayUser();
+}
+
+function addItemToHistory() {
+    axios.post('https://cors-anywhere.herokuapp.com/https://d2a3-45-118-77-169.ap.ngrok.io/signIn', { email: user.email}).then((res) => {
+        console.log(res.data);
+    });
 }
 
 function getCategory(category) {
@@ -254,21 +281,80 @@ function generateItems(itemsList)  {
     });
 }
 
-function addToCart(id) {
-    console.log(original_items[id].name);
+
+function toggleCart() {
+    if(cartShow) {
+        document.getElementById('page').classList.remove('active');
+        cartShow = false;
+    }
+    else {
+        document.getElementById('page').classList.add('active');
+        cartShow = true;
+    }
 }
 
-function getOriginalItems() {
-    fetchItem().then(function(result) {
-        for (let i = 0; i < result.length; i++) {
-            original_items.push(result[i]);
-            original_items[i].id = i;
+function generateCartItems() {
+    if(localStorage.getItem('cart') == null) {
+        let emptyCart = []
+        localStorage.setItem('cart', JSON.stringify(emptyCart));
+    }
+    cartItems = JSON.parse(localStorage.getItem('cart'));
+    console.log(cartItems);
+    document.getElementById('cartBucket').innerHTML = '';
+    for (let i = 0; i < cartItems.length; i++) {
+        if(original_items[cartItems[i].id].category < 1 || original_items[cartItems[i].id].category > 2) {
+            document.getElementById('cartBucket').innerHTML += `
+            <div class="cart-item">
+                <img src="${original_items[cartItems[i].id].img[0]}" alt="">
+                <div class="info">
+                    <h1>${original_items[cartItems[i].id].name}</h1>
+                    <div class="bot">
+                        <h3>Quantity: ${cartItems[i].qty}</h3>
+                        <div class="price-remove">
+                            <h2>${(original_items[cartItems[i].id].price * cartItems[i].qty).toFixed(2)}$</h2>
+                            <h2 onclick="removeFromCart(${cartItems[i].id})">Remove</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>`;
         }
-        main_items = original_items;
-        console.log(main_items);
-        generateItems(main_items);
-    });
+        else {
+            let currentItemSize = cartItems[i].size;
+            if(currentItemSize == 0) currentItemSize = 'S';
+            else if(currentItemSize == 1) currentItemSize = 'M';
+            else if(currentItemSize == 2) currentItemSize = 'L';
+            else if(currentItemSize == 3) currentItemSize = 'XL';
+            else if(currentItemSize == 4) currentItemSize = 'XXL';
+            document.getElementById('cartBucket').innerHTML += `
+            <div class="cart-item">
+                <img src="${original_items[cartItems[i].id].img[0]}" alt="">
+                <div class="info">
+                    <h1>${original_items[cartItems[i].id].name}</h1>
+                    <div class="bot">
+                        <h3>Size: ${currentItemSize}</h3>
+                        <h3>Quantity: ${cartItems[i].qty}</h3>
+                        <div class="price-remove">
+                            <h2>${(original_items[cartItems[i].id].price * cartItems[i].qty).toFixed(2)}$</h2>
+                            <h2 onclick="removeFromCart(${cartItems[i].id})">Remove</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>`;
+        }
+    }
 }
+
+function removeFromCart(id) {
+    let newCartItems = [];
+    for (let i = 0; i < cartItems.length; i++) {
+        if(cartItems[i].id != id) {
+            newCartItems.push(cartItems[i]);
+        }
+    }
+    localStorage.setItem('cart', JSON.stringify(newCartItems));
+    generateCartItems();
+}
+
 
 window.onload = function () {
     google.accounts.id.initialize({
@@ -283,147 +369,3 @@ window.onload = function () {
     getOriginalItems();
 }
 
-//! Seakmeng cart function
-function cartReady() {
-    //? Loop to check all add to cart buttons
-    var addToCartButton = document.getElementsByClassName('cart-button')
-    for (let i = 0; i < addToCartButton; i++) {
-        let button = addToCartButton[i]
-        //? Attach a click event to the button, if clicked the addToCartClicked function run
-        button.addEventListener('click', addToCart)
-    }
-
-    //? Remove cart
-    var removeCartItemButtons = document.getElementsByClassName('cartRemove')
-    for (var i = 0; i < removeCartItemButtons.length; i++) {
-        let button = removeCartItemButtons[i]
-        button.addEventListener('click', removeCartItem)
-    }
-}
-
-var cartedItem = [];
-//? Function to get cart detail
-function addToCart(id) {
-    //? Call Function to append the code to html
-    if(cartedItem.length > 0) {
-        for (let i = 0; i < cartedItem.length; i++) {
-            if(cartedItem[i].item_id == id) 
-            {
-                console.log("Duplicate");
-                return;
-            }
-        }
-    }
-    addItemToCart(id);
-}
-
-//? Function to append the code to html
-function addItemToCart(id) {
-        cartedItem.push({
-            item_id: id,
-            item_qty: 1,
-            item_price: 0,
-        });
-        console.log(cartedItem);
-        let cartAdd = document.querySelector(".cartBody");
-        cartAdd.innerHTML += `
-        <li class="cartRow cartRow-${id}">
-        <img class="cartImg" src="${original_items[id].img[0]}" alt="">
-        <div class="cartInfo">
-            <p class="cartName">${original_items[id].name}</p>
-            <small class="cartName">Price: $${original_items[id].price}</small>
-            <br>
-            <div class="hoverRemove">
-                <a class="cartRemove" id="${id}" onclick='removeCartItem(${id})'>Remove</a>
-            </div>
-        </div>
-        <div class="quantityselector">
-            <a class="add-remove-quantity" onclick='removeQty(${id})'>-</a>
-            <p class="quantity-input" id="value-${id}">1</p>
-            <a class="add-remove-quantity" onclick='addQty(${id})'>+</a>
-        </div>
-        <a class="cartSubtotal">
-            <span id='subPrice-${id}'>$${original_items[id].price}</span>
-        </a>
-        </li>`;
-        for (let i = 0; i < cartedItem.length; i++) {
-            if(cartedItem[i].item_id == id)
-            {
-                cartedItem[i].item_price = original_items[id].price
-            }
-        }
-        let totalFirst = 0;
-        for (let i = 0; i < cartedItem.length; i++)
-        {
-            for (let j = 0; j < cartedItem.length; j++) {
-                if(cartedItem[j].item_id == id)
-                {
-                    if (cartedItem[j].item_qty == 1) {
-                        totalFirst += cartedItem[i].item_price
-                    }
-                }
-            }
-        }
-        document.getElementById('totalPrice').innerHTML = "$" + totalFirst.toFixed(2);
-}
-//? Remove cart function
-function removeCartItem(id) {
-    var removeCartedItem = document.getElementsByClassName('cartRow-' + id);
-        removeCartedItem[0].parentNode.removeChild(removeCartedItem[0]);
-    let indexOfObject = cartedItem.findIndex(object => {
-    return object.item_id === id;
-    });
-    cartedItem.splice(indexOfObject, 1);
-    console.log(cartedItem);
-    cartTotal();
-}
-//? + quantity
-function addQty(id) {
-    if(cartedItem.length > 0) {
-        for (let i = 0; i < cartedItem.length; i++) {
-            if(cartedItem[i].item_id == id)
-            {
-                cartedItem[i].item_qty++;
-                if (cartedItem[i].item_qty >= 1) {
-                    document.getElementById('value-' + id).innerHTML = cartedItem[i].item_qty;
-                    cartSubtotal(cartedItem[i].item_qty, id)
-                }
-            }
-        }
-    }
-}
-//? - quantity
-function removeQty(id) {
-    if(cartedItem.length > 0) {
-        for (let i = 0; i < cartedItem.length; i++) {
-            if(cartedItem[i].item_id == id)
-            {
-                cartedItem[i].item_qty--;
-                if (cartedItem[i].item_qty >= 1) {
-                    document.getElementById('value-' + id).innerHTML = cartedItem[i].item_qty;
-                    cartSubtotal(cartedItem[i].item_qty, id)
-                }
-            }
-        }
-    }
-}
-//? Update price
-function cartSubtotal(cartQty, id) {
-    var cartPrice = cartQty * original_items[id].price;
-    document.getElementById('subPrice-'+ id).innerHTML = "$" + cartPrice.toFixed(2);
-    for (let i = 0; i < cartedItem.length; i++) {
-        if(cartedItem[i].item_id == id)
-        {
-            cartedItem[i].item_price = cartPrice;
-        }
-    }
-    cartTotal();
-}
-//? Update Total price
-function cartTotal() {
-    let totalPrice = 0;
-    for (let i = 0; i < cartedItem.length; i++) {
-        totalPrice += cartedItem[i].item_price
-    }
-    document.getElementById('totalPrice').innerHTML = "$" + totalPrice.toFixed(2);
-}

@@ -375,6 +375,10 @@ main {
     transition: 0.25s;
     cursor: url('../Images/white_cursor.png'), default;
 }
+.checkout-btn a {
+    color:white;
+    cursor: url('../Images/white_cursor.png'), default;
+}
 .checkout-btn:hover {
     transform: scale(1.03);
 }

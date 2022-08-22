@@ -26,54 +26,93 @@
                     <li><a href="../about/">About</a></li>
                 </ul>
             </nav>
-            <main>
-                <div class="cartContainer">
-                    <div class="cartHeader">
-                        <a class="cartText cartText1">
-                            <h3>Product</h3>
-                        </a>
-                        <a class="cartText">
-                            <h3>Quantity</h3>
-                        </a>
-                        <a class="cartText">
-                            <h3>Subtotal</h3>
-                        </a>
-                    </div>
-                </div>
-                <div class="cartBg">
-                    <ul class="cartBody" id='cartBody'>
-                        <li class="cartRow cartRow-${id}">
-                            <img class="cartImg" src="../Images/1_1.jpg" alt="">
-                            <div class="cartInfo">
-                                <p class="cartName">NAJUNJI ITO - MEDUSA UZUMAKI T-SHIRT - CRUNCHYROLL EXCLUSIVE!ME</p>
-                                <small class="cartName">Price: $100</small>
-                                <br>
-                                <div class="hoverRemove">
-                                    <a class="cartRemove" id="${id}">Remove</a>
-                                </div>
-                            </div>
-                            <div class="quantityselector">
-                                <a class="add-remove-quantity">-</a>
-                                <p class="quantity-input" id="value-${id}">1</p>
-                                <a class="add-remove-quantity">+</a>
-                            </div>
-                            <a class="cartSubtotal">
-                                <span id='subPrice-${id}'>100$</span>
+            <main class="mainCart">
+                <img class="cartBtn" src="../../Images/Logo.svg" alt="">
+                <div class="widthCart">
+                    <div class="cartContainer">
+                        <div class="cartHeader cartPosition">
+                            <a class="cartName cartText cartText1">
+                                <h3>Product</h3>
                             </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="checkoutButton">
-                    <div class="cartTotal">
-                        <a>
-                            <span>Total</span>
-                        </a>
-                        <a>
-                            <span id="totalPrice">$</span>
-                        </a>
+                            <a class="cartName cartText">
+                                <h3></h3>
+                            </a>
+                            <a class="cartName cartText cartText3">
+                                <h3>Quantity</h3>
+                            </a>
+                            <a class="cartName cartText cartText4">
+                                <h3>Subtotal</h3>
+                            </a>
+                        </div>
                     </div>
-                    <div class="checkout">
-                        <button type="submit" name="CHECKOUT"><span>CHECKOUT</span></button>
+                    <div class="cartBg">
+                        <ul class="cartBody" id='cartBody'>
+                            <li class="cartRow cartRow-${id} cartPosition">
+                                <img class="cartImg" src="../Images/1_1.jpg" alt="">
+                                <div class="cartInfo">
+                                    <p class="cartName">NAJUNJI ITO - MEDUSA UZUMAKI T-SHIRT - CRUNCHYROLL EXCLUSIVE!ME
+                                    </p>
+                                    <small class="cartName">Price: $100</small>
+                                    <br>
+                                    <div class="hoverRemove">
+                                        <a class="cartRemove" id="${id}">Remove</a>
+                                    </div>
+                                </div>
+                                <div class="quantityselector">
+                                    <a class="add-remove-quantity">-</a>
+                                    <p class="quantity-input" id="value-${id}">1</p>
+                                    <a class="add-remove-quantity">+</a>
+                                </div>
+                                <a class="cartSubtotal">
+                                    <span id='subPrice-${id}' class="cartName">100$</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="cartBg">
+                        <ul class="cartBody" id='cartBody'>
+                            <li class="cartRow cartRow-${id} cartPosition">
+                                <img class="cartImg"
+                                    src="https://res.cloudinary.com/dasp34oqa/image/upload/v1657385192/Anime%20D.Store/the_rising_of_the_shield_hero_season_2_raphtalia0_zh7whi.jpg"
+                                    alt="">
+                                <div class="cartInfo">
+                                    <p class="cartName">NAJUNJI ITO - MEDUSA UZUMAKI T-SHIRT - CRUNCHYROLL EXCLUSIVE!ME
+                                    </p>
+                                    <small class="cartName">Price: $100</small>
+                                    <br>
+                                    <div class="hoverRemove">
+                                        <a class="cartRemove" id="${id}">Remove</a>
+                                    </div>
+                                </div>
+                                <div class="quantityselector">
+                                    <a class="add-remove-quantity">-</a>
+                                    <p class="quantity-input" id="value-${id}">1</p>
+                                    <a class="add-remove-quantity">+</a>
+                                </div>
+                                <a class="cartSubtotal">
+                                    <span id='subPrice-${id}' class="cartName">100$</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="checkoutButton">
+                        <div class="cartTotal cartPosition cartHeader">
+                            <a class="cartText">
+                                <span></span>
+                            </a>
+                            <a class="cartText">
+                                <span></span>
+                            </a>
+                            <a class="cartName cartText cartText3 cartTotalSize">
+                                <span>Total</span>
+                            </a>
+                            <a class="cartName cartText cartText4 cartTotalSize">
+                                <span id="totalPrice">$</span>
+                            </a>
+                        </div>
+                        <div class="checkout">
+                            <button type="submit" name="CHECKOUT"><span>CHECKOUT</span></button>
+                        </div>
                     </div>
                 </div>
             </main>

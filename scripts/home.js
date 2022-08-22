@@ -12,21 +12,11 @@ onmousemove = function moveScreen(e) {
 
 }
 
-var canvas = document.getElementById("canvas");
-var ctx = canvas.getContext("2d");
-var img = document.createElement("img");
-img.src = window.getComputedStyle(canvas).backgroundImage.slice(4, -1).replace(/"/g, "");
-
-img.onload = function () {
-    drawText();
-}
-
-function drawText() {
-    ctx.font = window.getComputedStyle(canvas).font;
-    ctx.fillStyle = ctx.createPattern(img, 'repeat');
-    ctx.textAlign = 'center';
-    var x = canvas.width / 2,
-        y = 0;
-    ctx.fillText(canvas.textContent, x, 200);
-    ctx.fill();
+window.onload = function() {
+    if(localStorage.getItem('user') == null) {
+        document.getElementById('accountShow').style.display = 'none';
+    }
+    else {
+        console.log("User not signed in yet!");
+    }
 }

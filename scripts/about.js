@@ -10,3 +10,12 @@ onmousemove = function moveScreen(e) {
     let membersY = (clientY-800)/800;
     document.getElementById("members").style.transform = "translate(" + membersX + "rem," + membersY + "rem)";
 }
+
+window.onload = function() {
+    if(localStorage.getItem('user') == null) {
+        document.getElementById('accountShow').style.display = 'none';
+    }
+    else {
+        console.log("User not signed in yet!");
+    }
+}

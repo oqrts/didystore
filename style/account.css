@@ -148,13 +148,28 @@ main::-webkit-scrollbar {
     font-weight: normal;
     margin: 0;
 }
+.item h2 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 .item h2, .item h3 {
     color: white;
     font-family: "Magdelin", sans-serif;
-    font-size: 1.5rem;
-    margin-top: 1.5rem;
+    font-size: 1.4rem;
+    margin-top: 1.1rem;
     font-weight: normal;
     transition: 0.2s;
+}
+.item h5 {
+    color: white;
+    font-family: "Magdelin", sans-serif;
+    font-size: 1rem;
+    font-weight: normal;
+    transition: 0.2s;
+}
+.item h5 span {
+    color: rgb(255, 0, 128);
 }
 .item h3 {
     text-align: center;

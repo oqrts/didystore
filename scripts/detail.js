@@ -1,4 +1,5 @@
 const original_items = [];
+let user = {};
 let isInCart = false;
 let item = {};
 let cartShow = false;
@@ -13,17 +14,61 @@ onmousemove = function moveScreen(e) {
 }
 
 window.onload = function() {
+    if(localStorage.getItem('user') != null) {
+        user = JSON.parse(localStorage.getItem('user'));
+        document.getElementById('accountShow').style.display = 'none';
+    }
+    else {
+        document.getElementById('accountShow').style.display = 'none';
+        console.log("User not signed in yet!");
+    }
     getOriginalItems();
+}
+
+function checkOut() { 
+    if(localStorage.getItem('cart') == null) {
+        return;
+    }
+    else if(JSON.parse(localStorage.getItem('cart')).length == 0) {
+        return;
+    }
+    else {
+        let checkOutItems = JSON.parse(localStorage.getItem('cart'));
+        for (let i = 0; i < checkOutItems.length; i++) {
+            let date = new Date();
+            let result = date.toLocaleDateString("en-GB", { // you can use undefined as first argument
+                year: "2-digit",
+                month: "2-digit",
+                day: "2-digit",
+            });
+            checkOutItems[i].date = result;
+        }
+        console.log(user.email);
+        axios.post('https://animedstore-api.netlify.app/.netlify/functions/api/addItemToUser', { 
+            email: user.email,
+            items: checkOutItems
+        }).then((res) => {
+            console.log(res.data);
+            localStorage.setItem('cart', JSON.stringify([]));
+            generateCartItems();
+        });
+    }
 }
 
 function generateCartItems() {
     if(localStorage.getItem('cart') == null) {
-        let emptyCart = []
+        let emptyCart = [];
         localStorage.setItem('cart', JSON.stringify(emptyCart));
+        document.getElementById('cartBucket').innerHTML = "<div class='empty-cart'>Cart is empty</div>";
+    }
+    else if(JSON.parse(localStorage.getItem('cart')).length == 0) {
+        document.getElementById('cartBucket').innerHTML = "<div class='empty-cart'>Cart is empty</div>";
+    }
+    else {
+        document.getElementById('cartBucket').innerHTML = '';
     }
     cartItems = JSON.parse(localStorage.getItem('cart'));
     console.log(cartItems);
-    document.getElementById('cartBucket').innerHTML = '';
     for (let i = 0; i < cartItems.length; i++) {
         if(original_items[cartItems[i].id].category < 1 || original_items[cartItems[i].id].category > 2) {
             document.getElementById('cartBucket').innerHTML += `
@@ -96,6 +141,7 @@ function toggleCart() {
 
 
 function displayItem() {
+    console.log(item.img.length);
     //Image Selection
     for (let i = 0; i < item.img.length; i++) {
         if(i == 0) {
@@ -222,6 +268,7 @@ function checkCart()
     if(original_items[item.id].category < 1 || original_items[item.id].category > 2) {
         selectSize(0);
         document.getElementById('size-section').style.display = 'none'; 
+        document.getElementById('size-guide').style.display = 'none'; 
     }
     if(localStorage.getItem('cart') != null) {
         let cartItems = JSON.parse(localStorage.getItem('cart'));
@@ -236,6 +283,9 @@ function checkCart()
                     document.getElementById('addToCart').innerHTML = "REMOVE FROM CART";
                     document.getElementById('addToCart').classList.add('remove');
                     document.getElementById('inCartText').style.display = 'block';
+                    document.getElementById('qty').innerHTML = cartItems[i].qty;
+                    item.qty = cartItems[i].qty;
+                    sumPrice();
                     isInCart = true;
                 }
             }

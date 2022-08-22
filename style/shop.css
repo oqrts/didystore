@@ -335,6 +335,7 @@ main::-webkit-scrollbar {
     100% { transform: scale(1);}
 }
 .col-3 {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -347,12 +348,13 @@ main::-webkit-scrollbar {
     margin: 1rem;
 }
 .cart #page {
-    position: fixed;
+    position: absolute;
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: white;
     z-index: 1;
+    width: 100%;
     transition: 0.3s;
     transform: translateX(150%);
 }
@@ -393,6 +395,13 @@ main::-webkit-scrollbar {
 /* Hide scrollbar for Chrome, Safari and Opera */
 .cart-items::-webkit-scrollbar {
     display: none;
+}
+.empty-cart {
+    font-family: "Magdelin", sans-serif;
+    font-size: 1.1rem;
+    font-weight: normal;
+    margin: 1rem;
+    text-transform: capitalize;
 }
 .cart-item {
     margin-top: 0.5rem;

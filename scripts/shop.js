@@ -10,7 +10,6 @@ let cartItems = [];
 let itemName = "";
 
 function saveDetail(id) {
-    console.log("Save item detail");
     localStorage.setItem("item_details", JSON.stringify(original_items[id]));
     window.location.href = './detail';
 }
@@ -43,12 +42,14 @@ function sortNew() {
     document.getElementById('low').classList.remove('selected');
     document.getElementById('new').classList.add('selected');
     document.getElementById('old').classList.remove('selected');
-    main_items = original_items.slice();
-    generateItems(main_items);
+    main_items = original_items;
+    generateItems(original_items);
     setSearch(itemName);
+    console.log(original_items);
 }
 
 function sortHigh() {
+    main_items = original_items.slice();
     main_items.sort(function(a, b){
         return b.price - a.price;
     });
@@ -61,6 +62,7 @@ function sortHigh() {
 }
 
 function sortLow() {
+    main_items = original_items.slice();
     main_items.sort(function(a, b){
         return a.price - b.price;
     });
@@ -210,8 +212,12 @@ function checkUser() {
     if(localStorage.getItem('user') != null) {
         user = JSON.parse(localStorage.getItem('user'));
         displayUser();
+        axios.post('https://animedstore-api.netlify.app/.netlify/functions/api/signIn', { email: user.email }).then((res) => {
+            console.log(res.data);
+        })
     }
     else {
+        document.getElementById('accountShow').style.display = 'none';
         googleSignOut();
     }
 }
@@ -237,21 +243,15 @@ function handleCredentialResponse(response) {
         'name': userInfo.name,
         'email': userInfo.email
     }
-    axios.get('https://cors-anywhere.herokuapp.com/https://d2a3-45-118-77-169.ap.ngrok.io/users').then((res) => {
+    axios.get('https://animedstore-api.netlify.app/.netlify/functions/api/users').then((res) => {
         console.log(res.data);
     });
-    axios.post('https://cors-anywhere.herokuapp.com/https://d2a3-45-118-77-169.ap.ngrok.io/signIn', { email: user.email}).then((res) => {
+    axios.post('https://animedstore-api.netlify.app/.netlify/functions/api/signIn', { email: user.email}).then((res) => {
         console.log(res.data);
     });
     console.log(user);
     localStorage.setItem('user', JSON.stringify(user));
     displayUser();
-}
-
-function addItemToHistory() {
-    axios.post('https://cors-anywhere.herokuapp.com/https://d2a3-45-118-77-169.ap.ngrok.io/signIn', { email: user.email}).then((res) => {
-        console.log(res.data);
-    });
 }
 
 function getCategory(category) {
@@ -295,12 +295,18 @@ function toggleCart() {
 
 function generateCartItems() {
     if(localStorage.getItem('cart') == null) {
-        let emptyCart = []
+        let emptyCart = [];
         localStorage.setItem('cart', JSON.stringify(emptyCart));
+        document.getElementById('cartBucket').innerHTML = "<div class='empty-cart'>Cart is empty</div>";
+    }
+    else if(JSON.parse(localStorage.getItem('cart')).length == 0) {
+        document.getElementById('cartBucket').innerHTML = "<div class='empty-cart'>Cart is empty</div>";
+    }
+    else {
+        document.getElementById('cartBucket').innerHTML = '';
     }
     cartItems = JSON.parse(localStorage.getItem('cart'));
     console.log(cartItems);
-    document.getElementById('cartBucket').innerHTML = '';
     for (let i = 0; i < cartItems.length; i++) {
         if(original_items[cartItems[i].id].category < 1 || original_items[cartItems[i].id].category > 2) {
             document.getElementById('cartBucket').innerHTML += `
@@ -355,6 +361,35 @@ function removeFromCart(id) {
     generateCartItems();
 }
 
+function checkOut() { 
+    if(localStorage.getItem('cart') == null) {
+        return;
+    }
+    else if(JSON.parse(localStorage.getItem('cart')).length == 0) {
+        return;
+    }
+    else {
+        let checkOutItems = JSON.parse(localStorage.getItem('cart'));
+        for (let i = 0; i < checkOutItems.length; i++) {
+            let date = new Date();
+            let result = date.toLocaleDateString("en-GB", { // you can use undefined as first argument
+                year: "2-digit",
+                month: "2-digit",
+                day: "2-digit",
+            });
+            checkOutItems[i].date = result;
+        }
+        console.log(checkOutItems);
+        axios.post('https://animedstore-api.netlify.app/.netlify/functions/api/addItemToUser', { 
+            email: user.email,
+            items: checkOutItems
+        }).then((res) => {
+            console.log(res.data);
+            localStorage.setItem('cart', JSON.stringify([]));
+            generateCartItems();
+        });
+    }
+}
 
 window.onload = function () {
     google.accounts.id.initialize({

@@ -116,6 +116,8 @@ main::-webkit-scrollbar {
 }
 .cartText h3 {
     color: white;
+    font-family: 'Bebas Neue';
+    font-size: 2rem;
 }
 .cartBody {
     background-color: white;
@@ -138,12 +140,21 @@ main::-webkit-scrollbar {
     margin-top: 5px;
     margin-bottom: 5px;
 }
+.hoverRemove {
+    margin-top: 10px;
+}
 .hoverRemove a {
-    transition: 0.2s;
+    transition: 0.25s;
     cursor: url('../images/white_cursor.png'), auto;
+    -webkit-transition: 0.25s;
+    -moz-transition: 0.25s;
+    -ms-transition: 0.25s;
+    -o-transition: 0.25s;
 }
 .hoverRemove a:hover {
-    color: red;
+    color: white;
+    background-color: #ff0080;
+    padding: 5px;
 }
 .cartName {
     white-space: nowrap;
@@ -164,11 +175,8 @@ main::-webkit-scrollbar {
     font-weight: normal;
 }
 .cartTotal {
-    /* display: flex;
-    justify-content: space-between;
-    padding: 10px; */
     background-color: white;
-    border: none;
+    border-bottom: 2px solid white;
 }
 .cartTotalSize {
     font-size: 1.3rem;

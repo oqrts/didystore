@@ -208,10 +208,9 @@ main::-webkit-scrollbar {
     font-size: 1.5rem;
     font-weight: normal;
 }
-.checkoutButton {
+.borderTop {
     border-top: 1px solid white;
     margin: 0 0.5rem;
-    position: sticky;
 }
 .quantity-input {
     width: 20px;
@@ -258,7 +257,6 @@ main::-webkit-scrollbar {
     display: flex;
     justify-content:right;
     width: 100%;
-    margin: 0 !important;
 }
 .checkout button {
     width: calc(100% - 55.5rem);
@@ -280,4 +278,5 @@ main::-webkit-scrollbar {
     font-size: 2rem;
     color: white;
 }
+
 /*End of Cart*/

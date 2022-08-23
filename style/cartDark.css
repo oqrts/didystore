@@ -103,6 +103,9 @@ main::-webkit-scrollbar {
 .cartText3{
     margin: 1rem;
 }
+.cartTextHover:hover {
+    color: white;
+}
 .cartText4 h3{
     float: right;
 }
@@ -181,6 +184,9 @@ main::-webkit-scrollbar {
 .cartName span {
     color: white;   
 }
+.cartName span:hover {
+    color: #ff0080;   
+}
 .cartPrice{
     display: flex;
     justify-content: center;
@@ -199,9 +205,12 @@ main::-webkit-scrollbar {
     color: white;
 }
 .cartTotalSize {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
+    font-weight: normal;
 }
 .checkoutButton {
+    border-top: 1px solid white;
+    margin: 0 0.5rem;
     position: sticky;
 }
 .quantity-input {
@@ -249,9 +258,10 @@ main::-webkit-scrollbar {
     display: flex;
     justify-content:right;
     width: 100%;
+    margin: 0 !important;
 }
 .checkout button {
-    width: calc(100% - 56rem);
+    width: calc(100% - 55.5rem);
     text-align: center;
     border: none;
     padding: 1rem;

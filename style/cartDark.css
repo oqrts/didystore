@@ -209,8 +209,10 @@ main::-webkit-scrollbar {
     font-weight: normal;
 }
 .borderTop {
+    
     border-top: 1px solid white;
     margin: 0 0.5rem;
+    margin-top: 1rem;
 }
 .qty {
     display: flex;

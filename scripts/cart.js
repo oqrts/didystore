@@ -135,7 +135,6 @@ function subTotal(i, qty) {
     let price = document.getElementById(`itemPrice${i}`).innerHTML.slice(1);
     let itemSubTotal = parseFloat(price * qty);
     document.getElementById(`subTotal${i}`).innerHTML = "$" + itemSubTotal.toFixed(2);
-    totalPrice[i] = itemSubTotal;
     totalPriceUpdate()
 }
 

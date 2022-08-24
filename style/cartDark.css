@@ -155,9 +155,9 @@ main::-webkit-scrollbar {
     margin-top: 5px;
     margin-bottom: 5px;
 }
-.hoverRemove {
+/* .hoverRemove {
     margin-top: 10px;
-}
+} */
 .hoverRemove a {
     transition: 0.25s;
     cursor: url('../images/white_cursor.png'), auto;
@@ -166,13 +166,15 @@ main::-webkit-scrollbar {
     -ms-transition: 0.25s;
     -o-transition: 0.25s;
     padding: 5px;
+    position: relative;
+    right: 5px;
 }
 .hoverRemove a:hover {
     color: white;
     background-color: #ff0080;
 }
 .cartName {
-    /* white-space: nowrap; */
+    white-space: nowrap;
     -webkit-line-clamp: 1;
     overflow: hidden;
     /* max-width: 500px; */

@@ -34,6 +34,9 @@ function fetchItem() {
 
 //? Generate cart
 function generateCartItems() {
+    if(localStorage.getItem('cart') != null) {
+        document.getElementById('cartBody').innerHTML = '';
+    }
     cartItems = JSON.parse(localStorage.getItem('cart'));
     console.log(cartItems);
     for (let i = 0; i < cartItems.length; i++) {
@@ -113,6 +116,7 @@ function removeFromCart(id) {
     }
     localStorage.setItem('cart', JSON.stringify(newCartItems));
     generateCartItems();
+    totalPriceUpdate();
 }
 
 function totalPriceUpdate() {

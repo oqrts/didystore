@@ -6,11 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style/blizzard.css">
-    <!-- <link rel="stylesheet" href="../style/shop.css"> -->
     <link rel="stylesheet" href="../style/nav.css">
-    <link rel="stylesheet" href="../style/cart.css">
+    <link rel="stylesheet" href="../style/cartDark.css">
     <title>Anime D. Store</title>
-    <script src="../scripts/about.js"></script>
+    <script src="../scripts/cart.js"></script>
 </head>
 
 <body>
@@ -25,6 +24,7 @@
                     <li><a href="../">Home</a></li>
                     <li><a class="active" href="#">Shop</a></li>
                     <li><a href="../about/">About</a></li>
+                    <li id="accountShow"><a href="./account/">Account</a></li>
                 </ul>
             </nav>
             <main class="mainCart">
@@ -32,69 +32,27 @@
                     <div class="cartContainer">
                         <div class="cartHeader cartPosition">
                             <a class="cartText cartText1">
-                                <h3>ITEM</h3>
+                                <h3 class="cartTextHover">ITEM</h3>
                             </a>
                             <a class="cartText">
-                                <h3></h3>
+                                <h3 class="cartTextHover">NAME</h3>
                             </a>
-                            <a class="cartText cartText3">
-                                <h3>QUANTITY</h3>
+                            <a class="cartText cartText3 cartTextAlign">
+                                <h3 class="cartTextHover">QUANTITY</h3>
                             </a>
-                            <a class="cartText cartText4">
-                                <h3>SUBTOTAL</h3>
+                            <a class="cartText cartText5 cartTextAlign">
+                                <h3 class="cartTextHover">PRICE</h3>
+                            </a>
+                            <a class="cartText cartText4 cartTextAlign">
+                                <h3 class="cartTextHover">SUBTOTAL</h3>
                             </a>
                         </div>
                     </div>
                     <div class="cartBg">
                         <ul class="cartBody" id='cartBody'>
-                            <li class="cartRow cartRow-${id} cartPosition">
-                                <img class="cartImg" src="../Images/1_1.jpg" alt="">
-                                <div class="cartInfo">
-                                    <p class="cartName">NAJUNJI ITO - MEDUSA UZUMAKI T-SHIRT - CRUNCHYROLL EXCLUSIVE!ME
-                                    </p>
-                                    <small class="cartName">PRICE: $100</small>
-                                    <br>
-                                    <div class="hoverRemove">
-                                        <a class="cartRemove" id="${id}">REMOVE</a>
-                                    </div>
-                                </div>
-                                <div class="quantityselector">
-                                    <a class="add-remove-quantity">-</a>
-                                    <p class="quantity-input" id="value-${id}">1</p>
-                                    <a class="add-remove-quantity">+</a>
-                                </div>
-                                <a class="cartSubtotal">
-                                    <span id='subPrice-${id}' class="cartName">100$</span>
-                                </a>
-                            </li>
                         </ul>
                     </div>
-                    <div class="cartBg">
-                        <ul class="cartBody" id='cartBody'>
-                            <li class="cartRow cartRow-${id} cartPosition">
-                                <img class="cartImg"
-                                    src="https://res.cloudinary.com/dasp34oqa/image/upload/v1657385192/Anime%20D.Store/the_rising_of_the_shield_hero_season_2_raphtalia0_zh7whi.jpg"
-                                    alt="">
-                                <div class="cartInfo">
-                                    <p class="cartName">NAJUNJI ITO - MEDUSA UZUMAKI T-SHIRT - CRUNCHYROLL EXCLUSIVE!ME
-                                    </p>
-                                    <small class="cartName">PRICE: $100</small>
-                                    <br>
-                                    <div class="hoverRemove">
-                                        <a class="cartRemove" id="${id}">REMOVE</a>
-                                    </div>
-                                </div>
-                                <div class="quantityselector">
-                                    <a class="add-remove-quantity">-</a>
-                                    <p class="quantity-input" id="value-${id}">1</p>
-                                    <a class="add-remove-quantity">+</a>
-                                </div>
-                                <a class="cartSubtotal">
-                                    <span id='subPrice-${id}' class="cartName">100$</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+                    <div class="borderTop"></div>
                     <div class="checkoutButton">
                         <div class="cartTotal cartPosition cartHeader">
                             <a class="cartText">
@@ -103,11 +61,14 @@
                             <a class="cartText">
                                 <span></span>
                             </a>
-                            <a class="cartName cartText cartText3 cartTotalSize">
+                            <a class="cartText">
+                                <span></span>
+                            </a>
+                            <a class="cartName cartText cartText3 cartTotalSize cartTextAlign">
                                 <span>Total</span>
                             </a>
                             <a class="cartName cartText cartText4 cartTotalSize">
-                                <span id="totalPrice">$</span>
+                                <span id="totalPrice"></span>
                             </a>
                         </div>
                         <div class="checkout">

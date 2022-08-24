@@ -250,6 +250,10 @@ main::-webkit-scrollbar {
     color: #ff0080;
     background-color: white;
 }
+.add-remove-quantity:active {
+    background-color: #ff0080;
+    color: white;
+}
 .quantityselector {
     display: inline-flex;
     align-items: center;

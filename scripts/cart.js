@@ -54,9 +54,9 @@ function generateCartItems() {
                 </div>
                 <div class="qty">
                     <div class="quantityselector">
-                        <a onclick="reduceQty(${i})" class="qty add-remove-quantity">-</a>
+                        <span onclick="reduceQty(${i})" class="qty add-remove-quantity">-</span>
                         <p id="qtyNum${i}"class="quantity-input">${cartItems[i].qty}</p>
-                        <a onclick="addQty(${i})" class="qty add-remove-quantity">+</a>
+                        <span onclick="addQty(${i})" class="qty add-remove-quantity">+</span>
                     </div>
                 </div>
                 <div class="cartPrice">
@@ -90,9 +90,9 @@ function generateCartItems() {
                 </div>
                 <div class="qty">
                     <div class="quantityselector">
-                        <a onclick="reduceQty(${i})" class="qty add-remove-quantity">-</a>
+                        <span onclick="reduceQty(${i})" class="qty add-remove-quantity">-</span>
                         <p id="qtyNum${i}"class="quantity-input">${cartItems[i].qty}</p>
-                        <a onclick="addQty(${i})" class="qty add-remove-quantity">+</a>
+                        <span onclick="addQty(${i})" class="qty add-remove-quantity">+</span>
                     </div>
                 </div>
                 <div class="cartPrice">

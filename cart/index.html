@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../style/cartDark.css">
     <title>Anime D. Store</title>
     <script src="../scripts/cart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 
 <body>
@@ -22,9 +23,9 @@
             <nav>
                 <ul>
                     <li><a href="../">Home</a></li>
-                    <li><a class="active" href="#">Shop</a></li>
+                    <li><a class="active" href="../shop/">Shop</a></li>
                     <li><a href="../about/">About</a></li>
-                    <li id="accountShow"><a href="./account/">Account</a></li>
+                    <li id="accountShow"><a href="../account/">Account</a></li>
                 </ul>
             </nav>
             <main class="mainCart">
@@ -53,26 +54,36 @@
                         </ul>
                     </div>
                     <div class="borderTop"></div>
-                    <div class="checkoutButton">
-                        <div class="cartTotal cartPosition cartHeader">
-                            <a class="cartText">
-                                <span></span>
-                            </a>
-                            <a class="cartText">
-                                <span></span>
-                            </a>
-                            <a class="cartText">
-                                <span></span>
-                            </a>
-                            <a class="cartName cartText cartText3 cartTotalSize cartTextAlign">
-                                <span>Total</span>
-                            </a>
-                            <a class="cartName cartText cartText4 cartTotalSize">
-                                <span id="totalPrice"></span>
-                            </a>
-                        </div>
-                        <div class="checkout">
-                            <button type="submit" name="CHECKOUT"><span>CHECKOUT</span></button>
+                    <div class="checkout-grid">
+                        <main class="mainForm">
+                            <div class="Form">
+                                <div class="width">
+                                    <div class="head">
+                                        <h1>Customer Details</h1>
+                                    </div>
+                                    <div class="input-form">
+                                        <div class="form-box">
+                                            <label>Location</label>
+                                            <form>
+                                                <input type="text" placeholder="Ex: St504">
+                                            </form>
+                                        </div>
+                                        <div class="form-box">
+                                            <label>Phone Number</label>
+                                            <form>
+                                                <input type="text" placeholder="Ex: 012 122 122">
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </main>
+                        <div class="checkoutButton">
+                            <div class="totalText">
+                                <div class="cartName">Total:</div>
+                                <div class="cartName" id="totalPrice"></div>
+                            </div>
+                            <button onclick="checkOut()" class="checkout-btn">CHECKOUT</button
                         </div>
                     </div>
                 </div>

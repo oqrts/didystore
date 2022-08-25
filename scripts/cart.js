@@ -2,6 +2,7 @@ const original_items = [];
 let user = {};
 let item = {};
 let isInCart = false;
+let cartItems = [];
 onmousemove = function moveScreen(e) {
     let clientX = e.clientX;
     let clientY = e.clientY;
@@ -41,13 +42,21 @@ function generateCartItems() {
     console.log(cartItems);
     for (let i = 0; i < cartItems.length; i++) {
         if(original_items[cartItems[i].id].category < 1 || original_items[cartItems[i].id].category > 2) {
+            let itemCategory;
+            let currentItemSize = cartItems[i].size;
+
+            if(original_items[cartItems[i].id].category == 1) {
+                itemCategory = "Cosplay";
+            }
+            else itemCategory = "Apparel";
             document.querySelector(".cartBody").innerHTML += `
-            <li class="cartRow cartPosition">
+            <li class="cartRow cartPosition item">
                 <img class="cartImg" src="${original_items[cartItems[i].id].img[0]}" alt="">
                 <div class="cartInfo">
-                    <p class="cartName">${original_items[cartItems[i].id].name}
-                    </p>
-                    <br>
+                    <a>
+                        <h2>${original_items[cartItems[i].id].name}</h2>
+                        <h5> <span>Category:</span> ${itemCategory}</h5>
+                    </a>
                     <div class="hoverRemove">
                         <a onclick="removeFromCart(${cartItems[i].id})" class="cartRemove">REMOVE</a>
                     </div>
@@ -68,22 +77,27 @@ function generateCartItems() {
             </li> `;
     }
         else {
+            let itemCategory;
             let currentItemSize = cartItems[i].size;
+
+            if(original_items[cartItems[i].id].category == 1) {
+                itemCategory = "Cosplay";
+            }
+            else itemCategory = "Apparel";
+
             if(currentItemSize == 0) currentItemSize = 'S';
             else if(currentItemSize == 1) currentItemSize = 'M';
             else if(currentItemSize == 2) currentItemSize = 'L';
             else if(currentItemSize == 3) currentItemSize = 'XL';
             else if(currentItemSize == 4) currentItemSize = 'XXL';
             document.querySelector(".cartBody").innerHTML += `
-            <li class="cartRow cartPosition">
+            <li class="cartRow cartPosition item">
                 <img class="cartImg" src="${original_items[cartItems[i].id].img[0]}" alt="">
                 <div class="cartInfo">
-                    <p class="cartName">${original_items[cartItems[i].id].name}
-                    </p>
-                    <br>
-                    <p class="cartName">SIZE:  ${currentItemSize}
-                    </p>
-                    <br>
+                    <a>
+                        <h2>${original_items[cartItems[i].id].name}</h2>
+                        <h5> <span>Category:</span> ${itemCategory}, <span>Size:</span> ${currentItemSize}</h5>
+                    </a>
                     <div class="hoverRemove">
                         <a onclick="removeFromCart(${cartItems[i].id})" class="cartRemove">REMOVE</a>
                     </div>
@@ -140,19 +154,19 @@ function subTotal(i, qty) {
 
 function addQty(i){
     if(isInCart) return;
-    item.qty = document.getElementById(`qtyNum${i}`).innerHTML;
-    item.qty++;
-    document.getElementById(`qtyNum${i}`).innerHTML = item.qty;
-    subTotal(i, item.qty);
+    cartItems[i].qty = document.getElementById(`qtyNum${i}`).innerHTML;
+    cartItems[i].qty++;
+    document.getElementById(`qtyNum${i}`).innerHTML = cartItems[i].qty;
+    subTotal(i, cartItems[i].qty);
 }
 
 function reduceQty(i) {
     if(isInCart) return;
-    item.qty = document.getElementById(`qtyNum${i}`).innerHTML;
-    if(item.qty > 1) {
-        item.qty--;
-        document.getElementById(`qtyNum${i}`).innerHTML = item.qty;
-        subTotal(i, item.qty);
+    cartItems[i].qty = document.getElementById(`qtyNum${i}`).innerHTML;
+    if(cartItems[i].qty > 1) {
+        cartItems[i].qty--;
+        document.getElementById(`qtyNum${i}`).innerHTML = cartItems[i].qty;
+        subTotal(i, cartItems[i].qty);
     }
 }
 
@@ -165,4 +179,27 @@ function getOriginalItems() {
         generateCartItems();
         totalPriceUpdate();
     });
+}
+
+function checkOut() {
+    localStorage.setItem('cart', JSON.stringify(cartItems));
+    let checkOutItems = JSON.parse(localStorage.getItem('cart'));
+        for (let i = 0; i < checkOutItems.length; i++) {
+            let date = new Date();
+            let result = date.toLocaleDateString("en-GB", { // you can use undefined as first argument
+                year: "2-digit",
+                month: "2-digit",
+                day: "2-digit",
+            });
+            checkOutItems[i].date = result;
+        }
+        console.log(user.email);
+        axios.post('https://animedstore-api.netlify.app/.netlify/functions/api/addItemToUser', { 
+            email: user.email,
+            items: checkOutItems
+        }).then((res) => {
+            console.log(res.data);
+            localStorage.setItem('cart', JSON.stringify([]));
+            window.location.href = '../account/';
+        });
 }

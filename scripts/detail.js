@@ -26,6 +26,8 @@ window.onload = function() {
 }
 
 function checkOut() { 
+    window.location.href = "../../cart/";
+    return;
     if(localStorage.getItem('cart') == null) {
         return;
     }
@@ -79,7 +81,7 @@ function generateCartItems() {
                     <div class="bot">
                         <h3>Quantity: ${cartItems[i].qty}</h3>
                         <div class="price-remove">
-                            <h2>${(original_items[cartItems[i].id].price * cartItems[i].qty).toFixed(2)}$</h2>
+                            <h2>$${(original_items[cartItems[i].id].price * cartItems[i].qty).toFixed(2)}</h2>
                             <h2 onclick="removeFromCart(${cartItems[i].id})">Remove</h2>
                         </div>
                     </div>
@@ -102,7 +104,7 @@ function generateCartItems() {
                         <h3>Size: ${currentItemSize}</h3>
                         <h3>Quantity: ${cartItems[i].qty}</h3>
                         <div class="price-remove">
-                            <h2>${(original_items[cartItems[i].id].price * cartItems[i].qty).toFixed(2)}$</h2>
+                            <h2>$${(original_items[cartItems[i].id].price * cartItems[i].qty).toFixed(2)}</h2>
                             <h2 onclick="removeFromCart(${cartItems[i].id})">Remove</h2>
                         </div>
                     </div>
@@ -161,10 +163,10 @@ function displayItem() {
     document.getElementById('item-name').innerHTML = item.name;
 
     //Price
-    document.getElementById('item-price').innerHTML = item.price + "$";
+    document.getElementById('item-price').innerHTML = "$" + item.price;
 
     //Price
-    document.getElementById('priceSum').innerHTML = item.price + "$";
+    document.getElementById('priceSum').innerHTML = "$" + item.price;
 }
 
 function getItemDetail() {
@@ -193,7 +195,7 @@ function moveSlideTo(pos) {
 }
 
 function sumPrice() {
-    document.getElementById('priceSum').innerHTML = (item.qty * item.price).toFixed(2) + "$";
+    document.getElementById('priceSum').innerHTML = "$" + (item.qty * item.price).toFixed(2);
 }
 
 function selectSize(size) {
@@ -292,7 +294,7 @@ function checkCart()
         }
         else {
             console.log("Item is NOT in cart");
-            document.getElementById('addToCart').innerHTML = "ADD TO CART";
+            document.getElementById('addToCart').innerHTML = "PLEASE SELECT A SIZE";
             document.getElementById('addToCart').classList.remove('remove');
             document.getElementById('inCartText').style.display = 'none';
             isInCart = false;

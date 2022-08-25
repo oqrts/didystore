@@ -277,7 +277,7 @@ function getStatus(status) {
 function generateItems(itemsList)  {
     document.getElementById('item-grid').innerHTML = "";
     itemsList.forEach(item => {
-        document.getElementById('item-grid').innerHTML += `<a onclick='saveDetail(${item.id})' class='item ${getCategory(item.category)}'><div class='back-img'></div> <div class='display'> <img src='${item.img[0]}'> </div> <div class='info'> ${getStatus(item.status)} <h1 class='name'>${item.name}</h1> <h2>${item.price}$</h2> <div class='cart-button'> </div> </div></a>`;
+        document.getElementById('item-grid').innerHTML += `<a onclick='saveDetail(${item.id})' class='item ${getCategory(item.category)}'><div class='back-img'></div> <div class='display'> <img src='${item.img[0]}'> </div> <div class='info'> ${getStatus(item.status)} <h1 class='name'>${item.name}</h1> <h2>$${item.price}</h2> <div class='cart-button'> </div> </div></a>`;
     });
 }
 
@@ -317,7 +317,7 @@ function generateCartItems() {
                     <div class="bot">
                         <h3>Quantity: ${cartItems[i].qty}</h3>
                         <div class="price-remove">
-                            <h2>${(original_items[cartItems[i].id].price * cartItems[i].qty).toFixed(2)}$</h2>
+                            <h2>$${(original_items[cartItems[i].id].price * cartItems[i].qty).toFixed(2)}</h2>
                             <h2 onclick="removeFromCart(${cartItems[i].id})">Remove</h2>
                         </div>
                     </div>
@@ -340,7 +340,7 @@ function generateCartItems() {
                         <h3>Size: ${currentItemSize}</h3>
                         <h3>Quantity: ${cartItems[i].qty}</h3>
                         <div class="price-remove">
-                            <h2>${(original_items[cartItems[i].id].price * cartItems[i].qty).toFixed(2)}$</h2>
+                            <h2>$${(original_items[cartItems[i].id].price * cartItems[i].qty).toFixed(2)}</h2>
                             <h2 onclick="removeFromCart(${cartItems[i].id})">Remove</h2>
                         </div>
                     </div>
@@ -362,6 +362,8 @@ function removeFromCart(id) {
 }
 
 function checkOut() { 
+    window.location.href = "../cart/";
+    return;
     if(localStorage.getItem('cart') == null) {
         return;
     }

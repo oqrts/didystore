@@ -294,7 +294,13 @@ function checkCart()
         }
         else {
             console.log("Item is NOT in cart");
-            document.getElementById('addToCart').innerHTML = "PLEASE SELECT A SIZE";
+            if(item.category < 1 || item.category > 2) {
+                console.log(item.category);
+                document.getElementById('addToCart').innerHTML = "ADD TO CART";
+            }
+            else {
+                document.getElementById('addToCart').innerHTML = "PLEASE SELECT A SIZE";
+            }
             document.getElementById('addToCart').classList.remove('remove');
             document.getElementById('inCartText').style.display = 'none';
             isInCart = false;

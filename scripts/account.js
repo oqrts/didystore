@@ -39,6 +39,11 @@ function getOriginalItems() {
     });
 }
 
+function saveDetail(id) {
+    localStorage.setItem("item_details", JSON.stringify(original_items[id]));
+    window.location.href = '../shop/detail';
+}
+
 function loadHistory() {
     axios.get('https://animedstore-api.netlify.app/.netlify/functions/api/users/' + user.email).then((res) => {
         console.log(res.data);
@@ -59,7 +64,7 @@ function loadHistory() {
                     <div class="img-wrapper">
                         <img src="${original_items[item.id].img[0]}" alt="">
                     </div>
-                    <a>
+                    <a onclick="saveDetail(${item.id})">
                         <h2>${original_items[item.id].name}</h2>
                         <h5> <span>Category:</span> ${itemCategory}</h5>
                     </a>
@@ -100,7 +105,7 @@ function loadHistory() {
                     <div class="img-wrapper">
                         <img src="${original_items[item.id].img[0]}" alt="">
                     </div>
-                    <a>
+                    <a onclick="saveDetail(${item.id})">
                         <h2>${original_items[item.id].name}</h2>
                         <h5> <span>Category:</span> ${itemCategory}, <span>Size:</span> ${itemSize}</h5>
                     </a>

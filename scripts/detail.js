@@ -16,7 +16,7 @@ onmousemove = function moveScreen(e) {
 window.onload = function() {
     if(localStorage.getItem('user') != null) {
         user = JSON.parse(localStorage.getItem('user'));
-        document.getElementById('accountShow').style.display = 'none';
+        document.getElementById('accountShow').style.display = 'block';
     }
     else {
         document.getElementById('accountShow').style.display = 'none';

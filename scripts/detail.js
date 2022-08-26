@@ -26,8 +26,6 @@ window.onload = function() {
 }
 
 function checkOut() { 
-    window.location.href = "../../cart/";
-    return;
     if(localStorage.getItem('cart') == null) {
         return;
     }
@@ -35,25 +33,7 @@ function checkOut() {
         return;
     }
     else {
-        let checkOutItems = JSON.parse(localStorage.getItem('cart'));
-        for (let i = 0; i < checkOutItems.length; i++) {
-            let date = new Date();
-            let result = date.toLocaleDateString("en-GB", { // you can use undefined as first argument
-                year: "2-digit",
-                month: "2-digit",
-                day: "2-digit",
-            });
-            checkOutItems[i].date = result;
-        }
-        console.log(user.email);
-        axios.post('https://animedstore-api.netlify.app/.netlify/functions/api/addItemToUser', { 
-            email: user.email,
-            items: checkOutItems
-        }).then((res) => {
-            console.log(res.data);
-            localStorage.setItem('cart', JSON.stringify([]));
-            generateCartItems();
-        });
+        window.location.href = "../../cart/";
     }
 }
 
@@ -167,6 +147,9 @@ function displayItem() {
 
     //Price
     document.getElementById('priceSum').innerHTML = "$" + item.price;
+
+    //Description
+    document.getElementById('desc').innerHTML = "<h3>Description:</h3>" + item.desc;
 }
 
 function getItemDetail() {

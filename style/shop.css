@@ -261,6 +261,7 @@ main::-webkit-scrollbar {
     align-items: flex-end;
 }
 .item-category .pink-checkbox {
+    margin-right: 0.6rem;
     background: white;
     border: 1px solid white;
     width: 0.85rem;
@@ -279,11 +280,11 @@ main::-webkit-scrollbar {
     align-items: center;
 }
 .item-category ul li label{
+    display: flex;
+    align-items: center;
     color: white;
     font-size: 0.9rem;
-    margin: 0;
     padding: 0.2rem;
-    margin-left: 0.6rem;
     transition: 0.25s;
     border-radius: 6px;
     animation: none;

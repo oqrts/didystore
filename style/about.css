@@ -77,6 +77,7 @@ p span {
     color: hwb(330 0% 0%);
     font-weight: bold;
     font-family: 'Magdelin', sans-serif;
+    cursor: url('../Images/white_cursor.png'), default;
 }
 
 .hover-underline-animation {

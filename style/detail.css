@@ -89,7 +89,7 @@ main {
 .detail-grid h2 {
     color: var(--pink);
 }
-.detail-grid h3,.detail-grid h4, #desc li {
+.detail-grid h3,.detail-grid h4, #desc li, #desc p {
     font-family: "Magdelin", sans-serif;
     color: white;
     text-transform: capitalize;
@@ -207,6 +207,10 @@ main {
 }
 #desc ul {
     padding-left: 1.5rem;
+}
+#desc p {
+    font-size: 1.1rem;
+    font-weight: lighter;
 }
 #desc li {
     font-weight: lighter;

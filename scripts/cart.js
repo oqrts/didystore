@@ -16,7 +16,8 @@ window.onload = function() {
     if(localStorage.getItem('user') != null) {
         user = JSON.parse(localStorage.getItem('user'));
         document.getElementById('accountShow').style.display = 'block';
-        console.log("test")
+        document.getElementById('no-account').style.display = 'none';
+        console.log("test");
     }
     else {
         document.getElementById('accountShow').style.display = 'none';
@@ -182,6 +183,12 @@ function getOriginalItems() {
 }
 
 function checkOut() {
+    
+    if(localStorage.getItem('user') == null) {
+        console.log("User not login");
+        return;
+    }
+
     localStorage.setItem('cart', JSON.stringify(cartItems));
     let checkOutItems = JSON.parse(localStorage.getItem('cart'));
         for (let i = 0; i < checkOutItems.length; i++) {

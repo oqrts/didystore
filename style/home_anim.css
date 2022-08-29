@@ -112,22 +112,22 @@
 }
 @keyframes toprowChangev1 {
     0% { 
-        content:  'GET YOUR'; 
+        content:  'GRAB YOUR'; 
         font-family: 'Passion One';
         font-size: 10rem;
     }
     5% { 
-        content:  'GET YOUR'; 
+        content:  'GRAB YOUR'; 
         font-family: 'Passion One';
         font-size: 10rem;
     }
     10% { 
-        content:  'GET YOUR'; 
+        content:  'GRAB YOUR'; 
         font-family: 'Passion One';
         font-size: 10rem;
     }
     15% { 
-        content:  'GET YOUR'; 
+        content:  'GRAB YOUR'; 
         font-family: 'Passion One';
         font-size: 10rem;
     }
@@ -212,7 +212,7 @@
         font-size: 9rem;
     }
     100% { 
-        content:  'GET YOUR'; 
+        content:  'GRAB YOUR'; 
         font-family: 'Passion One';
     }
 }
@@ -355,12 +355,12 @@
         font-size: 6rem;
     }
     30% { 
-        content: 'សំលៀកបំពាក់'; 
+        content: 'សម្លៀកបំពាក់'; 
         font-family: 'Koulen', cursive;
         font-size: 6rem;
     }
     35% { 
-        content: 'គ្រឿងបន្លាស់'; 
+        content: 'គ្រឿងតុបតែង'; 
         font-family: 'Koulen', cursive;
         font-size: 6rem;
     }
@@ -431,22 +431,22 @@
 }
 @keyframes toprowChangev2 {
     0% { 
-        content:  'GET YOUR'; 
+        content:  'GRAB YOUR'; 
         font-family: 'Passion One';
         font-size: 7rem;
     }
     5% { 
-        content:  'GET YOUR'; 
+        content:  'GRAB YOUR'; 
         font-family: 'Passion One';
         font-size: 7rem;
     }
     10% { 
-        content:  'GET YOUR'; 
+        content:  'GRAB YOUR'; 
         font-family: 'Passion One';
         font-size: 7rem;
     }
     15% { 
-        content:  'GET YOUR'; 
+        content:  'GRAB YOUR'; 
         font-family: 'Passion One';
         font-size: 7rem;
     }
@@ -531,7 +531,7 @@
         font-size: 7rem;
     }
     100% { 
-        content:  'GET YOUR'; 
+        content:  'GRAB YOUR'; 
         font-family: 'Passion One';
     }
 }

@@ -196,7 +196,7 @@ main::-webkit-scrollbar {
 @keyframes textChange {
     0% { content:  'FIGURES'; }
     25% { content: 'COSPLAYS'; }
-    50% { content: 'APARELS'; }
+    50% { content: 'APPARELS'; }
     75% { content: 'ACCESSORIES'; }
     100% { content:  'FIGURES'; }
 }

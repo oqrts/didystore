@@ -13,9 +13,7 @@ function startSnapping() {
 }
 
 function startSnap() {
-  $('#thanos').attr("src","../Images/thanos_idle.png");
-  $('#4-text1').css("color", "black");
-  $('#4-text2').css("color", "black");
+  $('#thanos').attr("src","../Images/thanos_idle.png"); 
   var audio = new Audio('../sounds/dusted.wav');
   audio.play();
   html2canvas($(".content")[0]).then(canvas => {

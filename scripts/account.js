@@ -129,7 +129,7 @@ function loadHistory() {
                 </li>`;
             }
         });
-        document.getElementById('total-spent').innerHTML = totalSpent.toFixed(2) + "$";
+        document.getElementById('total-spent').innerHTML = "$" + totalSpent.toFixed(2) ;
         document.getElementById('total-items').innerHTML = totalItems;
     })
 }

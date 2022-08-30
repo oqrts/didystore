@@ -270,6 +270,7 @@ main::-webkit-scrollbar {
 }
 .item-category li:hover label {
     color: #ff0080;
+    cursor: url('../images/white_cursor.png'), auto;
 }
 .item-category li.active .pink-checkbox{
     background: #ff0080;

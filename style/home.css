@@ -41,6 +41,7 @@ main {
 }
 .rotate div {
     color: rgb(255, 0, 128);
+    cursor: url('../images/white_cursor.png'), auto;
 }
 .rotate span {
     cursor: url('../images/pink_cursor.png'), auto;

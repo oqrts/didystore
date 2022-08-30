@@ -62,11 +62,11 @@ body {
 }
 .member:hover .specials {
     font-size: 0;
-    transition: 3s ease-in-out;
+    transition: 6s ease-in-out;
 }
 .member:hover .specials .special {
     color: #ff0080;
-    font-size: 3rem;
+    font-size: 3.5rem;
     font-weight: bold;
     opacity: 1;
 }
@@ -112,21 +112,24 @@ body {
 #member2:hover span {
     color: green;
     font-family: 'M PLUS Code Latin', sans-serif;
+    transition: 1s;
 }
 #member2:hover h2{
     color: green;
     font-family: 'M PLUS Code Latin', sans-serif;
+    transition: 1s;
 }
 #member2:hover p {
     color: green;
     font-family: 'M PLUS Code Latin', sans-serif;
+    transition: 1s;
 }
 #thanos {
     opacity: 0;
     margin-top: 1rem;
     width: 50px;
     height: auto;
-    transition: 1s;
+    transition: 1s ease-out;
 }
 #member4:hover #thanos{
     opacity: 1;

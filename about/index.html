@@ -67,7 +67,7 @@
                     <div id="member2" class="member" onclick="printOut('Your computer has been hacked.')">
                         <div class="image-layered">
                             <img src="../images/hackerman.gif" alt="">
-                            <img src="../images/seakmeng2.jpg" alt="">
+                            <img src="../images/seakmeng1.jpg" alt="">
                         </div>
                         <div class="info">
                             <h2>Seakmeng Hor</h2>
@@ -86,31 +86,43 @@
                             </div>
                         </div>
                     </div>
-                    <div id="member3" class="member">
+                    <div id="member3" class="member" onmouseenter="loveMusic()" onmouseleave="stopMusic()">
+                        <audio id="love-music">
+                            <source src="../sounds/baby.wav" type="audio/ogg">
+                        </audio>
                         <div class="image-layered">
                             <img src="../images/you1.jpg" alt="">
                             <img src="../images/layheng1.jpg" alt="">
                         </div>
                         <div class="info">
                             <h2>Layheng Hok</h2>
-                            <div>
-                                <p><span>Email</span>: lhok1@paragoniu.edu.kh</p>
-                                <p><span>Hobbies</span>: Wait what doe he actually do?</p>
-                                <p class="specials"><span>Quote</span>: <span class="special">L</span>ook i might not
-                                    have a fanc<span class="special">Y</span> car, but i fancy <span
-                                        class="special">YOU</span></p>
+                            <div class="quote-layered" style="margin-bottom: 3.5rem;">
+                                <p>
+                                    <span>Email</span>: lhok1@paragoniu.edu.kh<br>
+                                    <span>Hobbies</span>: Music
+                                </p>
+                                <p style="font-size: 4rem; margin-bottom: 1rem;">
+                                    X
+                                </p>
                             </div>
+                            <p class="specials" style="padding-top: 1rem"><span>Quote</span>: <span class="special">L</span>ook i might not have a fanc<span class="special">Y</span> car, but i fancy <span class="special">YOU</span></p>
                         </div>
                     </div>
                     <div id="member4" class="member">
                         <div class="content" id="start-btn">
-                            <div><img src="../images/long2.jpg" alt=""></div>
+                            <div><img src="../images/long1.webp" alt=""></div>
                             <div class="info">
                                 <h2>Bunlong Prak</h2>
                                 <div>
                                     <p><span>Email</span>: bprak@paragoniu.edu.kh</p>
                                     <p><span>Hobbies</span>: Watching Animes</p>
-                                    <img id="thanos" src="../Images/thanos_idle.png" alt="">
+                                    <div class="quote-layered">
+                                        <p><span>Quote</span>: never gonna give you up,     never gonna let you down</p>
+                                        <p>
+                                            <img id="thanos" src="../Images/thanos_idle.png" alt="">
+                                        </p>
+                                    </div>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -167,6 +179,7 @@
         integrity="sha512-dELYIOEzIECWdvsEdoywFOB4qKDmtQee33yD0dQnzAE7eBGKJ984VQXRLs/vlsP4Sb3VchbQL7iAy4NWqetCsw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script src="../scripts/love.js"></script>
     <script src="../scripts/hack.js"></script>
     <script src="../scripts/snap.js"></script>
     <script src="../scripts/about.js"></script>

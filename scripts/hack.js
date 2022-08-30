@@ -9,7 +9,7 @@ function hackScreenShow() {
     video.volume = 0.1;
     video.play();
     setTimeout(hackScreenHide, 14000, video);
-    document.getElementById('hackText').innerHTML = '';
+    document.getElementById('hackText').innerHTML = 'Click';
 }
 
 function hackScreenHide(video) {

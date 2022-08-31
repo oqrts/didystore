@@ -135,7 +135,7 @@ function displayItem() {
     }
 
     //Slide Images
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < item.img.length; i++) {
         document.getElementById('slide').innerHTML += `<img src="${item.img[i]}">`;
     }
 

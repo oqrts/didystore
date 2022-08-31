@@ -9,7 +9,7 @@ function hackScreenShow() {
     video.volume = 0.1;
     video.play();
     setTimeout(hackScreenHide, 14000, video);
-    document.getElementById('hackText').innerHTML = 'Click';
+    document.getElementById('hackText').innerHTML = '';
 }
 
 function hackScreenHide(video) {
@@ -20,9 +20,21 @@ function hackScreenHide(video) {
     firstTime = true;
 }
 
+function typingSound() {
+    var audio = new Audio('../sounds/typing.wav');
+    audio.play();
+}
+
+function hackVoice() {
+    var audio = new Audio('../sounds/hackvoice.wav');
+    audio.play();
+}
+
 function printOut(text) {
     if(!firstTime) return;
-    setTimeout(hackScreenShow, 3000);
+    typingSound();
+    setTimeout(hackScreenShow, 5000);
+    setTimeout(hackVoice, 3500);
     for(var i = 0; i < text.length; i++) {
         var CHAR = text[i];
         setTimeout(appendLetter, timePerLetter*i, CHAR);

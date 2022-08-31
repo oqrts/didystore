@@ -1,20 +1,20 @@
-let canPlay = true;
+let canPlay1 = true;
 
 function loveMusic() {
-    if(!canPlay) return;
+    if(!canPlay1) return;
     var audio = document.getElementById('love-music');
-    canPlay = false;
+    canPlay1 = false;
     audio.play();
-    setTimeout(allowMusic, 7000);
+    setTimeout(allowMusic, 44000);
 }
 
 function allowMusic() {
-    canPlay = true;
+    canPlay1 = true;
 }
 
 function stopMusic() {
     var audio = document.getElementById('love-music');
-    canPlay = true;
+    canPlay1 = true;
     audio.pause();
     audio.currentTime = 0;
 }

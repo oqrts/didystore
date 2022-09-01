@@ -20,3 +20,25 @@ window.onload = function() {
         console.log("User not signed in yet!");
     }
 }
+let isPlaying = false;
+
+function allowMusic() {
+    if(isPlaying) {
+        stopMusic();
+    }
+    else {
+        var audio = document.getElementById('bg-sound');
+        document.getElementById('mute-btn').style.filter = "brightness(1)";
+        audio.volume = 0.03;
+        audio.play();
+        isPlaying = true;
+    }
+}
+
+function stopMusic() {
+    var audio = document.getElementById('bg-sound');
+    document.getElementById('mute-btn').style.filter = "brightness(0.6)";
+    audio.pause();
+    audio.currentTime = 0;
+    isPlaying = false;
+}

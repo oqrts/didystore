@@ -144,6 +144,9 @@ body {
 } 
 @keyframes magicInOut {
     0% {
+        opacity: 0;
+    }
+    15% {
         opacity: 1;
     }
     20% {

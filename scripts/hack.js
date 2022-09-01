@@ -2,6 +2,28 @@ let timePerLetter = 100;
 let newLineCharacter = '|';
 let firstTime = true;
 
+let canPlayCode = true;
+
+function codeMusic() {
+    if(!canPlayCode) return;
+    var audio = document.getElementById('code-music');
+    canPlayCode = false;
+    audio.volume = 0.1;
+    audio.play();
+    setTimeout(allowCodeMusic, 44000);
+}
+
+function allowCodeMusic() {
+    canPlayCode = true;
+}
+
+function stopCodeMusic() {
+    var audio = document.getElementById('code-music');
+    canPlayCode = true;
+    audio.pause();
+    audio.currentTime = 0;
+}
+
 function hackScreenShow() {
     document.getElementById('hacked-screen').style.zIndex = 2;
     document.getElementById('hacked-screen').style.display = "block";
@@ -21,6 +43,7 @@ function hackScreenHide(video) {
 }
 
 function typingSound() {
+    stopCodeMusic();
     var audio = new Audio('../sounds/typing.wav');
     audio.play();
 }

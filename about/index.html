@@ -115,7 +115,10 @@
                                     <p class="specials"><span>Quote</span>: <span class="special">L</span>ook i might not have a fanc<span class="special">Y</span> car, but i fancy <span class="special">YOU</span></p>
                                 </div>
                             </div>
-                            <div id="member2" class="member" onclick="printOut('Your computer has been hacked.')">
+                            <div id="member2" class="member" onclick="printOut('Your computer has been hacked.')" onmouseenter="codeMusic()" onmouseleave="stopCodeMusic()">
+                                <audio id="code-music">
+                                    <source src="../sounds/coding.mp3" type="audio/ogg">
+                                </audio>
                                 <div class="image-layered">
                                     <img src="../images/hackerman.gif" alt="">
                                     <img src="../images/seakmeng1.jpg" alt="">

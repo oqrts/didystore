@@ -122,7 +122,7 @@ function reverseTime() {
   document.getElementById('magic-circle').style.display = 'flex';
   document.getElementById('magic-circle').style.zIndex = 2;
   document.getElementById('magic-circle-img').style.width = '400px'; 
-  setTimeout(showMembersBack, 3000);
+  setTimeout(showMembersBack, 2400);
 }
 
 function showMembersBack() {

@@ -39,6 +39,5 @@ function stopMusic() {
     var audio = document.getElementById('bg-sound');
     document.getElementById('mute-btn').style.filter = "brightness(0.6)";
     audio.pause();
-    audio.currentTime = 0;
     isPlaying = false;
 }

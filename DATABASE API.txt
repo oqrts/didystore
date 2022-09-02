@@ -1,0 +1,8 @@
+To see the entire mongoDB Database go to:
+https://animedstore-api.netlify.app/.netlify/functions/api/users/
+
+To see a specific user's info go to (replace example@gmai.com with the user's email):
+https://animedstore-api.netlify.app/.netlify/functions/api/users/example@gmail.com
+
+The Database of the items that we can see in the folder data/items_latest.json
+

@@ -34,7 +34,7 @@ function sortOld() {
     main_items.reverse();
     console.log(original_items);
     generateItems(main_items);
-    setSearch(itemName);
+    setSearch();
 }
 
 function sortNew() {
@@ -44,7 +44,7 @@ function sortNew() {
     document.getElementById('old').classList.remove('selected');
     main_items = original_items;
     generateItems(original_items);
-    setSearch(itemName);
+    setSearch();
     console.log(original_items);
 }
 
@@ -58,7 +58,7 @@ function sortHigh() {
     document.getElementById('new').classList.remove('selected');
     document.getElementById('old').classList.remove('selected');
     generateItems(main_items);
-    setSearch(itemName);
+    setSearch();
 }
 
 function sortLow() {
@@ -71,7 +71,7 @@ function sortLow() {
     document.getElementById('new').classList.remove('selected');
     document.getElementById('old').classList.remove('selected');
     generateItems(main_items);
-    setSearch(itemName);
+    setSearch();
 }
 
 function setSearch() {
@@ -89,7 +89,7 @@ function setSearch() {
 
 function searchItem() {
     itemName = document.getElementById('searchBar').value;
-    setSearch(itemName);
+    setSearch();
 }
 
 function toggleFigure() {

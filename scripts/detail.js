@@ -133,21 +133,16 @@ function displayItem() {
             document.getElementById('img-selector').innerHTML += `<img onclick="moveSlideTo(${i})" id="img-select-${i}" src="${item.img[i]}">`;
         }
     }
-
     //Slide Images
     for (let i = 0; i < item.img.length; i++) {
         document.getElementById('slide').innerHTML += `<img src="${item.img[i]}">`;
     }
-
     //Name
     document.getElementById('item-name').innerHTML = item.name;
-
     //Price
     document.getElementById('item-price').innerHTML = "$" + item.price;
-
-    //Price
+    //Total Price
     document.getElementById('priceSum').innerHTML = "$" + item.price;
-
     //Description
     document.getElementById('desc').innerHTML = "<h3>Description:</h3>" + item.desc;
 }
@@ -161,7 +156,6 @@ function getItemDetail() {
     else {
         console.log("No item to see detail of!");
     }
-    
 }
 
 function moveSlideTo(pos) {

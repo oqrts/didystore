@@ -10,12 +10,12 @@
 
 @keyframes categoryChangev1 {
     0% { 
-        content:  'FIGURES'; 
+        content:  'LIFE'; 
         font-family: 'Passion One';
         font-size: 10rem;
     }
     5% { 
-        content: 'COSPLAYS'; 
+        content: 'SHIRTS'; 
         font-family: 'Passion One';
         font-size: 10rem;
     }
@@ -25,7 +25,7 @@
         font-size: 10rem;
     }
     15% { 
-        content: 'ACCESSORIES'; 
+        content: 'STICKERS'; 
         font-family: 'Passion One';
         font-size: 10rem;
     }
@@ -212,7 +212,7 @@
         font-size: 9rem;
     }
     100% { 
-        content:  'GRAB YOUR'; 
+        content:  'BUY YOUR'; 
         font-family: 'Passion One';
     }
 }

@@ -86,7 +86,30 @@
                         </div>
                         <button id="checkout-button">Checkout</button>
                         <script src="https://js.stripe.com/v3/"></script>
-                    </div>
+                        <script>
+  const stripe = Stripe('your-publishable-key-here');
+
+  document.getElementById('checkout-button').addEventListener('click', () => {
+    // Create a new checkout session using the server-side endpoint
+    fetch('/create-checkout-session', {
+      method: 'POST',
+    })
+    .then((response) => response.json())
+    .then((sessionId) => {
+      // Redirect to Checkout
+      return stripe.redirectToCheckout({ sessionId });
+    })
+    .then((result) => {
+      if (result.error) {
+        alert(result.error.message);
+      }
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
+  });
+</script>
+ </div>
                 </section>
                 <section class="profile">
                     <div id="signInBtn"></div>

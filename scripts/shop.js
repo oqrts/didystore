@@ -375,7 +375,7 @@ function checkOut() {
 
 window.onload = function () {
     google.accounts.id.initialize({
-    client_id: "594234124010-23ugaco82t1moqsuuco1nahdi8sv0adf.apps.googleusercontent.com",
+    client_id: "504398128408-5lr6ss54oegnd8rvth5t9v16r0ihats2.apps.googleusercontent.com",
     callback: handleCredentialResponse
     });
     google.accounts.id.renderButton(
